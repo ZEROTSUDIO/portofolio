@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Haqi — Backend & Data Developer</title>
-    <meta name="description" content="Arief Rizal Bayhaqi — Backend & Data Developer. Building robust backend architectures, automated decision support systems, and machine learning pipelines." />
+    <meta name="description" content="Arief Rizal Bayhaqi — Backend & Data Developer specializing in robust backend architectures, ML pipelines, and decision support systems." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,593 +19,436 @@
     <link href="/src/style.css" rel="stylesheet" />
   </head>
 
-  <!-- ─────────────────── BODY ─────────────────── -->
-  <body class="bg-black text-white font-sans text-[14px] leading-[1.5] overflow-x-hidden">
+  <body class="bg-white text-black font-sans text-[14px] leading-[1.5] overflow-x-hidden">
 
-    <!-- Custom cursor -->
-    <div id="cursor-dot"></div>
-    <div id="cursor-ring"></div>
+    <!-- ══════════ NAV ══════════ -->
+    <nav class="nav-bar sticky top-0 z-50">
+      <div class="max-w-[1200px] mx-auto w-full flex items-center justify-between px-10 py-[18px]">
 
-    <!-- ══════════════ NAV ══════════════ -->
-    <nav id="navbar" class="nav-glass sticky top-0 z-50 transition-all duration-300">
-      <div class="max-w-[1200px] mx-auto w-full flex items-center justify-between px-8 py-4">
         <!-- Logo -->
-        <div class="flex items-center gap-2">
-          <div class="w-7 h-7 rounded-lg bg-purple flex items-center justify-center text-[11px] font-bold text-white shadow-[0_0_16px_rgba(139,92,246,0.6)]">H</div>
-          <span class="text-[15px] font-bold tracking-[-0.5px]">
-            haqi<span class="gradient-text-purple">.</span><span class="text-white/40 font-normal">dev</span>
+        <div class="flex items-center gap-2.5">
+          <div class="w-6 h-6 bg-black rounded-md flex items-center justify-center text-[10px] font-bold text-white">H</div>
+          <span class="text-[15px] font-bold tracking-[-0.4px]">
+            Arief Rizal Bayhaqi<span class="text-purple">.</span>
           </span>
         </div>
 
         <!-- Links -->
         <ul class="flex gap-7 list-none max-sm:hidden">
-          <li><a href="#about"   class="nav-link font-mono text-[12px] text-white/50 hover:text-white transition-colors duration-200 tracking-wider uppercase">About</a></li>
-          <li><a href="#work"    class="nav-link font-mono text-[12px] text-white/50 hover:text-white transition-colors duration-200 tracking-wider uppercase">Work</a></li>
-          <li><a href="#skill"   class="nav-link font-mono text-[12px] text-white/50 hover:text-white transition-colors duration-200 tracking-wider uppercase">Skills</a></li>
-          <li><a href="#contact" class="nav-link font-mono text-[12px] text-white/50 hover:text-white transition-colors duration-200 tracking-wider uppercase">Contact</a></li>
+          <li><a href="#about"   class="hover-purple text-[13px] font-medium text-black/60 tracking-[0.1px]">About</a></li>
+          <li><a href="#work"    class="hover-purple text-[13px] font-medium text-black/60 tracking-[0.1px]">Work</a></li>
+          <li><a href="#skill"   class="hover-purple text-[13px] font-medium text-black/60 tracking-[0.1px]">Skills</a></li>
+          <li><a href="#contact" class="hover-purple text-[13px] font-medium text-black/60 tracking-[0.1px]">Contact</a></li>
         </ul>
 
         <!-- CTA -->
-        <a
-          href="mailto:a.r.bayhaqi341@gmail.com"
-          class="btn-glow bg-purple text-white px-5 py-2 rounded-full text-[12px] font-semibold no-underline tracking-[0.4px] border border-purple/60 shadow-[0_0_20px_rgba(139,92,246,0.3)]"
-        >Hire me ↗</a>
+        <a href="mailto:a.r.bayhaqi341@gmail.com" class="btn-hire">Hire me</a>
       </div>
     </nav>
 
-    <!-- ══════════════ HERO ══════════════ -->
-    <section id="about" class="relative overflow-hidden min-h-[92vh] flex items-center">
+    <!-- ══════════ HERO ══════════ -->
+    <section id="about" class="border-b border-gray-line">
+      <div class="max-w-[1200px] mx-auto w-full px-10 pt-20 pb-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
-      <!-- Background orbs -->
-      <div class="orb w-[600px] h-[600px] bg-purple/10 top-[-100px] right-[-100px]" style="animation: float1 8s ease-in-out infinite;"></div>
-      <div class="orb w-[400px] h-[400px] bg-cyan-500/8 bottom-[-50px] left-[-100px]" style="animation: float2 10s ease-in-out infinite;"></div>
-      <div class="orb w-[250px] h-[250px] bg-purple/15 top-[40%] left-[30%]" style="animation: float3 12s ease-in-out infinite;"></div>
-
-      <!-- Grid background -->
-      <div class="absolute inset-0 opacity-[0.03]"
-        style="background-image: linear-gradient(rgba(139,92,246,1) 1px, transparent 1px), linear-gradient(90deg, rgba(139,92,246,1) 1px, transparent 1px); background-size: 60px 60px;">
-      </div>
-
-      <div class="max-w-[1200px] mx-auto w-full px-8 pt-24 pb-20 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
-
-        <!-- Left: Text -->
+        <!-- Left -->
         <div>
-          <!-- Available badge + avatar -->
-          <div class="flex items-center gap-4 mb-8 reveal">
-            <div class="avatar-ring">
+          <!-- Avatar + badge -->
+          <div class="flex items-center gap-4 mb-6 reveal">
+            <div class="avatar-wrap">
               <img
                 src="https://ui-avatars.com/api/?name=Arief+Bayhaqi&background=7c3aed&color=fff&size=150"
                 alt="Arief Rizal Bayhaqi"
-                class="w-12 h-12 rounded-full object-cover relative z-10"
+                class="w-14 h-14 rounded-full object-cover shadow-sm"
               />
             </div>
-            <div class="inline-flex items-center gap-2 glass px-4 py-2 rounded-full text-[11px] font-mono text-purple-mid">
-              <span class="w-1.5 h-1.5 bg-green-400 rounded-full inline-block shadow-[0_0_8px_#4ade80] animate-pulse"></span>
+            <div class="inline-flex items-center gap-1.5 bg-purple-light text-purple font-mono text-[11px] px-3 py-1.5 rounded-sm font-medium border border-purple/20">
+              <span class="w-1.5 h-1.5 bg-purple rounded-full inline-block animate-pulse"></span>
               Available for work
             </div>
           </div>
 
           <!-- Headline -->
-          <h1 class="text-[54px] sm:text-[64px] font-extrabold leading-[1.0] tracking-[-3px] mb-6 reveal reveal-delay-1">
-            <span class="gradient-text">Building the</span><br/>
-            <span class="text-white">backend of</span><br/>
-            <span class="gradient-text-purple">tomorrow<span class="text-white">.</span></span>
+          <h1 class="text-[52px] font-extrabold leading-[1.05] tracking-[-2px] mb-4 reveal reveal-delay-1">
+            Hi, I'm Arief<br />
+            Rizal Bayhaqi<span class="text-purple">.</span><br />
+            <span class="text-purple">Backend</span> &amp; Data<br />Developer
           </h1>
 
-          <!-- Sub title with typing -->
-          <p class="text-[14px] text-white/50 leading-[1.8] max-w-[420px] mb-3 font-normal reveal reveal-delay-2">
-            I'm <span class="text-purple-mid font-semibold">Arief Rizal Bayhaqi</span> — a backend & data developer specializing in
+          <!-- Typing subtitle -->
+          <p class="text-[#555] text-[14px] leading-[1.7] max-w-[380px] mb-2 reveal reveal-delay-2">
+            I specialize in
           </p>
-          <div class="flex items-center gap-2 mb-8 reveal reveal-delay-2">
-            <span class="font-mono text-[13px] text-purple-mid" id="typing-text"></span>
+          <div class="flex items-center gap-1.5 mb-7 reveal reveal-delay-2">
+            <span class="font-mono text-[13px] text-purple font-medium" id="typing-text"></span>
             <span class="typing-cursor"></span>
           </div>
 
-          <!-- CTA Buttons -->
+          <!-- Buttons -->
           <div class="flex gap-3 flex-wrap reveal reveal-delay-3">
-            <a href="#work"
-              class="btn-glow bg-purple text-white px-7 py-3 rounded-full text-[13px] font-semibold no-underline border border-purple/60 shadow-[0_0_24px_rgba(139,92,246,0.4)]"
-            >View projects ↓</a>
-            <a href="#"
-              class="glass text-white/80 px-7 py-3 rounded-full text-[13px] font-semibold no-underline hover:text-white hover:border-purple/50 transition-all duration-200 border border-white/10"
-            >Download CV</a>
+            <a href="#work" class="btn-primary">View projects</a>
+            <a href="#" class="btn-outline">Download CV</a>
           </div>
         </div>
 
-        <!-- Right: Stats grid -->
-        <div class="grid grid-cols-2 gap-4 reveal reveal-delay-2">
-
-          <!-- Stat 1 -->
-          <div class="stat-card col-span-1">
-            <div id="count-projects" class="text-[38px] font-extrabold tracking-[-2px] gradient-text-purple leading-none">5+</div>
-            <div class="text-[11px] text-white/40 mt-1 font-mono uppercase tracking-widest">Projects shipped</div>
+        <!-- Right: Stats + tags -->
+        <div class="flex flex-col gap-3 reveal reveal-delay-2">
+          <!-- Stats 2×2 -->
+          <div class="grid grid-cols-2 gap-3">
+            <div class="stat-card border-purple! bg-purple! text-white">
+              <div class="text-[36px] font-extrabold tracking-[-1.5px] leading-none">5+</div>
+              <div class="text-[11px] text-purple-mid mt-1 font-medium">Projects shipped</div>
+            </div>
+            <div class="stat-card">
+              <div class="text-[36px] font-extrabold tracking-[-1.5px] leading-none">1+</div>
+              <div class="text-[11px] text-[#999] mt-1 font-medium">Years experience</div>
+            </div>
+            <div class="stat-card">
+              <div class="text-[36px] font-extrabold tracking-[-1.5px] leading-none">12</div>
+              <div class="text-[11px] text-[#999] mt-1 font-medium">Repos public</div>
+            </div>
+            <div class="stat-card border-black! bg-black! text-white">
+              <div class="text-[36px] font-extrabold tracking-[-1.5px] leading-none text-white">99%</div>
+              <div class="text-[11px] text-[#666] mt-1 font-medium">Satisfaction</div>
+            </div>
           </div>
 
-          <!-- Stat 2 -->
-          <div class="stat-card col-span-1">
-            <div class="text-[38px] font-extrabold tracking-[-2px] text-white leading-none">1+</div>
-            <div class="text-[11px] text-white/40 mt-1 font-mono uppercase tracking-widest">Yrs experience</div>
-          </div>
-
-          <!-- Stat 3 -->
-          <div class="stat-card col-span-1">
-            <div id="count-repos" class="text-[38px] font-extrabold tracking-[-2px] text-white leading-none">12</div>
-            <div class="text-[11px] text-white/40 mt-1 font-mono uppercase tracking-widest">Repos public</div>
-          </div>
-
-          <!-- Stat 4 -->
-          <div class="stat-card col-span-1">
-            <div id="count-satisfaction" class="text-[38px] font-extrabold tracking-[-2px] gradient-text leading-none">99%</div>
-            <div class="text-[11px] text-white/40 mt-1 font-mono uppercase tracking-widest">Satisfaction</div>
-          </div>
-
-          <!-- Chip row -->
-          <div class="col-span-2 p-4 glass rounded-xl flex gap-2 flex-wrap">
-            <span class="tag-pill bg-purple/10 border-purple/30 text-purple-mid">PHP</span>
-            <span class="tag-pill bg-purple/10 border-purple/30 text-purple-mid">Python</span>
-            <span class="tag-pill">Laravel</span>
-            <span class="tag-pill">CodeIgniter</span>
-            <span class="tag-pill">Livewire</span>
-            <span class="tag-pill">Java</span>
-            <span class="tag-pill">C/C++</span>
-            <span class="tag-pill">MySQL</span>
+          <!-- Tech tags -->
+          <div class="border border-gray-line rounded-lg p-4 flex gap-2 flex-wrap bg-white">
+            <span class="tech-tag active">PHP</span>
+            <span class="tech-tag active">Python</span>
+            <span class="tech-tag">Laravel</span>
+            <span class="tech-tag">CodeIgniter</span>
+            <span class="tech-tag">Livewire</span>
+            <span class="tech-tag">Java</span>
+            <span class="tech-tag">C/C++</span>
+            <span class="tech-tag">MySQL</span>
           </div>
         </div>
-      </div>
-
-      <!-- Scroll hint -->
-      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-30 animate-bounce z-10">
-        <div class="w-px h-10 bg-gradient-to-b from-transparent to-purple"></div>
-        <span class="font-mono text-[9px] tracking-[3px] uppercase text-purple-mid">scroll</span>
       </div>
     </section>
 
-    <!-- ══════════════ MARQUEE ══════════════ -->
-    <div class="border-y border-gray-line py-4 overflow-hidden bg-surface relative z-10">
+    <!-- ══════════ MARQUEE ══════════ -->
+    <div class="border-b border-gray-line py-3.5 overflow-hidden bg-[#fafafa]">
       <div class="flex">
         <div class="marquee-track">
-          <span class="font-mono text-[11px] text-white/30 uppercase tracking-widest">Backend Development</span>
-          <span class="text-purple/60">✦</span>
-          <span class="font-mono text-[11px] text-white/30 uppercase tracking-widest">Machine Learning</span>
-          <span class="text-purple/60">✦</span>
-          <span class="font-mono text-[11px] text-white/30 uppercase tracking-widest">PHP · Python · Java</span>
-          <span class="text-purple/60">✦</span>
-          <span class="font-mono text-[11px] text-white/30 uppercase tracking-widest">REST API Design</span>
-          <span class="text-purple/60">✦</span>
-          <span class="font-mono text-[11px] text-white/30 uppercase tracking-widest">NLP & Sentiment Analysis</span>
-          <span class="text-purple/60">✦</span>
-          <span class="font-mono text-[11px] text-white/30 uppercase tracking-widest">Decision Support Systems</span>
-          <span class="text-purple/60">✦</span>
-          <span class="font-mono text-[11px] text-white/30 uppercase tracking-widest">Laravel · CodeIgniter</span>
-          <span class="text-purple/60">✦</span>
+          <span class="font-mono text-[10px] text-black/30 uppercase tracking-[0.15em]">Backend Development</span>
+          <span class="text-purple/40 font-mono">✦</span>
+          <span class="font-mono text-[10px] text-black/30 uppercase tracking-[0.15em]">Machine Learning</span>
+          <span class="text-purple/40 font-mono">✦</span>
+          <span class="font-mono text-[10px] text-black/30 uppercase tracking-[0.15em]">PHP · Python · Java</span>
+          <span class="text-purple/40 font-mono">✦</span>
+          <span class="font-mono text-[10px] text-black/30 uppercase tracking-[0.15em]">REST API Design</span>
+          <span class="text-purple/40 font-mono">✦</span>
+          <span class="font-mono text-[10px] text-black/30 uppercase tracking-[0.15em]">NLP & Sentiment Analysis</span>
+          <span class="text-purple/40 font-mono">✦</span>
+          <span class="font-mono text-[10px] text-black/30 uppercase tracking-[0.15em]">Decision Support Systems</span>
+          <span class="text-purple/40 font-mono">✦</span>
+          <span class="font-mono text-[10px] text-black/30 uppercase tracking-[0.15em]">Laravel · CodeIgniter · Livewire</span>
+          <span class="text-purple/40 font-mono">✦</span>
           <!-- duplicate for seamless loop -->
-          <span class="font-mono text-[11px] text-white/30 uppercase tracking-widest">Backend Development</span>
-          <span class="text-purple/60">✦</span>
-          <span class="font-mono text-[11px] text-white/30 uppercase tracking-widest">Machine Learning</span>
-          <span class="text-purple/60">✦</span>
-          <span class="font-mono text-[11px] text-white/30 uppercase tracking-widest">PHP · Python · Java</span>
-          <span class="text-purple/60">✦</span>
-          <span class="font-mono text-[11px] text-white/30 uppercase tracking-widest">REST API Design</span>
-          <span class="text-purple/60">✦</span>
-          <span class="font-mono text-[11px] text-white/30 uppercase tracking-widest">NLP & Sentiment Analysis</span>
-          <span class="text-purple/60">✦</span>
-          <span class="font-mono text-[11px] text-white/30 uppercase tracking-widest">Decision Support Systems</span>
-          <span class="text-purple/60">✦</span>
-          <span class="font-mono text-[11px] text-white/30 uppercase tracking-widest">Laravel · CodeIgniter</span>
-          <span class="text-purple/60">✦</span>
+          <span class="font-mono text-[10px] text-black/30 uppercase tracking-[0.15em]">Backend Development</span>
+          <span class="text-purple/40 font-mono">✦</span>
+          <span class="font-mono text-[10px] text-black/30 uppercase tracking-[0.15em]">Machine Learning</span>
+          <span class="text-purple/40 font-mono">✦</span>
+          <span class="font-mono text-[10px] text-black/30 uppercase tracking-[0.15em]">PHP · Python · Java</span>
+          <span class="text-purple/40 font-mono">✦</span>
+          <span class="font-mono text-[10px] text-black/30 uppercase tracking-[0.15em]">REST API Design</span>
+          <span class="text-purple/40 font-mono">✦</span>
+          <span class="font-mono text-[10px] text-black/30 uppercase tracking-[0.15em]">NLP & Sentiment Analysis</span>
+          <span class="text-purple/40 font-mono">✦</span>
+          <span class="font-mono text-[10px] text-black/30 uppercase tracking-[0.15em]">Decision Support Systems</span>
+          <span class="text-purple/40 font-mono">✦</span>
+          <span class="font-mono text-[10px] text-black/30 uppercase tracking-[0.15em]">Laravel · CodeIgniter · Livewire</span>
+          <span class="text-purple/40 font-mono">✦</span>
         </div>
       </div>
     </div>
 
-    <!-- ══════════════ WORK ══════════════ -->
-    <section id="work" class="relative overflow-hidden">
-      <div class="orb w-[500px] h-[500px] bg-purple/8 top-0 right-[-200px]"></div>
+    <!-- ══════════ WORK ══════════ -->
+    <section id="work" class="border-b border-gray-line">
+      <div class="max-w-[1200px] mx-auto w-full px-10 py-[60px]">
 
-      <div class="max-w-[1200px] mx-auto w-full px-8 py-20 relative z-10">
-
-        <!-- Section header -->
-        <div class="flex items-end justify-between mb-12 reveal">
-          <div>
-            <span class="font-mono text-[10px] text-purple font-medium bg-purple/10 border border-purple/20 px-3 py-1 rounded-full tracking-widest uppercase">01 / work</span>
-            <h2 class="text-[32px] font-extrabold tracking-[-1px] mt-3 text-white">Selected <em class="gradient-text not-italic">Projects</em></h2>
+        <!-- Header -->
+        <div class="flex items-end justify-between mb-8 reveal">
+          <div class="flex items-baseline gap-3">
+            <span class="section-badge">01 / work</span>
+            <h2 class="text-[22px] font-bold tracking-[-0.5px]">Selected Projects</h2>
           </div>
-          <a href="https://github.com/ZEROTSUDIO" class="font-mono text-[11px] text-white/40 hover:text-purple-mid transition-colors hidden md:block">view all on github →</a>
+          <a href="https://github.com/ZEROTSUDIO" target="_blank"
+            class="font-mono text-[11px] text-black/40 hover:text-purple transition-colors hidden md:block">
+            view all on github →
+          </a>
         </div>
 
-        <!-- Projects grid -->
+        <!-- Projects -->
         <div class="flex flex-col gap-4">
 
           <!-- Featured -->
-          <div class="project-card glow-card p-8 reveal reveal-delay-1" style="background: linear-gradient(135deg, #0f0f1a 0%, #14142a 100%);">
+          <div class="project-card featured p-7 reveal reveal-delay-1">
             <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
               <div class="flex-1">
-                <div class="flex items-center gap-3 mb-4">
-                  <span class="font-mono text-[10px] text-purple bg-purple/10 border border-purple/20 px-3 py-1 rounded-full uppercase tracking-widest">Featured · 2024</span>
-                  <span class="w-1.5 h-1.5 bg-green-400 rounded-full shadow-[0_0_6px_#4ade80]"></span>
+                <div class="flex items-center gap-2 mb-3">
+                  <span class="font-mono text-[10px] text-purple-mid font-medium uppercase tracking-wide">Featured · 2024</span>
+                  <span class="w-1.5 h-1.5 bg-green-400 rounded-full"></span>
                   <span class="font-mono text-[10px] text-green-400">Live</span>
                 </div>
-                <h3 class="text-[24px] font-extrabold tracking-[-0.8px] text-white mb-3">
-                  Realtime Analytics Dashboard
-                </h3>
-                <p class="text-[13px] text-white/50 leading-[1.7] mb-5 max-w-xl">
+                <h3 class="text-[22px] font-bold tracking-[-0.5px] text-white mb-2">Realtime Analytics Dashboard</h3>
+                <p class="text-[13px] text-[#aaa] leading-[1.6] mb-4 max-w-xl">
                   End-to-end data pipeline with WebSocket-driven charts serving 40k daily active users.
                   Built with React, Go, ClickHouse, and Kafka for sub-100ms latency.
                 </p>
-                <div class="flex gap-2 flex-wrap mb-5">
-                  <span class="tag-pill border-purple/30 text-purple-mid bg-purple/10">React</span>
-                  <span class="tag-pill border-purple/30 text-purple-mid bg-purple/10">Go</span>
-                  <span class="tag-pill border-purple/30 text-purple-mid bg-purple/10">Kafka</span>
-                  <span class="tag-pill border-purple/30 text-purple-mid bg-purple/10">ClickHouse</span>
-                  <span class="tag-pill border-purple/30 text-purple-mid bg-purple/10">WebSocket</span>
+                <div class="flex gap-1.5 flex-wrap mb-4">
+                  <span class="font-mono text-[10px] px-2 py-[3px] rounded-sm bg-white/10 text-purple-mid border border-white/10">React</span>
+                  <span class="font-mono text-[10px] px-2 py-[3px] rounded-sm bg-white/10 text-purple-mid border border-white/10">Go</span>
+                  <span class="font-mono text-[10px] px-2 py-[3px] rounded-sm bg-white/10 text-purple-mid border border-white/10">Kafka</span>
+                  <span class="font-mono text-[10px] px-2 py-[3px] rounded-sm bg-white/10 text-purple-mid border border-white/10">ClickHouse</span>
                 </div>
-                <a href="#" class="inline-flex items-center gap-2 text-[12px] font-semibold no-underline text-purple-mid hover:text-white transition-colors group">
-                  View case study
-                  <span class="group-hover:translate-x-1 transition-transform">→</span>
+                <a href="#" class="inline-flex items-center gap-1 text-[12px] font-semibold no-underline text-purple-mid hover:underline transition-all">
+                  View case study →
                 </a>
               </div>
 
-              <!-- Mock terminal card -->
-              <div class="w-full md:w-72 glass rounded-xl p-4 font-mono text-[11px] shrink-0">
+              <!-- Mini terminal -->
+              <div class="shrink-0 w-full md:w-64 rounded-lg border border-white/10 bg-white/5 p-4 font-mono text-[11px]">
                 <div class="flex gap-1.5 mb-3">
-                  <span class="w-2.5 h-2.5 rounded-full bg-red-500/70"></span>
-                  <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/70"></span>
-                  <span class="w-2.5 h-2.5 rounded-full bg-green-500/70"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-red-500/60"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/60"></span>
+                  <span class="w-2.5 h-2.5 rounded-full bg-green-500/60"></span>
                 </div>
                 <div class="text-green-400/80">$ npm run deploy</div>
                 <div class="text-white/30 mt-1">▸ Building... <span class="text-white/50">100%</span></div>
                 <div class="text-white/30">▸ Optimizing assets</div>
                 <div class="text-white/30">▸ Publishing to edge</div>
                 <div class="text-purple-mid mt-1">✓ Deployed in 2.4s</div>
-                <div class="text-white/20 mt-2">uptime: <span class="text-green-400/70">99.98%</span></div>
-                <div class="text-white/20">latency: <span class="text-purple-mid">87ms</span></div>
+                <div class="text-white/20 mt-2">latency: <span class="text-purple-mid">87ms</span></div>
               </div>
             </div>
           </div>
 
-          <!-- 2 smaller cards -->
+          <!-- Two smaller -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-
-            <div class="project-card glow-card p-7 reveal reveal-delay-2">
-              <div class="mb-3">
-                <span class="font-mono text-[10px] text-cyan-400 bg-cyan-400/10 border border-cyan-400/20 px-3 py-1 rounded-full uppercase tracking-widest">SaaS · 2023</span>
-              </div>
-              <h3 class="text-[19px] font-extrabold tracking-[-0.5px] text-white mb-2">AI Code Review Bot</h3>
-              <p class="text-[13px] text-white/50 leading-[1.6] mb-4">
+            <div class="project-card p-7 reveal reveal-delay-2">
+              <div class="font-mono text-[10px] text-purple font-medium mb-3">SaaS · 2023</div>
+              <h3 class="text-[17px] font-bold tracking-[-0.3px] mb-2">AI Code Review Bot</h3>
+              <p class="text-[13px] text-[#666] leading-[1.6] mb-4">
                 GitHub integration that reviews PRs and enforces team conventions using LLM inference.
               </p>
-              <div class="flex gap-2 flex-wrap mb-4">
-                <span class="tag-pill">TypeScript</span>
-                <span class="tag-pill">OpenAI</span>
-                <span class="tag-pill">GitHub API</span>
+              <div class="flex gap-1.5 flex-wrap mb-4">
+                <span class="tech-tag">TypeScript</span>
+                <span class="tech-tag">OpenAI</span>
+                <span class="tech-tag">GitHub API</span>
               </div>
-              <a href="#" class="inline-flex items-center gap-2 text-[12px] font-semibold no-underline text-purple-mid hover:text-white transition-colors group">
-                View project <span class="group-hover:translate-x-1 transition-transform">→</span>
-              </a>
+              <a href="#" class="inline-flex items-center gap-1 text-[12px] font-semibold no-underline text-purple hover:underline">View project →</a>
             </div>
 
-            <div class="project-card glow-card p-7 reveal reveal-delay-3">
-              <div class="mb-3">
-                <span class="font-mono text-[10px] text-emerald-400 bg-emerald-400/10 border border-emerald-400/20 px-3 py-1 rounded-full uppercase tracking-widest">Open source · 2023</span>
-              </div>
-              <h3 class="text-[19px] font-extrabold tracking-[-0.5px] text-white mb-2">INVS Studio Custom</h3>
-              <p class="text-[13px] text-white/50 leading-[1.6] mb-4">
+            <div class="project-card p-7 reveal reveal-delay-3">
+              <div class="font-mono text-[10px] text-purple font-medium mb-3">Open source · 2024</div>
+              <h3 class="text-[17px] font-bold tracking-[-0.3px] mb-2">INVS Studio Custom</h3>
+              <p class="text-[13px] text-[#666] leading-[1.6] mb-4">
                 Production management system with SJF scheduling algorithm, live dashboard, and demo mode for garment manufacturing.
               </p>
-              <div class="flex gap-2 flex-wrap mb-4">
-                <span class="tag-pill">PHP</span>
-                <span class="tag-pill">CodeIgniter</span>
-                <span class="tag-pill">MySQL</span>
+              <div class="flex gap-1.5 flex-wrap mb-4">
+                <span class="tech-tag">PHP</span>
+                <span class="tech-tag">CodeIgniter</span>
+                <span class="tech-tag">MySQL</span>
               </div>
-              <a href="https://github.com/ZEROTSUDIO" class="inline-flex items-center gap-2 text-[12px] font-semibold no-underline text-purple-mid hover:text-white transition-colors group">
-                View on GitHub <span class="group-hover:translate-x-1 transition-transform">→</span>
-              </a>
+              <a href="https://github.com/ZEROTSUDIO" class="inline-flex items-center gap-1 text-[12px] font-semibold no-underline text-purple hover:underline">View on GitHub →</a>
             </div>
-
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ══════════════ SKILLS ══════════════ -->
-    <section id="skill" class="relative overflow-hidden border-t border-gray-line">
-      <div class="orb w-[400px] h-[400px] bg-cyan-500/6 bottom-0 left-[-100px]"></div>
+    <!-- ══════════ SKILLS ══════════ -->
+    <section id="skill" class="border-b border-gray-line">
+      <div class="max-w-[1200px] mx-auto w-full px-10 py-[60px] grid grid-cols-1 md:grid-cols-3 gap-10">
 
-      <div class="max-w-[1200px] mx-auto w-full px-8 py-20 relative z-10">
-
-        <!-- Header -->
-        <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-14 reveal">
-          <div>
-            <span class="font-mono text-[10px] text-purple font-medium bg-purple/10 border border-purple/20 px-3 py-1 rounded-full tracking-widest uppercase">02 / skills</span>
-            <h2 class="text-[32px] font-extrabold tracking-[-1px] mt-3">
-              Technical <em class="gradient-text not-italic">Expertise</em>
-            </h2>
+        <!-- Left label -->
+        <div class="col-span-1 reveal">
+          <div class="flex flex-col items-start gap-2 mb-4">
+            <span class="section-badge">02 / skills</span>
+            <h2 class="text-[22px] font-bold tracking-[-0.5px]">Technical<br />Expertise</h2>
           </div>
-          <p class="text-[13px] text-white/40 leading-[1.7] max-w-xs mt-4 md:mt-0">
-            Specialized in backend systems, machine learning, and high-performance infrastructure.
+          <p class="text-[13px] text-[#666] leading-[1.7]">
+            Specialized in backend web development, machine learning algorithms,
+            and high-performance systems programming.
           </p>
         </div>
 
         <!-- Skill cards -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div class="col-span-1 md:col-span-2 flex flex-col gap-4">
 
-          <!-- Python & AI -->
-          <div class="glow-card p-7 flex flex-col gap-5 reveal reveal-delay-1">
-            <div class="flex gap-3 items-center">
-              <div class="w-12 h-12 bg-purple/10 border border-purple/20 rounded-xl flex items-center justify-center">
-                <i class="devicon-python-plain skill-icon text-[26px] text-purple-mid"></i>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+            <!-- Python & AI -->
+            <div class="skill-card reveal reveal-delay-1">
+              <div class="flex gap-3 items-center">
+                <i class="devicon-python-plain dev-icon text-[34px]"></i>
               </div>
-              <div class="w-8 h-8 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
-                <i class="devicon-scikitlearn-plain skill-icon text-[18px] text-white/60"></i>
+              <div>
+                <h3 class="text-[15px] font-bold mb-1">Python & AI/ML</h3>
+                <p class="text-[13px] text-[#666] leading-[1.6]">
+                  NLP, Sentiment Analysis, Decision Support Systems, and customized Machine Learning pipelines with scikit-learn.
+                </p>
+              </div>
+              <div class="flex flex-wrap gap-1.5 mt-auto">
+                <span class="tech-tag text-[10px]">NumPy</span>
+                <span class="tech-tag text-[10px]">Pandas</span>
+                <span class="tech-tag text-[10px]">scikit-learn</span>
+                <span class="tech-tag text-[10px]">NLP</span>
               </div>
             </div>
-            <div>
-              <h3 class="text-[16px] font-bold mb-2 text-white">Python & AI/ML</h3>
-              <p class="text-[13px] text-white/50 leading-[1.7]">
-                NLP, Sentiment Analysis, Decision Support Systems, and customized Machine Learning pipelines with scikit-learn.
-              </p>
-            </div>
-            <div class="mt-auto flex flex-wrap gap-1.5">
-              <span class="tag-pill text-[9px]">NumPy</span>
-              <span class="tag-pill text-[9px]">Pandas</span>
-              <span class="tag-pill text-[9px]">scikit-learn</span>
-              <span class="tag-pill text-[9px]">NLP</span>
+
+            <!-- Backend Web -->
+            <div class="skill-card reveal reveal-delay-2">
+              <div class="flex gap-3 items-center flex-wrap">
+                <i class="devicon-php-plain dev-icon text-[34px]"></i>
+                <i class="devicon-laravel-plain dev-icon text-[28px]"></i>
+                <i class="devicon-codeigniter-plain dev-icon text-[28px]"></i>
+                <i class="devicon-mysql-plain dev-icon text-[28px]"></i>
+              </div>
+              <div>
+                <h3 class="text-[15px] font-bold mb-1">Backend Web</h3>
+                <p class="text-[13px] text-[#666] leading-[1.6]">
+                  Robust APIs and MVC architectures utilizing PHP, CodeIgniter, Laravel, and Livewire.
+                </p>
+              </div>
+              <div class="flex flex-wrap gap-1.5 mt-auto">
+                <span class="tech-tag text-[10px]">REST API</span>
+                <span class="tech-tag text-[10px]">MVC</span>
+                <span class="tech-tag text-[10px]">Livewire</span>
+              </div>
             </div>
           </div>
 
-          <!-- Backend Web -->
-          <div class="glow-card p-7 flex flex-col gap-5 reveal reveal-delay-2">
-            <div class="flex gap-3 items-center flex-wrap">
-              <div class="w-12 h-12 bg-purple/10 border border-purple/20 rounded-xl flex items-center justify-center">
-                <i class="devicon-php-plain skill-icon text-[26px] text-purple-mid"></i>
-              </div>
-              <div class="w-8 h-8 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
-                <i class="devicon-laravel-plain skill-icon text-[18px] text-white/60"></i>
-              </div>
-              <div class="w-8 h-8 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
-                <i class="devicon-codeigniter-plain skill-icon text-[18px] text-white/60"></i>
-              </div>
-              <div class="w-8 h-8 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
-                <i class="devicon-mysql-plain skill-icon text-[18px] text-white/60"></i>
-              </div>
-            </div>
-            <div>
-              <h3 class="text-[16px] font-bold mb-2 text-white">Backend Web</h3>
-              <p class="text-[13px] text-white/50 leading-[1.7]">
-                Robust APIs and MVC architectures using PHP, CodeIgniter, Laravel, and Livewire with MySQL databases.
-              </p>
-            </div>
-            <div class="mt-auto flex flex-wrap gap-1.5">
-              <span class="tag-pill text-[9px]">REST API</span>
-              <span class="tag-pill text-[9px]">MVC</span>
-              <span class="tag-pill text-[9px]">Livewire</span>
-              <span class="tag-pill text-[9px]">MySQL</span>
-            </div>
-          </div>
-
-          <!-- Systems -->
-          <div class="glow-card p-7 flex flex-col gap-5 reveal reveal-delay-3">
+          <!-- Core & Systems — full width -->
+          <div class="skill-card reveal reveal-delay-3">
             <div class="flex gap-3 items-center">
-              <div class="w-12 h-12 bg-purple/10 border border-purple/20 rounded-xl flex items-center justify-center">
-                <i class="devicon-cplusplus-plain skill-icon text-[26px] text-purple-mid"></i>
-              </div>
-              <div class="w-8 h-8 bg-white/5 border border-white/10 rounded-lg flex items-center justify-center">
-                <i class="devicon-java-plain skill-icon text-[18px] text-white/60"></i>
-              </div>
+              <i class="devicon-java-plain dev-icon text-[34px]"></i>
+              <i class="devicon-cplusplus-plain dev-icon text-[34px]"></i>
             </div>
             <div>
-              <h3 class="text-[16px] font-bold mb-2 text-white">Core & Systems</h3>
-              <p class="text-[13px] text-white/50 leading-[1.7]">
+              <h3 class="text-[15px] font-bold mb-1">Core & Systems</h3>
+              <p class="text-[13px] text-[#666] leading-[1.6]">
                 High-performance backend services and system-level applications implemented in Java and C/C++.
               </p>
             </div>
-            <div class="mt-auto flex flex-wrap gap-1.5">
-              <span class="tag-pill text-[9px]">OOP</span>
-              <span class="tag-pill text-[9px]">Data Structures</span>
-              <span class="tag-pill text-[9px]">Algorithms</span>
-            </div>
           </div>
 
-        </div>
-
-        <!-- Big dev icon row -->
-        <div class="mt-12 glass rounded-2xl px-8 py-7 flex items-center justify-center gap-6 sm:gap-10 flex-wrap reveal reveal-delay-4">
-          <i class="devicon-git-plain skill-icon text-[30px] text-white/40" title="Git"></i>
-          <i class="devicon-github-original skill-icon text-[30px] text-white/40" title="GitHub"></i>
-          <i class="devicon-linux-plain skill-icon text-[30px] text-white/40" title="Linux"></i>
-          <i class="devicon-docker-plain skill-icon text-[30px] text-white/40" title="Docker"></i>
-          <i class="devicon-vscode-plain skill-icon text-[30px] text-white/40" title="VS Code"></i>
-          <i class="devicon-postman-plain skill-icon text-[30px] text-white/40" title="Postman"></i>
-          <i class="devicon-javascript-plain skill-icon text-[30px] text-white/40" title="JavaScript"></i>
-          <i class="devicon-tailwindcss-plain skill-icon text-[30px] text-white/40" title="Tailwind"></i>
+          <!-- Tool strip -->
+          <div class="tool-strip reveal reveal-delay-4">
+            <i class="devicon-git-plain dev-icon text-[26px] text-black/40" title="Git"></i>
+            <i class="devicon-github-original dev-icon text-[26px] text-black/40" title="GitHub"></i>
+            <i class="devicon-linux-plain dev-icon text-[26px] text-black/40" title="Linux"></i>
+            <i class="devicon-docker-plain dev-icon text-[26px] text-black/40" title="Docker"></i>
+            <i class="devicon-vscode-plain dev-icon text-[26px] text-black/40" title="VS Code"></i>
+            <i class="devicon-postman-plain dev-icon text-[26px] text-black/40" title="Postman"></i>
+            <i class="devicon-javascript-plain dev-icon text-[26px] text-black/40" title="JavaScript"></i>
+            <i class="devicon-tailwindcss-plain dev-icon text-[26px] text-black/40" title="Tailwind"></i>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ══════════════ CONTACT ══════════════ -->
-    <section id="contact" class="relative overflow-hidden border-t border-gray-line">
-      <div class="orb w-[500px] h-[500px] bg-purple/10 top-[-100px] left-[-100px]"></div>
+    <!-- ══════════ CONTACT ══════════ -->
+    <section id="contact">
+      <div class="max-w-[1200px] mx-auto w-full px-10 py-[60px] grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
 
-      <div class="max-w-[1200px] mx-auto w-full px-8 py-20 relative z-10">
-
-        <!-- CTA Banner -->
-        <div class="glass rounded-2xl p-10 md:p-14 mb-12 text-center relative overflow-hidden reveal"
-          style="background: linear-gradient(135deg, rgba(139,92,246,0.08) 0%, rgba(6,182,212,0.04) 100%); border-color: rgba(139,92,246,0.2);">
-          <div class="absolute inset-0 opacity-[0.02]"
-            style="background-image: linear-gradient(rgba(139,92,246,1) 1px, transparent 1px), linear-gradient(90deg, rgba(139,92,246,1) 1px, transparent 1px); background-size: 40px 40px;">
+        <!-- Left -->
+        <div class="reveal">
+          <div class="flex flex-col items-start gap-2 mb-3">
+            <span class="section-badge">03 / contact</span>
+            <h2 class="text-[22px] font-bold tracking-[-0.5px]">Let's build<br />something.</h2>
           </div>
-          <div class="relative z-10">
-            <span class="font-mono text-[10px] text-purple font-medium bg-purple/10 border border-purple/20 px-3 py-1 rounded-full tracking-widest uppercase">03 / contact</span>
-            <h2 class="text-[42px] sm:text-[52px] font-extrabold tracking-[-2px] mt-5 mb-4">
-              Let's build<br/><em class="gradient-text not-italic">something great.</em>
-            </h2>
-            <p class="text-[14px] text-white/50 leading-[1.7] max-w-md mx-auto mb-8">
-              Open to full-time roles, freelance contracts, and interesting open-source collaborations.
-              I respond within 24 hours.
-            </p>
-            <a
-              href="mailto:a.r.bayhaqi341@gmail.com"
-              class="btn-glow inline-flex items-center gap-2 bg-purple text-white px-8 py-3.5 rounded-full text-[14px] font-semibold no-underline border border-purple/60 shadow-[0_0_32px_rgba(139,92,246,0.5)]"
-            >Send me an email ↗</a>
-          </div>
+          <p class="text-[14px] text-[#666] leading-[1.7] max-w-[340px] mt-2">
+            Open to full-time roles, freelance contracts, and interesting open-source collaborations.
+            I respond within 24 hours.
+          </p>
         </div>
 
-        <!-- Contact links -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 reveal reveal-delay-2">
+        <!-- Right: contact links -->
+        <div class="flex flex-col gap-3 reveal reveal-delay-1">
           <a href="mailto:a.r.bayhaqi341@gmail.com" class="contact-link">
-            <div class="flex items-center gap-3">
-              <div class="w-8 h-8 bg-purple/10 border border-purple/20 rounded-lg flex items-center justify-center text-purple-mid text-[14px]">@</div>
-              <span class="text-white/80">a.r.bayhaqi341@gmail.com</span>
-            </div>
-            <span class="font-mono text-[10px] text-purple-mid uppercase tracking-widest">Email →</span>
+            <span>a.r.bayhaqi341@gmail.com</span>
+            <span class="font-mono text-[11px] text-purple">email →</span>
           </a>
           <a href="https://github.com/ZEROTSUDIO" target="_blank" class="contact-link">
-            <div class="flex items-center gap-3">
-              <div class="w-8 h-8 bg-purple/10 border border-purple/20 rounded-lg flex items-center justify-center">
-                <i class="devicon-github-original text-[16px] text-purple-mid"></i>
-              </div>
-              <span class="text-white/80">github.com/ZEROTSUDIO</span>
-            </div>
-            <span class="font-mono text-[10px] text-purple-mid uppercase tracking-widest">GitHub →</span>
+            <span>github.com/ZEROTSUDIO</span>
+            <span class="font-mono text-[11px] text-purple">github →</span>
           </a>
           <a href="#" class="contact-link">
-            <div class="flex items-center gap-3">
-              <div class="w-8 h-8 bg-purple/10 border border-purple/20 rounded-lg flex items-center justify-center text-purple-mid font-bold text-[12px]">in</div>
-              <span class="text-white/80">linkedin.com/in/yourname</span>
-            </div>
-            <span class="font-mono text-[10px] text-purple-mid uppercase tracking-widest">LinkedIn →</span>
+            <span>linkedin.com/in/yourname</span>
+            <span class="font-mono text-[11px] text-purple">linkedin →</span>
           </a>
           <a href="https://instagram.com/zeeddeong.341" target="_blank" class="contact-link">
-            <div class="flex items-center gap-3">
-              <div class="w-8 h-8 bg-purple/10 border border-purple/20 rounded-lg flex items-center justify-center text-purple-mid text-[14px]">✦</div>
-              <span class="text-white/80">@zeeddeong.341</span>
-            </div>
-            <span class="font-mono text-[10px] text-purple-mid uppercase tracking-widest">Instagram →</span>
+            <span>@zeeddeong.341</span>
+            <span class="font-mono text-[11px] text-purple">instagram →</span>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- ══════════════ FOOTER ══════════════ -->
+    <!-- ══════════ FOOTER ══════════ -->
     <footer class="border-t border-gray-line">
-      <div class="max-w-[1200px] mx-auto w-full px-8 py-6 flex justify-between items-center flex-wrap gap-4">
-        <div class="flex items-center gap-2">
-          <div class="w-5 h-5 rounded-md bg-purple/80 flex items-center justify-center text-[9px] font-bold text-white">H</div>
-          <span class="font-mono text-[11px] text-white/20">© 2025 — Arief Rizal Bayhaqi.</span>
-        </div>
-        <span class="font-mono text-[11px] text-white/20">Designed & built with <span class="text-purple-mid">♥</span> from scratch</span>
+      <div class="max-w-[1200px] mx-auto w-full px-10 py-5 flex justify-between items-center flex-wrap gap-4">
+        <span class="font-mono text-[11px] text-[#bbb]">© 2025 — Arief Rizal Bayhaqi. All rights reserved.</span>
+        <span class="font-mono text-[11px] text-[#bbb]">Designed & built from scratch</span>
       </div>
     </footer>
 
-  <!-- ══════════════ SCRIPTS ══════════════ -->
-  <script>
-    // ─── Custom Cursor ───
-    const dot = document.getElementById('cursor-dot');
-    const ring = document.getElementById('cursor-ring');
-    let mouseX = 0, mouseY = 0;
-    let ringX = 0, ringY = 0;
+    <!-- ══════════ SCRIPTS ══════════ -->
+    <script>
+      // ── Scroll Reveal ──
+      const reveals = document.querySelectorAll('.reveal');
+      const ro = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            ro.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      reveals.forEach(el => ro.observe(el));
 
-    document.addEventListener('mousemove', (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-      dot.style.left = mouseX + 'px';
-      dot.style.top  = mouseY + 'px';
-    });
+      // ── Typing animation ──
+      const phrases = [
+        'robust backend architectures',
+        'machine learning pipelines',
+        'decision support systems',
+        'REST API design',
+        'NLP & sentiment analysis',
+      ];
+      let pi = 0, ci = 0, deleting = false;
+      const typingEl = document.getElementById('typing-text');
 
-    function animateRing() {
-      ringX += (mouseX - ringX) * 0.12;
-      ringY += (mouseY - ringY) * 0.12;
-      ring.style.left = ringX + 'px';
-      ring.style.top  = ringY + 'px';
-      requestAnimationFrame(animateRing);
-    }
-    animateRing();
-
-    // ─── Scroll Reveal ───
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          observer.unobserve(e.target);
+      function type() {
+        const phrase = phrases[pi];
+        if (!deleting) {
+          typingEl.textContent = phrase.slice(0, ++ci);
+          if (ci === phrase.length) { deleting = true; setTimeout(type, 2000); return; }
+        } else {
+          typingEl.textContent = phrase.slice(0, --ci);
+          if (ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; }
         }
-      });
-    }, { threshold: 0.12 });
-    reveals.forEach(el => observer.observe(el));
-
-    // ─── Typing animation ───
-    const phrases = [
-      'robust backend architectures',
-      'machine learning pipelines',
-      'decision support systems',
-      'automated REST APIs',
-      'NLP & sentiment analysis',
-    ];
-    let pi = 0, ci = 0, deleting = false;
-    const el = document.getElementById('typing-text');
-    function type() {
-      const phrase = phrases[pi];
-      if (!deleting) {
-        el.textContent = phrase.slice(0, ++ci);
-        if (ci === phrase.length) { deleting = true; setTimeout(type, 1800); return; }
-      } else {
-        el.textContent = phrase.slice(0, --ci);
-        if (ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; }
+        setTimeout(type, deleting ? 35 : 65);
       }
-      setTimeout(type, deleting ? 40 : 70);
-    }
-    type();
+      type();
 
-    // ─── Floating orb keyframes via JS ───
-    const style = document.createElement('style');
-    style.textContent = `
-      @keyframes float1 { 0%,100%{transform:translate(0,0) scale(1)} 33%{transform:translate(-30px,20px) scale(1.05)} 66%{transform:translate(20px,-15px) scale(0.97)} }
-      @keyframes float2 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(25px,-30px)} }
-      @keyframes float3 { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(-20px,25px) scale(1.1)} }
-    `;
-    document.head.appendChild(style);
-
-    // ─── Active nav link ───
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link');
-    window.addEventListener('scroll', () => {
-      let current = '';
-      sections.forEach(s => {
-        if (window.scrollY >= s.offsetTop - 120) current = s.id;
+      // ── Active nav highlight on scroll ──
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('nav a[href^="#"]');
+      window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(s => {
+          if (window.scrollY >= s.offsetTop - 100) current = s.id;
+        });
+        navLinks.forEach(a => {
+          const active = a.getAttribute('href') === '#' + current;
+          a.style.color = active ? '#7c3aed' : '';
+          a.style.opacity = active ? '1' : '';
+        });
       });
-      navLinks.forEach(a => {
-        a.classList.toggle('text-white', a.getAttribute('href') === '#' + current);
-        a.classList.toggle('text-white/50', a.getAttribute('href') !== '#' + current);
-      });
-    });
-
-    // ─── Counter animation ───
-    function animateCount(el, target, suffix = '') {
-      let start = 0;
-      const duration = 1200;
-      const step = (timestamp) => {
-        if (!start) start = timestamp;
-        const progress = Math.min((timestamp - start) / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3);
-        el.textContent = Math.floor(eased * target) + suffix;
-        if (progress < 1) requestAnimationFrame(step);
-      };
-      requestAnimationFrame(step);
-    }
-
-    // trigger counters when hero is visible
-    const heroObserver = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          animateCount(document.getElementById('count-projects'), 5, '+');
-          animateCount(document.getElementById('count-repos'), 12);
-          animateCount(document.getElementById('count-satisfaction'), 99, '%');
-          heroObserver.disconnect();
-        }
-      });
-    }, { threshold: 0.3 });
-    const statsSection = document.querySelector('#about');
-    if (statsSection) heroObserver.observe(statsSection);
-  </script>
+    </script>
 
   </body>
 </html>
