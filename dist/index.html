@@ -3,773 +3,668 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Haqi — Backend & Data Developer</title>
+    <meta
+      name="description"
+      content="Arief Rizal Bayhaqi — Backend & Data Developer specializing in robust backend architectures, ML pipelines, and decision support systems."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      :root {
-        --black: #0a0a0a;
-        --white: #ffffff;
-        --purple: #7c3aed;
-        --purple-light: #ede9fe;
-        --purple-mid: #c4b5fd;
-        --gray-line: #e5e5e5;
-      }
-      body {
-        background: var(--white);
-        color: var(--black);
-        font-family: "Syne", sans-serif;
-        font-size: 14px;
-        line-height: 1.5;
-      }
-      .mono {
-        font-family: "DM Mono", monospace;
-      }
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        width: 100%;
-      }
-
-      /* NAV */
-      nav {
-        border-bottom: 1px solid var(--gray-line);
-        position: sticky;
-        top: 0;
-        background: var(--white);
-        z-index: 10;
-      }
-      .nav-container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 20px 40px;
-      }
-
-      .nav-logo {
-        font-size: 15px;
-        font-weight: 700;
-        letter-spacing: -0.3px;
-      }
-      .nav-logo span {
-        color: var(--purple);
-      }
-      .nav-links {
-        display: flex;
-        gap: 28px;
-        list-style: none;
-      }
-      .nav-links a {
-        text-decoration: none;
-        color: var(--black);
-        font-size: 13px;
-        font-weight: 500;
-        letter-spacing: 0.2px;
-        opacity: 0.6;
-        transition: opacity 0.2s;
-      }
-      .nav-links a:hover {
-        opacity: 1;
-      }
-      .nav-cta {
-        background: var(--black);
-        color: var(--white);
-        padding: 8px 18px;
-        border-radius: 4px;
-        font-size: 13px;
-        font-weight: 600;
-        text-decoration: none;
-        letter-spacing: 0.2px;
-        transition: background 0.2s;
-      }
-      .nav-cta:hover {
-        background: var(--purple);
-      }
-
-      /* HERO */
-      .hero {
-        border-bottom: 1px solid var(--gray-line);
-      }
-      .hero-container {
-        padding: 80px 40px 60px;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
-        align-items: center;
-      }
-
-      .hero-tag {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        background: var(--purple-light);
-        color: var(--purple);
-        font-family: "DM Mono", monospace;
-        font-size: 11px;
-        padding: 5px 12px;
-        border-radius: 3px;
-        margin-bottom: 20px;
-        font-weight: 500;
-      }
-      .hero-tag::before {
-        content: "";
-        width: 6px;
-        height: 6px;
-        background: var(--purple);
-        border-radius: 50%;
-        display: inline-block;
-      }
-      .hero-name {
-        font-size: 52px;
-        font-weight: 800;
-        line-height: 1.05;
-        letter-spacing: -2px;
-        margin-bottom: 16px;
-      }
-      .hero-name em {
-        color: var(--purple);
-        font-style: normal;
-      }
-      .hero-desc {
-        color: #555;
-        font-size: 14px;
-        line-height: 1.7;
-        max-width: 380px;
-        margin-bottom: 28px;
-        font-weight: 400;
-      }
-      .hero-btns {
-        display: flex;
-        gap: 12px;
-        flex-wrap: wrap;
-      }
-      .btn-primary {
-        background: var(--purple);
-        color: var(--white);
-        padding: 11px 24px;
-        border-radius: 4px;
-        font-size: 13px;
-        font-weight: 600;
-        text-decoration: none;
-        letter-spacing: 0.2px;
-        border: none;
-        cursor: pointer;
-      }
-      .btn-secondary {
-        background: transparent;
-        color: var(--black);
-        padding: 10px 24px;
-        border-radius: 4px;
-        font-size: 13px;
-        font-weight: 600;
-        text-decoration: none;
-        letter-spacing: 0.2px;
-        border: 1.5px solid var(--gray-line);
-        cursor: pointer;
-      }
-      .hero-visual {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
-      }
-      .stat-box {
-        border: 1px solid var(--gray-line);
-        border-radius: 8px;
-        padding: 20px;
-        background: var(--white);
-      }
-      .stat-box.accent {
-        background: var(--purple);
-        border-color: var(--purple);
-        color: var(--white);
-      }
-      .stat-box.accent .stat-label {
-        color: var(--purple-mid);
-      }
-      .stat-num {
-        font-size: 32px;
-        font-weight: 800;
-        letter-spacing: -1.5px;
-        line-height: 1;
-      }
-      .stat-label {
-        font-size: 12px;
-        color: #999;
-        margin-top: 4px;
-        font-weight: 500;
-      }
-      .tech-box {
-        grid-column: 1/-1;
-        border: 1px solid var(--gray-line);
-        border-radius: 8px;
-        padding: 16px;
-        display: flex;
-        gap: 8px;
-        flex-wrap: wrap;
-      }
-      .tech-pill {
-        font-family: "DM Mono", monospace;
-        font-size: 11px;
-        padding: 4px 10px;
-        border-radius: 3px;
-        background: var(--white);
-        border: 1px solid var(--gray-line);
-        color: #444;
-      }
-      .tech-pill.active {
-        background: var(--black);
-        color: var(--white);
-        border-color: var(--black);
-      }
-
-      /* SECTION HEADERS */
-      .section-header {
-        display: flex;
-        align-items: baseline;
-        gap: 12px;
-        margin-bottom: 28px;
-      }
-      .section-label {
-        font-family: "DM Mono", monospace;
-        font-size: 11px;
-        color: var(--purple);
-        font-weight: 500;
-        background: var(--purple-light);
-        padding: 3px 10px;
-        border-radius: 3px;
-      }
-      .section-title {
-        font-size: 22px;
-        font-weight: 700;
-        letter-spacing: -0.5px;
-      }
-
-      /* PROJECTS */
-      .projects {
-        border-bottom: 1px solid var(--gray-line);
-      }
-      .projects-container {
-        padding: 60px 40px;
-      }
-
-      .projects-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1px;
-        background: var(--gray-line);
-        border: 1px solid var(--gray-line);
-        border-radius: 8px;
-        overflow: hidden;
-      }
-      .project-card {
-        padding: 28px;
-        background: var(--white);
-        transition: background 0.15s;
-      }
-      .project-card:hover {
-        background: #fafafa;
-      }
-      .project-card.featured {
-        grid-column: 1/-1;
-        background: var(--black);
-        color: var(--white);
-      }
-      .project-card.featured:hover {
-        background: #111;
-      }
-      .project-card.featured .project-meta {
-        color: var(--purple-mid);
-      }
-      .project-card.featured .project-title {
-        color: var(--white);
-      }
-      .project-card.featured .project-desc {
-        color: #aaa;
-      }
-      .project-card.featured .project-tag {
-        background: #ffffff18;
-        color: var(--purple-mid);
-        border-color: transparent;
-      }
-      .project-meta {
-        font-family: "DM Mono", monospace;
-        font-size: 11px;
-        color: var(--purple);
-        margin-bottom: 10px;
-        font-weight: 500;
-      }
-      .project-title {
-        font-size: 17px;
-        font-weight: 700;
-        margin-bottom: 8px;
-        letter-spacing: -0.3px;
-      }
-      .project-desc {
-        font-size: 13px;
-        color: #666;
-        line-height: 1.6;
-        margin-bottom: 14px;
-      }
-      .project-tags {
-        display: flex;
-        gap: 6px;
-        flex-wrap: wrap;
-      }
-      .project-tag {
-        font-family: "DM Mono", monospace;
-        font-size: 10px;
-        padding: 3px 8px;
-        border-radius: 3px;
-        border: 1px solid var(--gray-line);
-        color: #666;
-      }
-      .project-link {
-        display: inline-flex;
-        align-items: center;
-        gap: 4px;
-        margin-top: 16px;
-        font-size: 12px;
-        font-weight: 600;
-        text-decoration: none;
-        color: var(--purple);
-      }
-
-      /* SKILLS */
-      .skills {
-        border-bottom: 1px solid var(--gray-line);
-      }
-      .skills-container {
-        padding: 60px 40px;
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        gap: 40px;
-      }
-
-      .skills-list {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-      }
-      .skill-row {
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-      }
-      .skill-name {
-        font-size: 13px;
-        font-weight: 600;
-        display: flex;
-        justify-content: space-between;
-      }
-      .skill-name span {
-        font-family: "DM Mono", monospace;
-        font-size: 11px;
-        color: var(--purple);
-        font-weight: 400;
-      }
-      .skill-bar {
-        height: 3px;
-        background: var(--gray-line);
-        border-radius: 2px;
-        overflow: hidden;
-      }
-      .skill-fill {
-        height: 100%;
-        background: var(--purple);
-        border-radius: 2px;
-      }
-
-      /* EXPERIENCE */
-      .experience {
-        border-bottom: 1px solid var(--gray-line);
-      }
-      .experience-container {
-        padding: 60px 40px;
-      }
-
-      .exp-list {
-        display: flex;
-        flex-direction: column;
-        gap: 0;
-        border: 1px solid var(--gray-line);
-        border-radius: 8px;
-        overflow: hidden;
-      }
-      .exp-item {
-        padding: 24px 28px;
-        border-bottom: 1px solid var(--gray-line);
-        display: grid;
-        grid-template-columns: 120px 1fr;
-        gap: 24px;
-        transition: background 0.15s;
-      }
-      .exp-item:last-child {
-        border-bottom: none;
-      }
-      .exp-item:hover {
-        background: #fafafa;
-      }
-      .exp-date {
-        font-family: "DM Mono", monospace;
-        font-size: 11px;
-        color: #999;
-        padding-top: 3px;
-      }
-      .exp-role {
-        font-size: 15px;
-        font-weight: 700;
-        margin-bottom: 3px;
-        letter-spacing: -0.2px;
-      }
-      .exp-company {
-        font-size: 12px;
-        color: var(--purple);
-        font-weight: 600;
-        margin-bottom: 8px;
-      }
-      .exp-desc {
-        font-size: 13px;
-        color: #666;
-        line-height: 1.6;
-      }
-
-      /* CONTACT */
-      .contact-container {
-        padding: 60px 40px;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
-        align-items: start;
-      }
-
-      .contact-text p {
-        font-size: 14px;
-        color: #666;
-        line-height: 1.7;
-        margin-top: 12px;
-        max-width: 340px;
-      }
-      .contact-links {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-      }
-      .contact-link {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 16px 20px;
-        border: 1px solid var(--gray-line);
-        border-radius: 6px;
-        text-decoration: none;
-        color: var(--black);
-        font-weight: 600;
-        font-size: 13px;
-        transition:
-          border-color 0.2s,
-          background 0.2s;
-      }
-      .contact-link:hover {
-        border-color: var(--purple);
-        background: var(--purple-light);
-      }
-      .contact-link-icon {
-        font-family: "DM Mono", monospace;
-        font-size: 11px;
-        color: var(--purple);
-      }
-
-      /* FOOTER */
-      footer {
-        border-top: 1px solid var(--gray-line);
-      }
-      .footer-container {
-        padding: 20px 40px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .footer-copy {
-        font-family: "DM Mono", monospace;
-        font-size: 11px;
-        color: #bbb;
-      }
-      .footer-scroll {
-        font-family: "DM Mono", monospace;
-        font-size: 11px;
-        color: #bbb;
-      }
-    </style>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
+    <link rel="stylesheet" crossorigin href="/assets/style-DNsiRA7f.css">
   </head>
-  <body></body>
-</html>
 
-<h2
-  class="sr-only"
-  style="
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-  "
->
-  Programmer portfolio template — modern minimalist, black white purple
-</h2>
-
-<nav>
-  <div class="nav-logo">dev<span>.</span>portfolio</div>
-  <ul class="nav-links">
-    <li><a href="#">Work</a></li>
-    <li><a href="#">About</a></li>
-    <li><a href="#">Skills</a></li>
-    <li><a href="#">Contact</a></li>
-  </ul>
-  <a href="#" class="nav-cta">Hire me</a>
-</nav>
-
-<section class="hero">
-  <div>
-    <div class="hero-tag">Available for work</div>
-    <h1 class="hero-name">Full<em>Stack</em><br />Developer</h1>
-    <p class="hero-desc">
-      Building clean, performant web applications with a focus on developer
-      experience and scalable architecture. 5+ years shipping production code.
-    </p>
-    <div class="hero-btns">
-      <a href="#" class="btn-primary">View projects</a>
-      <a href="#" class="btn-secondary">Download CV</a>
-    </div>
-  </div>
-  <div class="hero-visual">
-    <div class="stat-box accent">
-      <div class="stat-num">52</div>
-      <div class="stat-label">Projects shipped</div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-num">5+</div>
-      <div class="stat-label">Years experience</div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-num">12</div>
-      <div class="stat-label">Open source libs</div>
-    </div>
-    <div class="stat-box" style="background: #0a0a0a; border-color: #0a0a0a">
-      <div class="stat-num" style="color: #fff">99%</div>
-      <div class="stat-label" style="color: #555">Client satisfaction</div>
-    </div>
-    <div class="tech-box">
-      <span class="tech-pill active">TypeScript</span>
-      <span class="tech-pill active">React</span>
-      <span class="tech-pill">Node.js</span>
-      <span class="tech-pill">PostgreSQL</span>
-      <span class="tech-pill">Docker</span>
-      <span class="tech-pill">AWS</span>
-      <span class="tech-pill">Go</span>
-    </div>
-  </div>
-</section>
-
-<section class="projects">
-  <div class="section-header">
-    <span class="section-label">01 / work</span>
-    <h2 class="section-title">Selected Projects</h2>
-  </div>
-  <div class="projects-grid">
-    <div class="project-card featured">
-      <div class="project-meta">Featured · 2024</div>
-      <div class="project-title" style="font-size: 21px">
-        Realtime Analytics Dashboard
-      </div>
-      <p class="project-desc">
-        End-to-end data pipeline with WebSocket-driven charts serving 40k daily
-        active users. Built with React, Go, ClickHouse, and Kafka for sub-100ms
-        latency.
-      </p>
-      <div class="project-tags">
-        <span class="project-tag">React</span>
-        <span class="project-tag">Go</span>
-        <span class="project-tag">Kafka</span>
-        <span class="project-tag">ClickHouse</span>
-      </div>
-      <a href="#" class="project-link" style="color: var(--purple-mid)"
-        >View case study →</a
+  <body
+    class="bg-white text-black font-sans text-[14px] leading-[1.5] overflow-x-hidden"
+  >
+    <!-- ══════════ NAV ══════════ -->
+    <nav class="nav-bar sticky top-0 z-50">
+      <div
+        class="max-w-[1200px] mx-auto w-full flex items-center justify-between px-10 py-[18px]"
       >
-    </div>
-    <div class="project-card">
-      <div class="project-meta">SaaS · 2023</div>
-      <div class="project-title">AI Code Review Bot</div>
-      <p class="project-desc">
-        GitHub integration that reviews PRs and enforces team conventions using
-        LLM inference.
-      </p>
-      <div class="project-tags">
-        <span class="project-tag">TypeScript</span>
-        <span class="project-tag">OpenAI</span>
-        <span class="project-tag">GitHub API</span>
-      </div>
-      <a href="#" class="project-link">View project →</a>
-    </div>
-    <div class="project-card">
-      <div class="project-meta">Open source · 2023</div>
-      <div class="project-title">orm-lite</div>
-      <p class="project-desc">
-        Lightweight TypeScript ORM for PostgreSQL with zero-config migrations
-        and full type safety.
-      </p>
-      <div class="project-tags">
-        <span class="project-tag">TypeScript</span>
-        <span class="project-tag">PostgreSQL</span>
-      </div>
-      <a href="#" class="project-link">View on GitHub →</a>
-    </div>
-  </div>
-</section>
+        <!-- Logo -->
+        <div class="flex items-center gap-2.5">
+          <div
+            class="w-6 h-6 bg-black rounded-md flex items-center justify-center text-[10px] font-bold text-white"
+          >
+            H
+          </div>
+          <span class="text-[15px] font-bold tracking-[-0.4px]">
+            Arief Rizal Bayhaqi<span class="text-purple">.</span>
+          </span>
+        </div>
 
-<section class="skills">
-  <div>
-    <div
-      class="section-header"
-      style="flex-direction: column; align-items: flex-start; gap: 8px"
-    >
-      <span class="section-label">02 / skills</span>
-      <h2 class="section-title">Technical<br />Expertise</h2>
-    </div>
-    <p style="font-size: 13px; color: #666; line-height: 1.7">
-      Specialized in full-stack JavaScript and systems programming, with
-      production experience across the entire delivery lifecycle.
-    </p>
-  </div>
-  <div class="skills-list">
-    <div class="skill-row">
-      <div class="skill-name">TypeScript / JavaScript<span>Expert</span></div>
-      <div class="skill-bar">
-        <div class="skill-fill" style="width: 95%"></div>
-      </div>
-    </div>
-    <div class="skill-row">
-      <div class="skill-name">React / Next.js<span>Expert</span></div>
-      <div class="skill-bar">
-        <div class="skill-fill" style="width: 92%"></div>
-      </div>
-    </div>
-    <div class="skill-row">
-      <div class="skill-name">Node.js / Go<span>Advanced</span></div>
-      <div class="skill-bar">
-        <div class="skill-fill" style="width: 85%"></div>
-      </div>
-    </div>
-    <div class="skill-row">
-      <div class="skill-name">PostgreSQL / Redis<span>Advanced</span></div>
-      <div class="skill-bar">
-        <div class="skill-fill" style="width: 80%"></div>
-      </div>
-    </div>
-    <div class="skill-row">
-      <div class="skill-name">
-        AWS / Docker / Kubernetes<span>Proficient</span>
-      </div>
-      <div class="skill-bar">
-        <div class="skill-fill" style="width: 72%"></div>
-      </div>
-    </div>
-    <div class="skill-row">
-      <div class="skill-name">System Design<span>Advanced</span></div>
-      <div class="skill-bar">
-        <div class="skill-fill" style="width: 88%"></div>
-      </div>
-    </div>
-  </div>
-</section>
+        <!-- Links -->
+        <ul class="flex gap-7 list-none max-sm:hidden">
+          <li>
+            <a
+              href="#about"
+              class="hover-purple text-[13px] font-medium text-black/60 tracking-[0.1px]"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="#work"
+              class="hover-purple text-[13px] font-medium text-black/60 tracking-[0.1px]"
+              >Work</a
+            >
+          </li>
+          <li>
+            <a
+              href="#skill"
+              class="hover-purple text-[13px] font-medium text-black/60 tracking-[0.1px]"
+              >Skills</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contact"
+              class="hover-purple text-[13px] font-medium text-black/60 tracking-[0.1px]"
+              >Contact</a
+            >
+          </li>
+        </ul>
 
-<section class="experience">
-  <div class="section-header">
-    <span class="section-label">03 / history</span>
-    <h2 class="section-title">Experience</h2>
-  </div>
-  <div class="exp-list">
-    <div class="exp-item">
-      <div class="exp-date">2022 — now</div>
-      <div>
-        <div class="exp-role">Senior Software Engineer</div>
-        <div class="exp-company">Vercel · Remote</div>
-        <div class="exp-desc">
-          Led architecture of the Edge Runtime caching layer, reducing cold
-          starts by 60%. Mentored 4 junior engineers and drove adoption of
-          TypeScript strict mode across the codebase.
+        <!-- CTA -->
+        <a href="mailto:a.r.bayhaqi341@gmail.com" class="btn-hire">Hire me</a>
+      </div>
+    </nav>
+
+    <!-- ══════════ HERO ══════════ -->
+    <section id="about" class="border-b border-gray-line">
+      <div
+        class="max-w-[1200px] mx-auto w-full px-10 pt-20 pb-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
+      >
+        <!-- Left -->
+        <div>
+          <!-- Avatar + badge -->
+          <div class="flex items-center gap-4 mb-6 reveal">
+            <div class="avatar-wrap">
+              <img
+                src="https://ui-avatars.com/api/?name=Arief+Bayhaqi&background=7c3aed&color=fff&size=150"
+                alt="Arief Rizal Bayhaqi"
+                class="w-14 h-14 rounded-full object-cover shadow-sm"
+              />
+            </div>
+            <div
+              class="inline-flex items-center gap-1.5 bg-purple-light text-purple font-mono text-[11px] px-3 py-1.5 rounded-sm font-medium border border-purple/20"
+            >
+              <span
+                class="w-1.5 h-1.5 bg-purple rounded-full inline-block animate-pulse"
+              ></span>
+              Available for work
+            </div>
+          </div>
+
+          <!-- Headline -->
+          <h1
+            class="text-[52px] font-extrabold leading-[1.05] tracking-[-2px] mb-4 reveal reveal-delay-1"
+          >
+            Hi, I'm Arief<br />
+            Rizal Bayhaqi<span class="text-purple">.</span><br />
+            <span class="text-purple">Backend</span> &amp; Data<br />Developer
+          </h1>
+
+          <!-- Typing subtitle -->
+          <p
+            class="text-[#555] text-[14px] leading-[1.7] max-w-[380px] mb-2 reveal reveal-delay-2"
+          >
+            I specialize in
+          </p>
+          <div class="flex items-center gap-1.5 mb-7 reveal reveal-delay-2">
+            <span
+              class="font-mono text-[13px] text-purple font-medium"
+              id="typing-text"
+            ></span>
+            <span class="typing-cursor"></span>
+          </div>
+
+          <!-- Buttons -->
+          <div class="flex gap-3 flex-wrap reveal reveal-delay-3">
+            <a href="#work" class="btn-primary">View projects</a>
+            <a href="#" class="btn-outline">Download CV</a>
+          </div>
+        </div>
+
+        <!-- Right: Stats + tags -->
+        <div class="flex flex-col gap-3 reveal reveal-delay-2">
+          <!-- Stats 2×2 -->
+          <div class="grid grid-cols-2 gap-3">
+            <div class="stat-card border-purple! bg-purple! text-white">
+              <div
+                class="text-[36px] font-extrabold tracking-[-1.5px] leading-none"
+              >
+                5+
+              </div>
+              <div class="text-[11px] text-purple-mid mt-1 font-medium">
+                Projects shipped
+              </div>
+            </div>
+            <div class="stat-card">
+              <div
+                class="text-[36px] font-extrabold tracking-[-1.5px] leading-none"
+              >
+                1+
+              </div>
+              <div class="text-[11px] text-[#999] mt-1 font-medium">
+                Years experience
+              </div>
+            </div>
+            <div class="stat-card">
+              <div
+                class="text-[36px] font-extrabold tracking-[-1.5px] leading-none"
+              >
+                12
+              </div>
+              <div class="text-[11px] text-[#999] mt-1 font-medium">
+                Repos public
+              </div>
+            </div>
+            <div class="stat-card border-black! bg-black! text-white">
+              <div
+                class="text-[36px] font-extrabold tracking-[-1.5px] leading-none text-white"
+              >
+                99%
+              </div>
+              <div class="text-[11px] text-[#666] mt-1 font-medium">
+                Satisfaction
+              </div>
+            </div>
+          </div>
+
+          <!-- Tech tags -->
+          <div
+            class="border border-gray-line rounded-lg p-4 flex gap-2 flex-wrap bg-white"
+          >
+            <span class="tech-tag active">PHP</span>
+            <span class="tech-tag active">Python</span>
+            <span class="tech-tag">Laravel</span>
+            <span class="tech-tag">CodeIgniter</span>
+            <span class="tech-tag">Livewire</span>
+            <span class="tech-tag">Java</span>
+            <span class="tech-tag">C/C++</span>
+            <span class="tech-tag">MySQL</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ MARQUEE ══════════ -->
+    <div class="border-b border-gray-line py-3.5 overflow-hidden bg-[#fafafa]">
+      <div class="flex">
+        <div class="marquee-track">
+          <span
+            class="font-mono text-[10px] text-black/30 uppercase tracking-[0.15em]"
+            >Backend Development</span
+          >
+          <span class="text-purple/40 font-mono">✦</span>
+          <span
+            class="font-mono text-[10px] text-black/30 uppercase tracking-[0.15em]"
+            >Machine Learning</span
+          >
+          <span class="text-purple/40 font-mono">✦</span>
+          <span
+            class="font-mono text-[10px] text-black/30 uppercase tracking-[0.15em]"
+            >PHP · Python · Java</span
+          >
+          <span class="text-purple/40 font-mono">✦</span>
+          <span
+            class="font-mono text-[10px] text-black/30 uppercase tracking-[0.15em]"
+            >REST API Design</span
+          >
+          <span class="text-purple/40 font-mono">✦</span>
+          <span
+            class="font-mono text-[10px] text-black/30 uppercase tracking-[0.15em]"
+            >NLP & Sentiment Analysis</span
+          >
+          <span class="text-purple/40 font-mono">✦</span>
+          <span
+            class="font-mono text-[10px] text-black/30 uppercase tracking-[0.15em]"
+            >Decision Support Systems</span
+          >
+          <span class="text-purple/40 font-mono">✦</span>
+          <span
+            class="font-mono text-[10px] text-black/30 uppercase tracking-[0.15em]"
+            >Laravel · CodeIgniter · Livewire</span
+          >
+          <span class="text-purple/40 font-mono">✦</span>
+          <!-- duplicate for seamless loop -->
+          <span
+            class="font-mono text-[10px] text-black/30 uppercase tracking-[0.15em]"
+            >Backend Development</span
+          >
+          <span class="text-purple/40 font-mono">✦</span>
+          <span
+            class="font-mono text-[10px] text-black/30 uppercase tracking-[0.15em]"
+            >Machine Learning</span
+          >
+          <span class="text-purple/40 font-mono">✦</span>
+          <span
+            class="font-mono text-[10px] text-black/30 uppercase tracking-[0.15em]"
+            >PHP · Python · Java</span
+          >
+          <span class="text-purple/40 font-mono">✦</span>
+          <span
+            class="font-mono text-[10px] text-black/30 uppercase tracking-[0.15em]"
+            >REST API Design</span
+          >
+          <span class="text-purple/40 font-mono">✦</span>
+          <span
+            class="font-mono text-[10px] text-black/30 uppercase tracking-[0.15em]"
+            >NLP & Sentiment Analysis</span
+          >
+          <span class="text-purple/40 font-mono">✦</span>
+          <span
+            class="font-mono text-[10px] text-black/30 uppercase tracking-[0.15em]"
+            >Decision Support Systems</span
+          >
+          <span class="text-purple/40 font-mono">✦</span>
+          <span
+            class="font-mono text-[10px] text-black/30 uppercase tracking-[0.15em]"
+            >Laravel · CodeIgniter · Livewire</span
+          >
+          <span class="text-purple/40 font-mono">✦</span>
         </div>
       </div>
     </div>
-    <div class="exp-item">
-      <div class="exp-date">2020 — 2022</div>
-      <div>
-        <div class="exp-role">Software Engineer</div>
-        <div class="exp-company">Stripe · San Francisco</div>
-        <div class="exp-desc">
-          Built internal tooling for fraud detection pipelines processing 2M+
-          transactions/day. Maintained Go microservices and contributed to
-          Stripe's developer dashboard in React.
+
+    <!-- ══════════ WORK ══════════ -->
+    <section id="work" class="border-b border-gray-line">
+      <div class="max-w-[1200px] mx-auto w-full px-10 py-[60px]">
+        <!-- Header -->
+        <div class="flex items-end justify-between mb-8 reveal">
+          <div class="flex items-baseline gap-3">
+            <span class="section-badge">01 / work</span>
+            <h2 class="text-[22px] font-bold tracking-[-0.5px]">
+              Selected Projects
+            </h2>
+          </div>
+          <a
+            href="https://github.com/ZEROTSUDIO"
+            target="_blank"
+            class="font-mono text-[11px] text-black/40 hover:text-purple transition-colors hidden md:block"
+          >
+            view all on github →
+          </a>
+        </div>
+
+        <!-- Projects -->
+        <div class="flex flex-col gap-4">
+          <!-- Featured -->
+          <div class="project-card featured p-7 reveal reveal-delay-1">
+            <div
+              class="flex flex-col md:flex-row md:items-start md:justify-between gap-6"
+            >
+              <div class="flex-1">
+                <div class="flex items-center gap-2 mb-3">
+                  <span
+                    class="font-mono text-[10px] text-purple-mid font-medium uppercase tracking-wide"
+                    >Featured · 2026</span
+                  >
+                  <span class="w-1.5 h-1.5 bg-green-400 rounded-full"></span>
+                  <span class="font-mono text-[10px] text-green-400">Live</span>
+                </div>
+                <h3
+                  class="text-[22px] font-bold tracking-[-0.5px] text-white mb-2"
+                >
+                  Rapa Cast Stone
+                </h3>
+                <h4
+                  class="text-[22px] font-bold tracking-[-0.5px] text-white mb-2"
+                >
+                  E-Catalogue and Company Profile
+                </h4>
+                <p class="text-[13px] text-[#aaa] leading-[1.6] mb-4 max-w-xl">
+                  A modern, responsive e-catalogue website for Rapa Cast Stone,
+                  featuring a comprehensive stone product showcase, detailed
+                  specifications, and a contact form.
+                </p>
+                <div class="flex gap-1.5 flex-wrap mb-4">
+                  <span
+                    class="font-mono text-[10px] px-2 py-[3px] rounded-sm bg-white/10 text-purple-mid border border-white/10"
+                    >Laravel</span
+                  >
+                  <span
+                    class="font-mono text-[10px] px-2 py-[3px] rounded-sm bg-white/10 text-purple-mid border border-white/10"
+                    >Livewire</span
+                  >
+                  <span
+                    class="font-mono text-[10px] px-2 py-[3px] rounded-sm bg-white/10 text-purple-mid border border-white/10"
+                    >Tailwind</span
+                  >
+                  <span
+                    class="font-mono text-[10px] px-2 py-[3px] rounded-sm bg-white/10 text-purple-mid border border-white/10"
+                    >MySQL</span
+                  >
+                </div>
+                <a
+                  href="case-study.html"
+                  class="inline-flex items-center gap-1 text-[12px] font-semibold no-underline text-purple-mid hover:underline transition-all"
+                >
+                  View case study →
+                </a>
+              </div>
+
+              <!-- Mini terminal -->
+              <div
+                class="shrink-0 w-full md:w-64 rounded-lg border border-white/10 bg-white/5 p-4 font-mono text-[11px]"
+              >
+                <img
+                  class="w-full h-full object-cover rounded-lg"
+                  src="/assets/Rapa-CZoljEQO.png"
+                  alt="rapa"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Two smaller -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="project-card p-7 reveal reveal-delay-2">
+              <div class="font-mono text-[10px] text-purple font-medium mb-3">
+                NLP Chatbot · 2025
+              </div>
+              <h3 class="text-[17px] font-bold tracking-[-0.3px] mb-2">
+                Chatbot Perpus Bipa
+              </h3>
+              <p class="text-[13px] text-[#666] leading-[1.6] mb-4">
+                A chatbot for Perpustakaan STMIK Bina Patria that can answer
+                questions about books collections and authors.
+              </p>
+              <div class="flex gap-1.5 flex-wrap mb-4">
+                <span class="tech-tag">Transformers</span>
+                <span class="tech-tag">IndoBERT</span>
+                <span class="tech-tag">Python</span>
+              </div>
+              <a
+                href="https://github.com/ZEROTSUDIO/Chatbot-Perpus-Bipa"
+                class="inline-flex items-center gap-1 text-[12px] font-semibold no-underline text-purple hover:underline"
+                >View project →</a
+              >
+            </div>
+
+            <div class="project-card p-7 reveal reveal-delay-3">
+              <div class="font-mono text-[10px] text-purple font-medium mb-3">
+                Open source · 2024
+              </div>
+              <h3 class="text-[17px] font-bold tracking-[-0.3px] mb-2">
+                INVS Studio Custom
+              </h3>
+              <p class="text-[13px] text-[#666] leading-[1.6] mb-4">
+                Production management system with SJF scheduling algorithm, live
+                dashboard, and demo mode for garment manufacturing.
+              </p>
+              <div class="flex gap-1.5 flex-wrap mb-4">
+                <span class="tech-tag">PHP</span>
+                <span class="tech-tag">CodeIgniter</span>
+                <span class="tech-tag">MySQL</span>
+              </div>
+              <a
+                href="https://github.com/ZEROTSUDIO"
+                class="inline-flex items-center gap-1 text-[12px] font-semibold no-underline text-purple hover:underline"
+                >View on GitHub →</a
+              >
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="exp-item">
-      <div class="exp-date">2018 — 2020</div>
-      <div>
-        <div class="exp-role">Frontend Developer</div>
-        <div class="exp-company">Startup Studio · Jakarta</div>
-        <div class="exp-desc">
-          Shipped MVPs for 8 startups across fintech and logistics. Primary
-          stack: React, Node, and PostgreSQL. Introduced automated testing,
-          cutting production bugs by 40%.
+    </section>
+
+    <!-- ══════════ SKILLS ══════════ -->
+    <section id="skill" class="border-b border-gray-line">
+      <div
+        class="max-w-[1200px] mx-auto w-full px-10 py-[60px] grid grid-cols-1 md:grid-cols-3 gap-10"
+      >
+        <!-- Left label -->
+        <div class="col-span-1 reveal">
+          <div class="flex flex-col items-start gap-2 mb-4">
+            <span class="section-badge">02 / skills</span>
+            <h2 class="text-[22px] font-bold tracking-[-0.5px]">
+              Technical<br />Expertise
+            </h2>
+          </div>
+          <p class="text-[13px] text-[#666] leading-[1.7]">
+            Specialized in backend web development, machine learning algorithms,
+            and high-performance systems programming.
+          </p>
+        </div>
+
+        <!-- Skill cards -->
+        <div class="col-span-1 md:col-span-2 flex flex-col gap-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Python & AI -->
+            <div class="skill-card reveal reveal-delay-1">
+              <div class="flex gap-3 items-center">
+                <i class="devicon-python-plain dev-icon text-[34px]"></i>
+              </div>
+              <div>
+                <h3 class="text-[15px] font-bold mb-1">Python & AI/ML</h3>
+                <p class="text-[13px] text-[#666] leading-[1.6]">
+                  NLP, Sentiment Analysis, Decision Support Systems, and
+                  customized Machine Learning pipelines with scikit-learn.
+                </p>
+              </div>
+              <div class="flex flex-wrap gap-1.5 mt-auto">
+                <span class="tech-tag text-[10px]">NumPy</span>
+                <span class="tech-tag text-[10px]">Pandas</span>
+                <span class="tech-tag text-[10px]">scikit-learn</span>
+                <span class="tech-tag text-[10px]">NLP</span>
+              </div>
+            </div>
+
+            <!-- Backend Web -->
+            <div class="skill-card reveal reveal-delay-2">
+              <div class="flex gap-3 items-center flex-wrap">
+                <i class="devicon-php-plain dev-icon text-[34px]"></i>
+                <i class="devicon-laravel-plain dev-icon text-[28px]"></i>
+                <i class="devicon-codeigniter-plain dev-icon text-[28px]"></i>
+                <i class="devicon-mysql-plain dev-icon text-[28px]"></i>
+              </div>
+              <div>
+                <h3 class="text-[15px] font-bold mb-1">Backend Web</h3>
+                <p class="text-[13px] text-[#666] leading-[1.6]">
+                  Robust APIs and MVC architectures utilizing PHP, CodeIgniter,
+                  Laravel, and Livewire.
+                </p>
+              </div>
+              <div class="flex flex-wrap gap-1.5 mt-auto">
+                <span class="tech-tag text-[10px]">REST API</span>
+                <span class="tech-tag text-[10px]">MVC</span>
+                <span class="tech-tag text-[10px]">Livewire</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Core & Systems — full width -->
+          <div class="skill-card reveal reveal-delay-3">
+            <div class="flex gap-3 items-center">
+              <i class="devicon-java-plain dev-icon text-[34px]"></i>
+              <i class="devicon-cplusplus-plain dev-icon text-[34px]"></i>
+            </div>
+            <div>
+              <h3 class="text-[15px] font-bold mb-1">Core & Systems</h3>
+              <p class="text-[13px] text-[#666] leading-[1.6]">
+                High-performance backend services and system-level applications
+                implemented in Java and C/C++.
+              </p>
+            </div>
+          </div>
+
+          <!-- Tool strip -->
+          <div class="tool-strip reveal reveal-delay-4">
+            <i
+              class="devicon-git-plain dev-icon text-[26px] text-black/40"
+              title="Git"
+            ></i>
+            <i
+              class="devicon-github-original dev-icon text-[26px] text-black/40"
+              title="GitHub"
+            ></i>
+            <i
+              class="devicon-linux-plain dev-icon text-[26px] text-black/40"
+              title="Linux"
+            ></i>
+            <i
+              class="devicon-docker-plain dev-icon text-[26px] text-black/40"
+              title="Docker"
+            ></i>
+            <i
+              class="devicon-vscode-plain dev-icon text-[26px] text-black/40"
+              title="VS Code"
+            ></i>
+            <i
+              class="devicon-postman-plain dev-icon text-[26px] text-black/40"
+              title="Postman"
+            ></i>
+            <i
+              class="devicon-javascript-plain dev-icon text-[26px] text-black/40"
+              title="JavaScript"
+            ></i>
+            <i
+              class="devicon-tailwindcss-plain dev-icon text-[26px] text-black/40"
+              title="Tailwind"
+            ></i>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section class="contact">
-  <div class="contact-text">
-    <div
-      class="section-header"
-      style="flex-direction: column; align-items: flex-start; gap: 8px"
-    >
-      <span class="section-label">04 / contact</span>
-      <h2 class="section-title">Let's build<br />something.</h2>
-    </div>
-    <p>
-      Open to full-time roles, freelance contracts, and interesting open-source
-      collaborations. I respond within 24 hours.
-    </p>
-  </div>
-  <div class="contact-links">
-    <a href="#" class="contact-link">
-      <span>hello@yourname.dev</span>
-      <span class="contact-link-icon">email →</span>
-    </a>
-    <a href="#" class="contact-link">
-      <span>github.com/yourname</span>
-      <span class="contact-link-icon">github →</span>
-    </a>
-    <a href="#" class="contact-link">
-      <span>linkedin.com/in/yourname</span>
-      <span class="contact-link-icon">linkedin →</span>
-    </a>
-    <a href="#" class="contact-link">
-      <span>@yourhandle</span>
-      <span class="contact-link-icon">twitter →</span>
-    </a>
-  </div>
-</section>
+    <!-- ══════════ CONTACT ══════════ -->
+    <section id="contact">
+      <div
+        class="max-w-[1200px] mx-auto w-full px-10 py-[60px] grid grid-cols-1 md:grid-cols-2 gap-10 items-start"
+      >
+        <!-- Left -->
+        <div class="reveal">
+          <div class="flex flex-col items-start gap-2 mb-3">
+            <span class="section-badge">03 / contact</span>
+            <h2 class="text-[22px] font-bold tracking-[-0.5px]">
+              Let's build<br />something.
+            </h2>
+          </div>
+          <p class="text-[14px] text-[#666] leading-[1.7] max-w-[340px] mt-2">
+            Open to full-time roles, freelance contracts, and interesting
+            open-source collaborations. I respond within 24 hours.
+          </p>
+        </div>
 
-<footer>
-  <span class="footer-copy">© 2025 — Your Name. All rights reserved.</span>
-  <span class="footer-scroll mono">Designed & built from scratch</span>
-</footer>
+        <!-- Right: contact links -->
+        <div class="flex flex-col gap-3 reveal reveal-delay-1">
+          <a href="mailto:a.r.bayhaqi341@gmail.com" class="contact-link">
+            <span>a.r.bayhaqi341@gmail.com</span>
+            <span class="font-mono text-[11px] text-purple">email →</span>
+          </a>
+          <a
+            href="https://github.com/ZEROTSUDIO"
+            target="_blank"
+            class="contact-link"
+          >
+            <span>github.com/ZEROTSUDIO</span>
+            <span class="font-mono text-[11px] text-purple">github →</span>
+          </a>
+          <a href="#" class="contact-link">
+            <span>linkedin.com/in/yourname</span>
+            <span class="font-mono text-[11px] text-purple">linkedin →</span>
+          </a>
+          <a
+            href="https://instagram.com/zeeddeong.341"
+            target="_blank"
+            class="contact-link"
+          >
+            <span>@zeeddeong.341</span>
+            <span class="font-mono text-[11px] text-purple">instagram →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ FOOTER ══════════ -->
+    <footer class="border-t border-gray-line">
+      <div
+        class="max-w-[1200px] mx-auto w-full px-10 py-5 flex justify-between items-center flex-wrap gap-4"
+      >
+        <span class="font-mono text-[11px] text-[#bbb]"
+          >© 2025 — Arief Rizal Bayhaqi. All rights reserved.</span
+        >
+        <span class="font-mono text-[11px] text-[#bbb]"
+          >Designed & built from scratch</span
+        >
+      </div>
+    </footer>
+
+    <!-- ══════════ SCRIPTS ══════════ -->
+    <script>
+      // ── Scroll Reveal ──
+      const reveals = document.querySelectorAll(".reveal");
+      const ro = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("visible");
+              ro.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.1 },
+      );
+      reveals.forEach((el) => ro.observe(el));
+
+      // ── Typing animation ──
+      const phrases = [
+        "robust backend architectures",
+        "machine learning pipelines",
+        "decision support systems",
+        "REST API design",
+        "NLP & sentiment analysis",
+      ];
+      let pi = 0,
+        ci = 0,
+        deleting = false;
+      const typingEl = document.getElementById("typing-text");
+
+      function type() {
+        const phrase = phrases[pi];
+        if (!deleting) {
+          typingEl.textContent = phrase.slice(0, ++ci);
+          if (ci === phrase.length) {
+            deleting = true;
+            setTimeout(type, 2000);
+            return;
+          }
+        } else {
+          typingEl.textContent = phrase.slice(0, --ci);
+          if (ci === 0) {
+            deleting = false;
+            pi = (pi + 1) % phrases.length;
+          }
+        }
+        setTimeout(type, deleting ? 35 : 65);
+      }
+      type();
+
+      // ── Active nav highlight on scroll ──
+      const sections = document.querySelectorAll("section[id]");
+      const navLinks = document.querySelectorAll('nav a[href^="#"]');
+      window.addEventListener("scroll", () => {
+        let current = "";
+        sections.forEach((s) => {
+          if (window.scrollY >= s.offsetTop - 100) current = s.id;
+        });
+        navLinks.forEach((a) => {
+          const active = a.getAttribute("href") === "#" + current;
+          a.style.color = active ? "#7c3aed" : "";
+          a.style.opacity = active ? "1" : "";
+        });
+      });
+    </script>
+  </body>
+</html>
