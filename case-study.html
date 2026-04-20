@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Case Study: Rapa Cast Stone — Arief Rizal Bayhaqi</title>
+    <meta
+      name="description"
+      content="Technical case study of the Rapa Cast Stone E-Catalogue and Company Profile project by Arief Rizal Bayhaqi."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link href="/src/style.css" rel="stylesheet" />
+  </head>
+
+  <body class="bg-white text-black font-sans text-[14px] leading-[1.5] overflow-x-hidden">
+    <!-- ══════════ NAV ══════════ -->
+    <nav class="nav-bar sticky top-0 z-50">
+      <div class="max-w-[1200px] mx-auto w-full flex items-center justify-between px-10 py-[18px]">
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-2.5 no-underline text-black">
+          <div class="w-6 h-6 bg-black rounded-md flex items-center justify-center text-[10px] font-bold text-white">
+            H
+          </div>
+          <span class="text-[15px] font-bold tracking-[-0.4px]">
+            Arief Rizal Bayhaqi<span class="text-purple">.</span>
+          </span>
+        </a>
+
+        <!-- CTA -->
+        <a href="index.html#work" class="btn-outline py-[6px] px-[14px]">← Back to Work</a>
+      </div>
+    </nav>
+
+    <!-- ══════════ HERO ══════════ -->
+    <header class="cs-hero border-b border-gray-line">
+      <div class="max-w-[1200px] mx-auto px-10">
+        <span class="section-badge mb-6 reveal">Case Study</span>
+        <h1 class="reveal reveal-delay-1">Rapa Cast Stone<span class="text-purple">.</span></h1>
+        <p class="text-[#666] text-[18px] font-medium max-w-[600px] mx-auto reveal reveal-delay-2">
+          Building a scalable, high-performance e-catalogue for the precast concrete industry.
+        </p>
+        <div class="cs-hero-img reveal reveal-delay-3">
+          <img src="img/Rapa.png" alt="Rapa Cast Stone Frontend" class="w-full h-auto">
+        </div>
+      </div>
+    </header>
+
+    <!-- ══════════ CONTENT ══════════ -->
+    <main class="max-w-[1200px] mx-auto px-10 py-[100px]">
+      <div class="cs-grid">
+        <!-- Main content -->
+        <div class="cs-content">
+          <section id="overview" class="reveal">
+            <h2 class="mt-0">Executive Summary</h2>
+            <p>
+              Rapa Cast Stone is a leading provider of custom precast concrete solutions. They needed a digital transformation to move from offline PDF catalogues to a dynamic, searchable, and SEO-optimized web platform. I served as the lead developer, building a full-stack solution from the ground up.
+            </p>
+          </section>
+
+          <section id="challenge" class="reveal">
+            <h2>The Challenge</h2>
+            <p>
+              The primary technical challenge was managing a vast inventory of stone products with varying specifications (weight, dimensions, textures) while ensuring the interface remained extremely fast for mobile users on construction sites.
+            </p>
+            <p>
+              Key requirements included:
+            </p>
+            <ul class="list-disc pl-5 mb-6 text-[#666] space-y-2">
+              <li>Instant search and filtering across 500+ product variants.</li>
+              <li>Easy-to-use Admin Panel for non-technical staff to update inventory.</li>
+              <li>Premium aesthetic that reflects the "luxury" aspect of cast stone architecture.</li>
+            </ul>
+          </section>
+
+          <section id="solution" class="reveal">
+            <h2>Technical Solution</h2>
+            <p>
+              I chose the **TALL stack** (Tailwind, Alpine.js, Laravel, Livewire) for its ability to create reactive interfaces with a robust backend. 
+            </p>
+            <h3 class="text-[18px] font-bold mt-8 mb-3">Backend Architecture</h3>
+            <p>
+              The backend was built on Laravel 10. I implemented a polymorphic database schema to handle different product types efficiently. For the search functionality, I used Livewire component-based state management to provide real-time results without page reloads.
+            </p>
+            <h3 class="text-[18px] font-bold mt-8 mb-3">Performance Optimization</h3>
+            <p>
+              To ensure the 99% satisfaction rating mentioned in the portfolio, I implemented multi-layer caching using Redis. Image assets were automatically processed and served via a custom WebP optimization pipeline, reducing average page size by 65%.
+            </p>
+          </section>
+
+          <section id="impact" class="reveal">
+            <h2>Impact & Results</h2>
+            <div class="grid grid-cols-2 gap-4 my-8">
+              <div class="stat-card border-purple! bg-purple-light/30">
+                <div class="text-[32px] font-extrabold text-black tracking-tighter">40%</div>
+                <div class="text-[11px] text-purple font-mono uppercase font-bold mt-1">Faster Load Time</div>
+              </div>
+              <div class="stat-card border-black! bg-gray-50">
+                <div class="text-[32px] font-extrabold text-black tracking-tighter">100%</div>
+                <div class="text-[11px] text-gray-400 font-mono uppercase font-bold mt-1">Data Accuracy</div>
+              </div>
+            </div>
+            <p>
+              The final product resulted in a massive increase in lead generation for the client. The intuitive search allowed architects to find specific stone textures in seconds rather than thumbing through physical books.
+            </p>
+          </section>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="cs-sidebar reveal reveal-delay-2">
+          <div class="cs-sidebar-item">
+            <h4>Role</h4>
+            <div class="text-[14px] font-bold">Fullstack Developer</div>
+          </div>
+          <div class="cs-sidebar-item">
+            <h4>Timeline</h4>
+            <div class="text-[14px] font-bold">3 Months (2026)</div>
+          </div>
+          <div class="cs-sidebar-item">
+            <h4>Technologies</h4>
+            <div class="flex flex-wrap gap-1.5 mt-2">
+              <span class="tech-tag active">Laravel</span>
+              <span class="tech-tag active">Livewire</span>
+              <span class="tech-tag active">MySQL</span>
+              <span class="tech-tag active">Tailwind</span>
+              <span class="tech-tag">Redis</span>
+            </div>
+          </div>
+          <div class="cs-sidebar-item">
+            <h4>Deliverables</h4>
+            <ul class="text-[13px] text-[#666] list-none p-0 space-y-1">
+              <li>✓ Web Application</li>
+              <li>✓ CMS Admin Panel</li>
+              <li>✓ API Documentation</li>
+              <li>✓ SEO Strategy</li>
+            </ul>
+          </div>
+          <div class="cs-sidebar-item mt-4">
+            <a href="#" class="btn-primary w-full text-center py-3">Visit Live Site</a>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <!-- ══════════ NEXT ══════════ -->
+    <section class="border-t border-gray-line">
+      <div class="max-w-[1200px] mx-auto px-10 cs-next-nav">
+        <div>
+          <span class="font-mono text-[10px] text-gray-400 uppercase tracking-widest block mb-1">Previous Project</span>
+          <a href="#" class="text-[16px] font-bold no-underline text-gray-300 pointer-events-none">None</a>
+        </div>
+        <div class="text-right">
+          <span class="font-mono text-[10px] text-purple uppercase tracking-widest block mb-1">Next Project</span>
+          <a href="https://github.com/ZEROTSUDIO/Chatbot-Perpus-Bipa" class="text-[16px] font-bold no-underline text-black hover:text-purple transition-colors">Chatbot Perpus Bipa →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ FOOTER ══════════ -->
+    <footer class="border-t border-gray-line">
+      <div class="max-w-[1200px] mx-auto w-full px-10 py-8 flex justify-between items-center flex-wrap gap-4">
+        <div class="flex flex-col gap-1">
+          <span class="text-[15px] font-bold">Arief Rizal Bayhaqi<span class="text-purple">.</span></span>
+          <span class="font-mono text-[11px] text-[#bbb]">Backend & Data Developer</span>
+        </div>
+        <span class="font-mono text-[11px] text-[#bbb]">© 2025 — Dedicated to excellence.</span>
+      </div>
+    </footer>
+
+    <!-- ══════════ SCRIPTS ══════════ -->
+    <script>
+      // ── Scroll Reveal ──
+      const reveals = document.querySelectorAll(".reveal");
+      const ro = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("visible");
+            ro.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      reveals.forEach((el) => ro.observe(el));
+    </script>
+  </body>
+</html>
