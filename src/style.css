@@ -270,13 +270,18 @@
 .avatar-wrap::after {
   content: '';
   position: absolute;
-  bottom: 1px;
-  right: 1px;
-  width: 10px;
-  height: 10px;
+  bottom: 8px;
+  right: 8px;
+  width: 16px;
+  height: 16px;
   background: #22c55e;
   border-radius: 50%;
-  border: 2px solid #ffffff;
+  border: 3px solid #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.shadow-purple-glow {
+  box-shadow: 0 25px 60px -15px rgba(124, 58, 237, 0.3);
 }
 
 /* ── Purple underline on hover links ── */

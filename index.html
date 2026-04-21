@@ -86,23 +86,14 @@
       >
         <!-- Left -->
         <div>
-          <!-- Avatar + badge -->
-          <div class="flex items-center gap-4 mb-6 reveal">
-            <div class="avatar-wrap">
-              <img
-                src="img/me.jpeg"
-                alt="Arief Rizal Bayhaqi"
-                class="w-14 h-14 rounded-full object-cover shadow-sm"
-              />
-            </div>
-            <div
-              class="inline-flex items-center gap-1.5 bg-purple-light text-purple font-mono text-[11px] px-3 py-1.5 rounded-sm font-medium border border-purple/20"
-            >
-              <span
-                class="w-1.5 h-1.5 bg-purple rounded-full inline-block animate-pulse"
-              ></span>
-              Available for work
-            </div>
+          <!-- Availability badge -->
+          <div
+            class="inline-flex items-center gap-1.5 bg-purple-light text-purple font-mono text-[11px] px-3 py-1.5 rounded-sm font-medium border border-purple/20 mb-6 reveal"
+          >
+            <span
+              class="w-1.5 h-1.5 bg-purple rounded-full inline-block animate-pulse"
+            ></span>
+            Available for work
           </div>
 
           <!-- Headline -->
@@ -135,8 +126,17 @@
           </div>
         </div>
 
-        <!-- Right: Stats + tags -->
-        <div class="flex flex-col gap-3 reveal reveal-delay-2">
+        <!-- Right: Photo + Stats + tags -->
+        <div class="flex flex-col gap-8 reveal reveal-delay-2">
+          <!-- Main Photo -->
+          <div class="avatar-wrap self-center md:self-end">
+            <img
+              src="img/me.jpeg"
+              alt="Arief Rizal Bayhaqi"
+              class="w-44 h-44 rounded-2xl object-cover shadow-2xl ring-4 ring-purple-light shadow-purple-glow"
+            />
+          </div>
+
           <!-- Stats 2×2 -->
           <div class="grid grid-cols-2 gap-3">
             <div class="stat-card border-purple! bg-purple! text-white">
