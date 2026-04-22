@@ -20,6 +20,9 @@
       href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
     />
     <link href="/src/style.css" rel="stylesheet" />
+    <style>
+      /* Base fonts and cursor are already handled in style.css */
+    </style>
   </head>
 
   <body
@@ -79,125 +82,196 @@
       </div>
     </nav>
 
-    <!-- ══════════ HERO ══════════ -->
-    <section id="about" class="border-b border-gray-line">
-      <div
-        class="max-w-[1200px] mx-auto w-full px-10 pt-20 pb-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
-      >
-        <!-- Left -->
-        <div>
-          <!-- Availability badge -->
-          <div
-            class="inline-flex items-center gap-1.5 bg-purple-light text-purple font-mono text-[11px] px-3 py-1.5 rounded-sm font-medium border border-purple/20 mb-6 reveal"
-          >
-            <span
-              class="w-1.5 h-1.5 bg-purple rounded-full inline-block animate-pulse"
-            ></span>
-            Available for work
+    <!-- ══════════ HERO (v2) ══════════ -->
+    <section id="about" class="hero-v2 border-b border-gray-line">
+      <div class="hero-blob"></div>
+      <div class="hero-blob-2"></div>
+
+      <div class="hero-container-v2 max-w-[1200px] mx-auto w-full px-10 flex md:flex-row items-center justify-between gap-12" style="position: relative; z-index: 2">
+        <!-- Left Content -->
+        <div class="flex-1 md:max-w-[520px]">
+          <div class="badge-available fade-up">Available for work</div>
+
+          <div class="mt-7">
+            <h1 class="fade-up delay-1 text-[clamp(40px,6vw,76px)] font-extrabold leading-[1.05] text-[#0a0a0a]">
+              Hi, I'm<br />
+              <span class="text-[#0a0a0a]">Arief Rizal</span><br />
+              <span class="text-purple">Bayhaqi.</span>
+            </h1>
           </div>
 
-          <!-- Headline -->
-          <h1
-            class="text-[52px] font-extrabold leading-[1.05] tracking-[-2px] mb-4 reveal reveal-delay-1"
-          >
-            Hi, I'm Arief<br />
-            Rizal Bayhaqi<span class="text-purple">.</span><br />
-            <span class="text-purple">Backend</span> &amp; Data<br />Developer
-          </h1>
-
-          <!-- Typing subtitle -->
-          <p
-            class="text-[#555] text-[14px] leading-[1.7] max-w-[380px] mb-2 reveal reveal-delay-2"
-          >
+          <!-- Typing Dynamic Content -->
+          <p class="fade-up delay-2 mt-5 text-[16px] text-text-muted leading-[1.65] max-md:mx-auto max-w-[360px]">
             I specialize in
           </p>
-          <div class="flex items-center gap-1.5 mb-7 reveal reveal-delay-2">
-            <span
-              class="font-mono text-[13px] text-purple font-medium"
-              id="typing-text"
-            ></span>
+          <div class="flex items-center gap-1.5 mb-7 fade-up delay-2 max-md:justify-center">
+            <span class="font-mono text-[16px] text-purple font-medium" id="typing-text"></span>
             <span class="typing-cursor"></span>
           </div>
 
-          <!-- Buttons -->
-          <div class="flex gap-3 flex-wrap reveal reveal-delay-3">
-            <a href="#work" class="btn-primary">View projects</a>
-            <a href="CV.pdf" class="btn-outline">Download CV</a>
+          <!-- Actions -->
+          <div class="fade-up delay-3 flex gap-3.5 mt-8 flex-wrap max-md:justify-center">
+            <a href="#work" class="btn-primary">
+              <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="mr-2">
+                <rect x="3" y="3" width="7" height="7" rx="1" />
+                <rect x="14" y="3" width="7" height="7" rx="1" />
+                <rect x="3" y="14" width="7" height="7" rx="1" />
+                <rect x="14" y="14" width="7" height="7" rx="1" />
+              </svg>
+              View my work
+            </a>
+            <a href="CV.pdf" class="btn-outline">
+              <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" class="mr-2">
+                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+              </svg>
+              Download CV
+            </a>
+          </div>
+
+          <!-- Specialization Pills -->
+          <div class="fade-up delay-4 mt-10">
+            <p class="text-[13px] text-text-muted mb-3">Core Expertise</p>
+            <div class="flex flex-wrap gap-2.5 max-md:justify-center">
+              <span class="spec-pill">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <polyline points="16 18 22 12 16 6" />
+                  <polyline points="8 6 2 12 8 18" />
+                </svg>
+                Backend
+              </span>
+              <span class="spec-pill">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                  <path d="M2 17l10 5 10-5" />
+                  <path d="M2 12l10 5 10-5" />
+                </svg>
+                RESTful API
+              </span>
+              <span class="spec-pill">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <ellipse cx="12" cy="5" rx="9" ry="3" />
+                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+                </svg>
+                Database
+              </span>
+            </div>
           </div>
         </div>
 
-        <!-- Right: Photo + Stats + tags -->
-        <div class="flex flex-col gap-8 reveal reveal-delay-2">
-          <!-- Main Photo -->
-          <div class="avatar-wrap self-center md:self-end">
-            <img
-              src="img/me.jpeg"
-              alt="Arief Rizal Bayhaqi"
-              class="w-44 h-44 rounded-2xl object-cover shadow-2xl ring-4 ring-purple-light shadow-purple-glow"
-            />
-          </div>
-
-          <!-- Stats 2×2 -->
-          <div class="grid grid-cols-2 gap-3">
-            <div class="stat-card border-purple! bg-purple! text-white">
-              <div
-                class="text-[36px] font-extrabold tracking-[-1.5px] leading-none"
-              >
-                5+
-              </div>
-              <div class="text-[11px] text-purple-mid mt-1 font-medium">
-                Projects shipped
-              </div>
-            </div>
-            <div class="stat-card">
-              <div
-                class="text-[36px] font-extrabold tracking-[-1.5px] leading-none"
-              >
-                1+
-              </div>
-              <div class="text-[11px] text-[#999] mt-1 font-medium">
-                Years experience
-              </div>
-            </div>
-            <div class="stat-card">
-              <div
-                class="text-[36px] font-extrabold tracking-[-1.5px] leading-none"
-              >
-                12
-              </div>
-              <div class="text-[11px] text-[#999] mt-1 font-medium">
-                Repos public
-              </div>
-            </div>
-            <div class="stat-card border-black! bg-black! text-white">
-              <div
-                class="text-[36px] font-extrabold tracking-[-1.5px] leading-none text-white"
-              >
-                99%
-              </div>
-              <div class="text-[11px] text-[#666] mt-1 font-medium">
-                Satisfaction
-              </div>
-            </div>
-          </div>
-
-          <!-- Tech tags -->
-          <div
-            class="border border-gray-line rounded-lg p-4 flex gap-2 flex-wrap bg-white"
-          >
-            <span class="tech-tag active">PHP</span>
-            <span class="tech-tag active">Python</span>
-            <span class="tech-tag">Laravel</span>
-            <span class="tech-tag">CodeIgniter</span>
-            <span class="tech-tag">Livewire</span>
-            <span class="tech-tag">Java</span>
-            <span class="tech-tag">C/C++</span>
-            <span class="tech-tag">MySQL</span>
+        <!-- Right: Photo -->
+        <div class="fade-up delay-2 relative shrink-0">
+          <div class="photo-frame">
+            <img src="img/me.png" alt="Arief Rizal Bayhaqi" class="w-full h-full object-cover" />
           </div>
         </div>
       </div>
     </section>
 
+    <!-- ══════════ STATS (v2) ══════════ -->
+    <section class="stats-section-v2 px-8">
+      <div class="max-w-[1200px] mx-auto w-full">
+        <div class="stats-grid-v2">
+          <div class="stat-item-v2">
+            <div class="stat-icon-v2">
+              <svg width="20" height="20" fill="none" stroke="var(--purple)" stroke-width="1.8" viewBox="0 0 24 24">
+                <rect x="3" y="3" width="7" height="7" rx="1" />
+                <rect x="14" y="3" width="7" height="7" rx="1" />
+                <rect x="3" y="14" width="7" height="7" rx="1" />
+                <rect x="14" y="14" width="7" height="7" rx="1" />
+              </svg>
+            </div>
+            <div class="stat-number-v2">5+</div>
+            <div class="stat-label-v2">Projects<br />Completed</div>
+          </div>
+          <div class="stat-item-v2">
+            <div class="stat-icon-v2">
+              <svg width="20" height="20" fill="none" stroke="var(--purple)" stroke-width="1.8" viewBox="0 0 24 24">
+                <rect x="2" y="3" width="20" height="14" rx="2" />
+                <path d="M8 21h8M12 17v4" />
+              </svg>
+            </div>
+            <div class="stat-number-v2">1+</div>
+            <div class="stat-label-v2">Years<br />Experience</div>
+          </div>
+          <div class="stat-item-v2">
+            <div class="stat-icon-v2">
+              <svg width="20" height="20" fill="none" stroke="var(--purple)" stroke-width="1.8" viewBox="0 0 24 24">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22" />
+              </svg>
+            </div>
+            <div class="stat-number-v2">12</div>
+            <div class="stat-label-v2">Public<br />Repositories</div>
+          </div>
+          <div class="stat-item-v2">
+            <div class="stat-icon-v2">
+              <svg width="20" height="20" fill="none" stroke="var(--purple)" stroke-width="1.8" viewBox="0 0 24 24">
+                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+            </div>
+            <div class="stat-number-v2">99%</div>
+            <div class="stat-label-v2">Client<br />Satisfaction</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════ TECH STACK (v2) ══════════ -->
+    <section class="tech-stack-section-v2 px-8">
+      <div class="max-w-[1200px] mx-auto w-full">
+        <div class="tech-stack-header-v2">
+          <h2 class="text-[22px] font-bold text-[#0a0a0a]">
+            Tech Stack<span class="section-dot-v2"></span>
+          </h2>
+          <a
+            href="#"
+            class="text-[14px] text-text-muted no-underline flex items-center gap-1.5 transition-colors hover:text-black font-medium"
+          >
+            More technologies
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+          </a>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <span class="tech-pill-v2">
+            <span class="bg-[#777bb3] text-white text-[11px] font-bold px-1.5 py-0.5 rounded">PHP</span>
+            PHP
+          </span>
+          <span class="tech-pill-v2">
+            <span class="text-[#ef4444] text-[17px]">🛡</span>
+            Laravel
+          </span>
+          <span class="tech-pill-v2">
+            <span class="text-[17px]">🔥</span>
+            CodeIgniter
+          </span>
+          <span class="tech-pill-v2">
+            <span class="text-[17px]">🪄</span>
+            Livewire
+          </span>
+          <span class="tech-pill-v2">
+            <span class="text-[17px]">🐬</span>
+            MySQL
+          </span>
+          <span class="tech-pill-v2">
+            <span class="text-[17px]">🐍</span>
+            Python
+          </span>
+          <span class="tech-pill-v2">
+            <span class="text-[17px]">☕</span>
+            Java
+          </span>
+          <span class="tech-pill-v2">
+            <span class="text-[17px]">⚙️</span>
+            C/C++
+          </span>
+        </div>
+      </div>
+    </section>
     <!-- ══════════ MARQUEE ══════════ -->
     <div class="border-b border-gray-line py-3.5 overflow-hidden bg-[#fafafa]">
       <div class="flex">
@@ -276,7 +350,6 @@
         </div>
       </div>
     </div>
-
     <!-- ══════════ WORK ══════════ -->
     <section id="work" class="border-b border-gray-line">
       <div class="max-w-[1200px] mx-auto w-full px-10 py-[60px]">
