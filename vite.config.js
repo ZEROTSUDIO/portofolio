@@ -9,8 +9,9 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: 'index.html',
-        caseStudy: 'case-study.html'
-      }
-    }
-  }
+        'rapa-case-study': 'rapa-case-study.html',
+        'invoice-generator-case-study': 'invoice-generator-case-study.html',
+      },
+    },
+  },
 })
