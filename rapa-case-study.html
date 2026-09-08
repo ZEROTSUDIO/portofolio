@@ -6,270 +6,308 @@
     <title>Case Study: Rapa Cast Stone — Arief Rizal Bayhaqi</title>
     <meta
       name="description"
-      content="Technical case study of the Rapa Cast Stone E-Catalogue and Company Profile project by Arief Rizal Bayhaqi."
+      content="Technical case study of the Rapa Cast Stone E-Catalogue and Company Profile architecture by Arief Rizal Bayhaqi."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;900&family=Space+Mono:wght@400;700&display=swap"
       rel="stylesheet"
     />
     <link href="/src/style.css" rel="stylesheet" />
     <script type="module" src="/src/main.js"></script>
   </head>
 
-  <body
-    class="bg-white text-black font-sans text-[14px] leading-[1.5] overflow-x-hidden"
-  >
-    <!-- ══════════ NAV ══════════ -->
-    <nav class="nav-bar sticky top-0 z-50">
-      <div
-        class="max-w-[1200px] mx-auto w-full flex items-center justify-between px-10 py-[18px]"
-      >
-        <!-- Logo -->
-        <a
-          href="index.html"
-          class="flex items-center gap-2.5 no-underline text-black"
-        >
-          <div
-            class="w-6 h-6 bg-black rounded-md flex items-center justify-center text-[10px] font-bold text-white"
-          >
-            H
-          </div>
-          <span class="text-[15px] font-bold tracking-[-0.4px]">
-            Arief Rizal Bayhaqi<span class="text-purple">.</span>
+  <body class="antialiased">
+    <!-- Decorative print marks -->
+    <div aria-hidden="true" class="hidden sm:block">
+      <div class="print-mark" style="top:18px; left:18px;">
+        <div class="crosshair"></div>
+        <div class="mt-1">TRIM // SPEC.2026</div>
+      </div>
+      <div class="print-mark text-right" style="top:18px; right:18px;">
+        <div class="crosshair ml-auto"></div>
+        <div class="mt-1">CASE STUDY // BLEED</div>
+      </div>
+      <div class="print-mark" style="bottom:18px; left:18px;">
+        <div class="crosshair"></div>
+        <div class="mt-1">ARCHIVAL // REV.01</div>
+      </div>
+      <div class="print-mark text-right" style="bottom:18px; right:18px;">
+        <div class="crosshair ml-auto"></div>
+        <div class="mt-1">SYSTEM V.02</div>
+      </div>
+    </div>
+
+    <!-- ══════════ NAVIGATION ══════════ -->
+    <header class="fixed top-0 inset-x-0 z-50 bg-[var(--paper)] border-b-[1.5px] border-[var(--ink)]">
+      <div class="max-w-6xl mx-auto flex items-center justify-between px-6 md:px-10 py-3.5">
+        <!-- Brand Logo -->
+        <a href="index.html" class="flex items-center gap-3 group">
+          <span class="diamond w-9 h-9 flex items-center justify-center bg-[var(--ink)] transition-transform group-hover:rotate-45">
+            <span class="font-mono font-bold text-xs text-[var(--paper)]">AB</span>
+          </span>
+          <span class="font-mono font-bold text-sm tracking-widest uppercase text-[var(--ink)]">
+            Arief Bayhaqi<span class="text-[var(--blood)]">.</span>
           </span>
         </a>
 
-        <!-- CTA -->
-        <a href="index.html#work" class="btn-outline py-[6px] px-[14px]"
-          >← Back to Work</a
-        >
-      </div>
-    </nav>
-
-    <!-- ══════════ HERO ══════════ -->
-    <header class="cs-hero border-b border-gray-line">
-      <div class="max-w-[1200px] mx-auto px-10">
-        <span class="section-badge mb-6 reveal">Case Study</span>
-        <h1 class="reveal reveal-delay-1">
-          Rapa Cast Stone<span class="text-purple">.</span>
-        </h1>
-        <p
-          class="text-[#666] text-[18px] font-medium max-w-[600px] mx-auto reveal reveal-delay-2"
-        >
-          Building a scalable, high-performance e-catalogue for the precast
-          concrete industry.
-        </p>
-        <div class="cs-hero-img reveal reveal-delay-3">
-          <img
-            src="img/Rapa.png"
-            alt="Rapa Cast Stone Frontend"
-            class="w-full h-auto"
-          />
-        </div>
+        <!-- Back Link -->
+        <a href="index.html#projects" class="btn-outline !py-2 !px-4 !text-xs font-mono">
+          ← Back to Projects
+        </a>
       </div>
     </header>
 
-    <!-- ══════════ CONTENT ══════════ -->
-    <main class="max-w-[1200px] mx-auto px-10 py-[100px]">
-      <div class="cs-grid">
-        <!-- Main content -->
-        <div class="cs-content">
-          <section id="overview" class="reveal">
-            <h2 class="mt-0">Executive Summary</h2>
-            <p>
-              Rapa Cast Stone is a leading provider of custom precast concrete
-              solutions. They needed a digital transformation to move from
-              offline PDF catalogues to a dynamic, searchable, and SEO-optimized
-              web platform. I served as the lead developer, building a
-              full-stack solution from the ground up.
-            </p>
-          </section>
+    <main class="pt-20 pb-24">
+      <!-- ══════════ CASE STUDY HEADER ══════════ -->
+      <section class="max-w-6xl mx-auto px-6 md:px-10 pt-10 pb-16">
+        <span class="tag-blood text-xs font-mono uppercase font-bold tracking-wider mb-4 inline-block">
+          Case Study // Production System
+        </span>
 
-          <section id="challenge" class="reveal">
-            <h2>The Challenge</h2>
-            <p>
-              The primary technical challenge was managing a vast inventory of
-              stone products with varying specifications (weight, dimensions,
-              textures) while ensuring the interface remained extremely fast for
-              mobile users on construction sites.
-            </p>
-            <p>Key requirements included:</p>
-            <ul class="list-disc pl-5 mb-6 text-[#666] space-y-2">
-              <li>
-                Instant search and filtering across 500+ product variants.
-              </li>
-              <li>
-                Easy-to-use Admin Panel for non-technical staff to update
-                inventory.
-              </li>
-              <li>
-                Premium aesthetic that reflects the "luxury" aspect of cast
-                stone architecture.
-              </li>
-            </ul>
-          </section>
+        <h1 class="font-display uppercase leading-[0.88] text-[clamp(2.6rem,7.5vw,5.5rem)]">
+          <span class="diag-word block text-[var(--ink)]">RAPA CAST</span>
+          <span class="diag-word block text-[var(--blood)]">STONE</span>
+        </h1>
 
-          <section id="solution" class="reveal">
-            <h2>Technical Solution</h2>
-            <p>
-              I chose the **TALL stack** (Tailwind, Alpine.js, Laravel,
-              Livewire) for its ability to create reactive interfaces with a
-              robust backend.
-            </p>
-            <h3 class="text-[18px] font-bold mt-8 mb-3">
-              Backend Architecture
-            </h3>
-            <p>
-              The backend was built on Laravel 10. I implemented a polymorphic
-              database schema to handle different product types efficiently. For
-              the search functionality, I used Livewire component-based state
-              management to provide real-time results without page reloads.
-            </p>
-          </section>
-
-          <section id="impact" class="reveal">
-            <h2>Impact & Results</h2>
-            <div class="grid grid-cols-2 gap-4 my-8">
-              <div class="stat-card border-purple! bg-purple-light/30">
-                <div
-                  class="text-[32px] font-extrabold text-black tracking-tighter"
-                >
-                  40%
-                </div>
-                <div
-                  class="text-[11px] text-purple font-mono uppercase font-bold mt-1"
-                >
-                  Faster Load Time
-                </div>
-              </div>
-              <div class="stat-card border-black! bg-gray-50">
-                <div
-                  class="text-[32px] font-extrabold text-black tracking-tighter"
-                >
-                  100%
-                </div>
-                <div
-                  class="text-[11px] text-gray-400 font-mono uppercase font-bold mt-1"
-                >
-                  Data Accuracy
-                </div>
-              </div>
-            </div>
-            <p>
-              The final product resulted in a massive increase in lead
-              generation for the client. The intuitive search allowed architects
-              to find specific stone textures in seconds rather than thumbing
-              through physical books.
-            </p>
-          </section>
+        <!-- Signature Title Bar -->
+        <div class="mt-6 mb-6">
+          <div class="title-bar shadow-[3px_3px_0_var(--ink)]">
+            <span class="title-bar-tag" style="background:var(--blood);">Project Spec</span>
+            <span class="title-bar-main text-lg sm:text-xl md:text-2xl">
+              High-Performance Architectural E-Catalogue &amp; CMS
+            </span>
+          </div>
         </div>
 
-        <!-- Sidebar -->
-        <aside class="cs-sidebar reveal reveal-delay-2">
-          <div class="cs-sidebar-item">
-            <h4>Role</h4>
-            <div class="text-[14px] font-bold">Fullstack Developer</div>
+        <p class="font-mono text-sm md:text-base max-w-2xl leading-relaxed text-[var(--ink-soft)] mt-4">
+          Building a responsive, scalable digital showroom and inventory management engine for the precast architectural concrete industry.
+        </p>
+
+        <!-- Main Hero Image Frame -->
+        <div class="panel p-3 sm:p-4 mt-10 shadow-[10px_10px_0_var(--ink)]">
+          <div class="overflow-hidden border border-[var(--ink)] bg-[#1e1e24]">
+            <img
+              src="/img/Rapa.png"
+              alt="Rapa Cast Stone Frontend Showcase"
+              class="w-full h-auto object-cover"
+            />
           </div>
-          <div class="cs-sidebar-item">
-            <h4>Timeline</h4>
-            <div class="text-[14px] font-bold">3 Months (2026)</div>
-          </div>
-          <div class="cs-sidebar-item">
-            <h4>Technologies</h4>
-            <div class="flex flex-wrap gap-1.5 mt-2">
-              <span class="tech-tag active">Laravel</span>
-              <span class="tech-tag active">Livewire</span>
-              <span class="tech-tag active">MySQL</span>
-              <span class="tech-tag active">Tailwind</span>
+        </div>
+      </section>
+
+      <!-- ══════════ MAIN CASE STUDY BODY ══════════ -->
+      <section class="max-w-6xl mx-auto px-6 md:px-10">
+        <div class="grid lg:grid-cols-[1.85fr_1fr] gap-10 items-start">
+          
+          <!-- Left Column: Detailed Technical Analysis -->
+          <div class="space-y-12">
+            
+            <!-- Section 1: Executive Summary -->
+            <div class="panel p-8 shadow-[4px_4px_0_var(--ink)]">
+              <div class="flex items-center gap-3 mb-4 pb-3 border-b border-[var(--ink)]">
+                <span class="tag-blood text-xs font-mono font-bold uppercase">01 / Overview</span>
+                <h2 class="font-display uppercase text-2xl">Executive Summary</h2>
+              </div>
+              <p class="text-base leading-relaxed text-[var(--ink-soft)]">
+                Rapa Cast Stone is a premier manufacturer of custom precast concrete solutions. Prior to this project, their catalog operations relied entirely on heavy offline PDF books and manual sales consultations.
+              </p>
+              <p class="text-base leading-relaxed text-[var(--ink-soft)] mt-3">
+                They required a complete digital transformation: a modern, searchable, SEO-indexed web catalogue accompanied by an intuitive administrative control panel to handle frequent product line updates without technical overhead.
+              </p>
             </div>
+
+            <!-- Section 2: Technical Challenges -->
+            <div class="panel p-8 shadow-[4px_4px_0_var(--ink)]">
+              <div class="flex items-center gap-3 mb-4 pb-3 border-b border-[var(--ink)]">
+                <span class="tag-orange text-xs font-mono font-bold uppercase">02 / Challenges</span>
+                <h2 class="font-display uppercase text-2xl">Engineering Hurdles</h2>
+              </div>
+              <p class="text-base leading-relaxed text-[var(--ink-soft)] mb-4">
+                The primary engineering challenge was managing a vast matrix of stone specifications (dimensions, weights, physical textures, applications) while maintaining sub-second mobile page loads for architects browsing directly on active construction jobsites:
+              </p>
+              <div class="space-y-3 font-mono text-xs uppercase">
+                <div class="p-3 bg-[var(--paper-dim)] border border-[var(--ink)] flex items-start gap-2.5">
+                  <span class="text-[var(--blood)] font-bold">▶</span>
+                  <span>Instant reactive filtering across 500+ product variants without disruptive full-page reloads.</span>
+                </div>
+                <div class="p-3 bg-[var(--paper-dim)] border border-[var(--ink)] flex items-start gap-2.5">
+                  <span class="text-[var(--blood)] font-bold">▶</span>
+                  <span>Lightweight polymorphic database schema accommodating diverse dimensional formats across stone collections.</span>
+                </div>
+                <div class="p-3 bg-[var(--paper-dim)] border border-[var(--ink)] flex items-start gap-2.5">
+                  <span class="text-[var(--blood)] font-bold">▶</span>
+                  <span>High-resolution asset delivery with automated compression to safeguard mobile data budgets.</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Section 3: Architecture & Solution -->
+            <div class="panel p-8 shadow-[4px_4px_0_var(--ink)]">
+              <div class="flex items-center gap-3 mb-4 pb-3 border-b border-[var(--ink)]">
+                <span class="tag-teal text-xs font-mono font-bold uppercase">03 / Solution</span>
+                <h2 class="font-display uppercase text-2xl">The TALL Stack Architecture</h2>
+              </div>
+              <p class="text-base leading-relaxed text-[var(--ink-soft)]">
+                I chose the <strong>TALL stack</strong> (Tailwind CSS, Alpine.js, Laravel, Livewire) to achieve a modern single-page application (SPA) reactive user experience while retaining server-side simplicity, SEO friendliness, and high-performance server caching.
+              </p>
+              
+              <div class="mt-6 border-t border-[var(--ink)] pt-5 space-y-4">
+                <h3 class="font-display uppercase text-xl text-[var(--ink)]">Backend Data Model</h3>
+                <p class="text-sm leading-relaxed text-[var(--ink-soft)]">
+                  Built on Laravel 10 and MySQL. I implemented optimized relational database indexing and eager loading strategies (<code class="font-mono bg-[var(--paper-dim)] px-1.5 py-0.5 border border-[var(--ink)] text-xs">with()</code>) to completely eliminate N+1 query overhead across complex product variations.
+                </p>
+
+                <h3 class="font-display uppercase text-xl text-[var(--ink)] pt-2">Livewire Component State</h3>
+                <p class="text-sm leading-relaxed text-[var(--ink-soft)]">
+                  The client-side search utilizes Livewire components with debounced server requests. Architects can instantaneously filter by stone texture, series, or color swatch without refreshing the browser or introducing client bundle bloat.
+                </p>
+              </div>
+            </div>
+
+            <!-- Section 4: Metrics & Results -->
+            <div class="panel p-8 shadow-[4px_4px_0_var(--ink)]">
+              <div class="flex items-center gap-3 mb-4 pb-3 border-b border-[var(--ink)]">
+                <span class="tag-purple text-xs font-mono font-bold uppercase">04 / Impact</span>
+                <h2 class="font-display uppercase text-2xl">Measured Outcomes</h2>
+              </div>
+
+              <!-- Stat Metric Grid -->
+              <div class="grid sm:grid-cols-3 gap-4 my-6">
+                <div class="p-5 bg-[var(--card)] border-[1.5px] border-[var(--ink)] shadow-[3px_3px_0_var(--ink)] text-center">
+                  <div class="font-display text-4xl text-[var(--blood)]">40%</div>
+                  <div class="font-mono text-[10px] uppercase tracking-wider font-bold mt-1 text-[var(--ink-soft)]">
+                    Faster Load Latency
+                  </div>
+                </div>
+
+                <div class="p-5 bg-[var(--card)] border-[1.5px] border-[var(--ink)] shadow-[3px_3px_0_var(--ink)] text-center">
+                  <div class="font-display text-4xl text-[var(--teal)]">500+</div>
+                  <div class="font-mono text-[10px] uppercase tracking-wider font-bold mt-1 text-[var(--ink-soft)]">
+                    Catalog Items Live
+                  </div>
+                </div>
+
+                <div class="p-5 bg-[var(--card)] border-[1.5px] border-[var(--ink)] shadow-[3px_3px_0_var(--ink)] text-center">
+                  <div class="font-display text-4xl text-[var(--orange)]">100%</div>
+                  <div class="font-mono text-[10px] uppercase tracking-wider font-bold mt-1 text-[var(--ink-soft)]">
+                    Spec Accuracy
+                  </div>
+                </div>
+              </div>
+
+              <p class="text-base leading-relaxed text-[var(--ink-soft)]">
+                The deployed web platform directly converted casual architectural visits into concrete project consultation leads. Non-technical administrators now manage product updates in minutes instead of waiting weeks for PDF reprints.
+              </p>
+            </div>
+
           </div>
-          <div class="cs-sidebar-item">
-            <h4>Deliverables</h4>
-            <ul class="text-[13px] text-[#666] list-none p-0 space-y-1">
-              <li>✓ Web Application</li>
-              <li>✓ CMS Admin Panel</li>
-              <li>✓ API Documentation</li>
-              <li>✓ SEO Strategy</li>
-            </ul>
+
+          <!-- Right Column: System Dossier Sidebar -->
+          <aside class="panel p-6 sm:p-8 shadow-[6px_6px_0_var(--ink)] sticky top-24 space-y-6">
+            <div class="border-b border-[var(--ink)] pb-3">
+              <span class="tag-blood text-[10px] font-mono font-bold uppercase">Specification Dossier</span>
+              <h3 class="font-display uppercase text-2xl mt-1">Project Meta</h3>
+            </div>
+
+            <!-- Role & Timeline -->
+            <div class="grid grid-cols-2 gap-4 font-mono text-xs uppercase">
+              <div>
+                <span class="text-[var(--ink-soft)]">Role</span><br />
+                <span class="font-bold text-[var(--ink)]">Fullstack Developer</span>
+              </div>
+              <div>
+                <span class="text-[var(--ink-soft)]">Timeline</span><br />
+                <span class="font-bold text-[var(--ink)]">3 Months (2026)</span>
+              </div>
+            </div>
+
+            <!-- Client & Industry -->
+            <div class="font-mono text-xs uppercase border-t border-[var(--ink)] pt-4">
+              <span class="text-[var(--ink-soft)]">Client / Domain</span><br />
+              <span class="font-bold text-[var(--ink)]">Rapa Cast Stone // Architectural Precast</span>
+            </div>
+
+            <!-- Tech Loadout Chips -->
+            <div class="border-t border-[var(--ink)] pt-4">
+              <span class="font-mono text-xs uppercase tracking-widest text-[var(--ink-soft)] font-bold block mb-3">
+                Technologies Used
+              </span>
+              <div class="grid grid-cols-2 gap-2">
+                <div class="chip !p-2 !text-[11px]"><span class="chip-dot !w-5 !h-5 !text-[8px]" style="background:var(--blood);">LV</span>Laravel 10</div>
+                <div class="chip !p-2 !text-[11px]"><span class="chip-dot !w-5 !h-5 !text-[8px]" style="background:var(--blood);">LW</span>Livewire</div>
+                <div class="chip !p-2 !text-[11px]"><span class="chip-dot !w-5 !h-5 !text-[8px]" style="background:var(--teal);">MY</span>MySQL</div>
+                <div class="chip !p-2 !text-[11px]"><span class="chip-dot !w-5 !h-5 !text-[8px]" style="background:var(--purple);">TW</span>Tailwind</div>
+              </div>
+            </div>
+
+            <!-- Deliverables Checklist -->
+            <div class="border-t border-[var(--ink)] pt-4">
+              <span class="font-mono text-xs uppercase tracking-widest text-[var(--ink-soft)] font-bold block mb-2">
+                Deliverables
+              </span>
+              <ul class="font-mono text-xs uppercase text-[var(--ink-soft)] space-y-1.5">
+                <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">✓</span> E-Catalogue Front</li>
+                <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">✓</span> CMS Admin Panel</li>
+                <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">✓</span> Livewire Filtering</li>
+                <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">✓</span> SEO Optimization</li>
+              </ul>
+            </div>
+
+            <!-- External CTA -->
+            <div class="border-t border-[var(--ink)] pt-4">
+              <a
+                href="https://www.rapacaststone.com"
+                target="_blank"
+                class="btn-solid w-full justify-center !py-3 !text-xs text-center"
+              >
+                Visit Live Site ↗
+              </a>
+            </div>
+          </aside>
+
+        </div>
+      </section>
+
+      <!-- ══════════ NEXT / PREV PROJECT FOOTER ══════════ -->
+      <section class="max-w-6xl mx-auto px-6 md:px-10 mt-20 pt-10 border-t-[1.5px] border-[var(--ink)]">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div class="text-left w-full sm:w-auto">
+            <span class="font-mono text-[10px] text-[var(--ink-soft)] uppercase tracking-widest block mb-1">
+              Previous Entry
+            </span>
+            <a href="index.html#projects" class="font-mono text-xs font-bold uppercase text-[var(--ink)] hover:text-[var(--blood)] transition-colors">
+              ← Move List Overview
+            </a>
           </div>
-          <div class="cs-sidebar-item mt-4">
+
+          <div class="text-right w-full sm:w-auto">
+            <span class="font-mono text-[10px] text-[var(--blood)] uppercase tracking-widest block mb-1">
+              Next Project
+            </span>
             <a
-              href="https://www.rapacaststone.com"
+              href="https://github.com/ZEROTSUDIO/Chatbot-Perpus-Bipa"
               target="_blank"
-              class="btn-primary w-full text-center py-3"
-              >Visit Live Site</a
+              class="font-display uppercase text-xl hover:text-[var(--blood)] transition-colors"
             >
+              Chatbot Perpus Bipa →
+            </a>
           </div>
-        </aside>
-      </div>
+        </div>
+      </section>
+
     </main>
 
-    <!-- ══════════ NEXT ══════════ -->
-    <section class="border-t border-gray-line">
-      <div class="max-w-[1200px] mx-auto px-10 cs-next-nav">
-        <div>
-          <span
-            class="font-mono text-[10px] text-gray-400 uppercase tracking-widest block mb-1"
-            >Previous Project</span
-          >
-          <a
-            href="#"
-            class="text-[16px] font-bold no-underline text-gray-300 pointer-events-none"
-            >None</a
-          >
-        </div>
-        <div class="text-right">
-          <span
-            class="font-mono text-[10px] text-purple uppercase tracking-widest block mb-1"
-            >Next Project</span
-          >
-          <a
-            href="https://github.com/ZEROTSUDIO/Chatbot-Perpus-Bipa"
-            target="_blank"
-            class="text-[16px] font-bold no-underline text-black hover:text-purple transition-colors"
-            >Chatbot Perpus Bipa →</a
-          >
-        </div>
-      </div>
-    </section>
-
     <!-- ══════════ FOOTER ══════════ -->
-    <footer class="border-t border-gray-line">
-      <div
-        class="max-w-[1200px] mx-auto w-full px-10 py-8 flex justify-between items-center flex-wrap gap-4"
-      >
-        <div class="flex flex-col gap-1">
-          <span class="text-[15px] font-bold"
-            >Arief Rizal Bayhaqi<span class="text-purple">.</span></span
-          >
-          <span class="font-mono text-[11px] text-[#bbb]"
-            >Backend & Data Developer</span
-          >
-        </div>
-        <span class="font-mono text-[11px] text-[#bbb]"
-          >© 2025 — Dedicated to excellence.</span
-        >
-      </div>
+    <footer class="max-w-6xl mx-auto px-6 md:px-10 pb-12 pt-6 border-t-[1.5px] border-[var(--ink)] flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p class="font-mono text-[11px] uppercase tracking-widest text-[var(--ink-soft)]">
+        © 2026 Arief Rizal Bayhaqi — Built with ink, paper, and code.
+      </p>
+      <p class="font-mono text-[11px] uppercase tracking-widest text-[var(--ink-soft)]">
+        Magelang, Indonesia
+      </p>
     </footer>
 
-    <!-- ══════════ SCRIPTS ══════════ -->
-    <script>
-      // ── Scroll Reveal ──
-      const reveals = document.querySelectorAll(".reveal");
-      const ro = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((e) => {
-            if (e.isIntersecting) {
-              e.target.classList.add("visible");
-              ro.unobserve(e.target);
-            }
-          });
-        },
-        { threshold: 0.1 },
-      );
-      reveals.forEach((el) => ro.observe(el));
-    </script>
   </body>
 </html>
