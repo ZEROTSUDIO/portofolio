@@ -45,7 +45,7 @@
           <span class="font-mono font-bold text-xs text-[var(--paper)]">AB</span>
         </span>
         <span class="font-mono font-bold text-sm tracking-widest uppercase hidden sm:inline text-[var(--ink)]">
-          Arief Bayhaqi<span class="text-[var(--purple)]">.</span>
+          Arief Bayhaqi<span class="text-[var(--blood)]">.</span>
         </span>
       </a>
 
@@ -93,7 +93,7 @@
       </div>
 
       <div class="max-w-6xl mx-auto px-6 md:px-10 py-16 md:py-24 w-full">
-        <div class="grid md:grid-cols-[1.2fr_auto] gap-12 items-center">
+        <div class="grid lg:grid-cols-[1.15fr_auto] md:grid-cols-[1.1fr_auto] gap-12 items-center">
           
           <!-- Left: Sasha Volkov Name & Title-Bar + Alex Content -->
           <div>
@@ -103,15 +103,15 @@
             </p>
 
             <!-- Skewed Stacked Name -->
-            <h1 class="font-display uppercase leading-[0.85] text-[clamp(2.9rem,8vw,6.4rem)] select-none">
+            <h1 class="font-display uppercase leading-[0.85] text-[clamp(3rem,8.5vw,6.8rem)] select-none">
               <span class="diag-word block text-[var(--ink)]">ARIEF RIZAL</span>
-              <span class="diag-word block text-[var(--purple)]">BAYHAQI</span>
+              <span class="diag-word block text-[var(--blood)]">BAYHAQI</span>
             </h1>
 
             <!-- Sasha Volkov Signature Title-Bar Component -->
             <div class="mt-6">
               <div class="title-bar shadow-[3px_3px_0_var(--ink)]">
-                <span class="title-bar-tag" style="background:var(--purple);">Specialization</span>
+                <span class="title-bar-tag" style="background:var(--blood);">Specialization</span>
                 <span class="title-bar-main text-xl sm:text-2xl md:text-3xl">Robust Backends &amp; ML Pipelines</span>
               </div>
             </div>
@@ -128,21 +128,21 @@
             </div>
           </div>
 
-          <!-- Right: Visual Card with Real Photo & Badges -->
+          <!-- Right: Visual Card with Real Photo (Bigger) & Badges -->
           <div class="justify-self-center relative">
-            <!-- Framed Photo Card -->
-            <div class="w-64 h-72 sm:w-72 sm:h-80 panel p-2.5 relative shadow-[8px_8px_0_var(--ink)] transform -rotate-1 hover:rotate-0 transition-transform duration-200">
+            <!-- Framed Photo Card (Enlarged) -->
+            <div class="w-72 h-84 sm:w-80 sm:h-96 md:w-88 md:h-[420px] lg:w-[360px] lg:h-[440px] panel p-3 relative shadow-[10px_10px_0_var(--ink)] transform -rotate-1 hover:rotate-0 transition-transform duration-200">
               <div class="w-full h-full overflow-hidden border border-[var(--ink)] bg-[var(--paper-dim)]">
                 <img src="/img/me.png" alt="Arief Rizal Bayhaqi" class="w-full h-full object-cover grayscale contrast-125 hover:grayscale-0 transition-all duration-300">
               </div>
             </div>
 
             <!-- Decorative Badges -->
-            <span class="tag-orange absolute -bottom-4 -left-4 font-bold shadow-[3px_3px_0_var(--ink)]" style="transform:rotate(-3deg);">
-              Lvl. 24 Backend Dev
+            <span class="tag-orange absolute -bottom-4 -left-4 font-bold shadow-[3px_3px_0_var(--ink)] text-xs sm:text-sm" style="transform:rotate(-3deg);">
+              23 Years Old Dev
             </span>
-            <span class="tag-teal absolute -top-3 -right-3 font-bold shadow-[3px_3px_0_var(--ink)]" style="transform:rotate(3deg);">
-              Yogyakarta, ID
+            <span class="tag-teal absolute -top-3 -right-3 font-bold shadow-[3px_3px_0_var(--ink)] text-xs sm:text-sm" style="transform:rotate(3deg);">
+              Magelang, ID
             </span>
           </div>
 
@@ -171,7 +171,7 @@
           <div class="grid grid-cols-2 gap-y-4 gap-x-6 mt-8 font-mono text-xs uppercase border-t-[1.5px] border-[var(--ink)] pt-6">
             <div>
               <span class="text-[var(--ink-soft)]">Location</span><br>
-              <span class="font-bold text-[var(--ink)]">Yogyakarta, ID</span>
+              <span class="font-bold text-[var(--ink)]">Magelang, ID</span>
             </div>
             <div>
               <span class="text-[var(--ink-soft)]">Primary Focus</span><br>
@@ -350,7 +350,7 @@
                 &gt; ALGO: SHORTEST JOB FIRST<br>
                 &gt; QUEUE: REAL-TIME SYNC
               </div>
-              <div class="text-[10px] text-[var(--purple)] font-bold">
+              <div class="text-[10px] text-[var(--blood)] font-bold">
                 GARMENT PRODUCTION SUITE
               </div>
             </div>
@@ -380,88 +380,143 @@
       </div>
     </section>
 
-    <!-- ══════════ TECH STACK SECTION ("Command List") ══════════ -->
+    <!-- ══════════ TECH STACK SECTION ("Command List" / Modular Loadout) ══════════ -->
     <section id="stack" class="max-w-6xl mx-auto px-6 md:px-10 py-24 border-t-[1.5px] border-[var(--ink)]">
       <!-- Title-Bar Section Header -->
-      <div class="title-bar">
-        <span class="title-bar-tag" style="background:var(--teal);">Command List</span>
-        <h2 class="title-bar-main text-2xl sm:text-3xl md:text-4xl">Tech Loadout</h2>
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+        <div class="title-bar">
+          <span class="title-bar-tag" style="background:var(--teal);">Command List</span>
+          <h2 class="title-bar-main text-2xl sm:text-3xl md:text-4xl">Tech Loadout</h2>
+        </div>
+        <p class="font-mono text-xs uppercase tracking-widest text-[var(--ink-soft)] font-bold">
+          Core Tooling // Version 2026
+        </p>
       </div>
 
-      <div class="panel mt-10 overflow-hidden shadow-[5px_5px_0_var(--ink)]">
-        <div class="grid grid-cols-[140px_1fr] md:grid-cols-[180px_1fr] font-mono text-xs uppercase tracking-widest bg-[var(--ink)] text-[var(--paper)]">
-          <div class="px-5 py-3">Domain</div>
-          <div class="px-5 py-3">Technologies &amp; Frameworks</div>
-        </div>
-
-        <!-- Row 1: Backend -->
-        <div class="table-row grid grid-cols-[140px_1fr] md:grid-cols-[180px_1fr] items-center">
-          <div class="px-5 py-4"><span class="tag-purple text-xs">Backend Core</span></div>
-          <div class="px-5 py-4 text-sm font-medium">
-            PHP (Laravel, CodeIgniter, Livewire) · Python (FastAPI, Flask) · Java · C/C++ · RESTful API Design · MVC Pattern
+      <div class="mt-10 space-y-8">
+        
+        <!-- Domain 1: Backend Architecture -->
+        <div class="panel p-6 sm:p-8 shadow-[4px_4px_0_var(--ink)]">
+          <div class="flex items-center gap-3 mb-5 pb-3 border-b border-[var(--ink)]">
+            <span class="tag-blood text-xs font-mono font-bold uppercase">01 / Backend Core</span>
+            <span class="font-mono text-xs text-[var(--ink-soft)] hidden sm:inline">// APIs, Microservices &amp; Systems</span>
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+            <div class="chip"><span class="chip-dot" style="background:var(--blood);">PH</span>PHP / Laravel</div>
+            <div class="chip"><span class="chip-dot" style="background:var(--blood);">CI</span>CodeIgniter</div>
+            <div class="chip"><span class="chip-dot" style="background:var(--blood);">LW</span>Livewire</div>
+            <div class="chip"><span class="chip-dot" style="background:var(--blood);">PY</span>Python / FastAPI</div>
+            <div class="chip"><span class="chip-dot" style="background:var(--blood);">JV</span>Java</div>
+            <div class="chip"><span class="chip-dot" style="background:var(--blood);">CP</span>C / C++</div>
+            <div class="chip"><span class="chip-dot" style="background:var(--blood);">AP</span>RESTful APIs</div>
+            <div class="chip"><span class="chip-dot" style="background:var(--blood);">MC</span>MVC Pattern</div>
           </div>
         </div>
 
-        <!-- Row 2: Data & ML -->
-        <div class="table-row grid grid-cols-[140px_1fr] md:grid-cols-[180px_1fr] items-center">
-          <div class="px-5 py-4"><span class="tag-orange text-xs">Data &amp; AI</span></div>
-          <div class="px-5 py-4 text-sm font-medium">
-            Natural Language Processing · IndoBERT Transformers · scikit-learn · Pandas · NumPy · Decision Support Systems (AHP, SAW, TOPSIS)
+        <!-- Domain 2: Data & AI -->
+        <div class="panel p-6 sm:p-8 shadow-[4px_4px_0_var(--ink)]">
+          <div class="flex items-center gap-3 mb-5 pb-3 border-b border-[var(--ink)]">
+            <span class="tag-orange text-xs font-mono font-bold uppercase">02 / Applied AI &amp; Data</span>
+            <span class="font-mono text-xs text-[var(--ink-soft)] hidden sm:inline">// NLP, Transformers &amp; Decision Support</span>
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+            <div class="chip"><span class="chip-dot" style="background:var(--orange);">TR</span>Transformers</div>
+            <div class="chip"><span class="chip-dot" style="background:var(--orange);">IB</span>IndoBERT NLP</div>
+            <div class="chip"><span class="chip-dot" style="background:var(--orange);">SK</span>scikit-learn</div>
+            <div class="chip"><span class="chip-dot" style="background:var(--orange);">PD</span>Pandas &amp; NumPy</div>
+            <div class="chip"><span class="chip-dot" style="background:var(--orange);">DS</span>Decision Support (AHP/SAW)</div>
+            <div class="chip"><span class="chip-dot" style="background:var(--orange);">PT</span>PyTorch Core</div>
           </div>
         </div>
 
-        <!-- Row 3: Databases -->
-        <div class="table-row grid grid-cols-[140px_1fr] md:grid-cols-[180px_1fr] items-center">
-          <div class="px-5 py-4"><span class="tag-teal text-xs">Databases</span></div>
-          <div class="px-5 py-4 text-sm font-medium">
-            MySQL · PostgreSQL · Relational Schema Modeling · Query Indexing &amp; Optimization
+        <!-- Dual Column: Databases & Tooling -->
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Domain 3: Databases -->
+          <div class="panel p-6 sm:p-8 shadow-[4px_4px_0_var(--ink)]">
+            <div class="flex items-center gap-3 mb-5 pb-3 border-b border-[var(--ink)]">
+              <span class="tag-teal text-xs font-mono font-bold uppercase">03 / Databases &amp; Storage</span>
+            </div>
+            <div class="grid grid-cols-2 gap-3">
+              <div class="chip"><span class="chip-dot" style="background:var(--teal);">MY</span>MySQL</div>
+              <div class="chip"><span class="chip-dot" style="background:var(--teal);">PG</span>PostgreSQL</div>
+              <div class="chip"><span class="chip-dot" style="background:var(--teal);">SC</span>Schema Design</div>
+              <div class="chip"><span class="chip-dot" style="background:var(--teal);">IX</span>Query Indexing</div>
+            </div>
+          </div>
+
+          <!-- Domain 4: DevOps & Tooling -->
+          <div class="panel p-6 sm:p-8 shadow-[4px_4px_0_var(--ink)]">
+            <div class="flex items-center gap-3 mb-5 pb-3 border-b border-[var(--ink)]">
+              <span class="tag-purple text-xs font-mono font-bold uppercase">04 / DevOps &amp; Tools</span>
+            </div>
+            <div class="grid grid-cols-2 gap-3">
+              <div class="chip"><span class="chip-dot" style="background:var(--purple);">GT</span>Git / GitHub</div>
+              <div class="chip"><span class="chip-dot" style="background:var(--purple);">LX</span>Linux / Bash</div>
+              <div class="chip"><span class="chip-dot" style="background:var(--purple);">DK</span>Docker</div>
+              <div class="chip"><span class="chip-dot" style="background:var(--purple);">PM</span>Postman</div>
+              <div class="chip"><span class="chip-dot" style="background:var(--purple);">TW</span>Tailwind CSS</div>
+              <div class="chip"><span class="chip-dot" style="background:var(--purple);">VT</span>Vite</div>
+            </div>
           </div>
         </div>
 
-        <!-- Row 4: Tooling & Ops -->
-        <div class="table-row grid grid-cols-[140px_1fr] md:grid-cols-[180px_1fr] items-center">
-          <div class="px-5 py-4"><span class="tag-blood text-xs">DevOps &amp; Tools</span></div>
-          <div class="px-5 py-4 text-sm font-medium">
-            Git · GitHub · Linux Environments · Docker · Postman · Tailwind CSS · Vite
-          </div>
-        </div>
       </div>
     </section>
 
-    <!-- ══════════ CONTACT SECTION ("Player Menu") ══════════ -->
+    <!-- ══════════ CONTACT SECTION ("Player Menu" - High Contrast) ══════════ -->
     <section id="contact" class="max-w-6xl mx-auto px-6 md:px-10 py-24 border-t-[1.5px] border-[var(--ink)]">
-      <div class="panel p-8 sm:p-12 md:p-16 relative overflow-hidden bg-[var(--ink)] text-[var(--paper)] shadow-[8px_8px_0_var(--purple)]">
-        <!-- Halftone overlay -->
-        <div class="absolute inset-0 halftone" style="filter:invert(1); opacity:0.07;" aria-hidden="true"></div>
+      <div class="panel p-8 sm:p-12 md:p-16 relative overflow-hidden bg-[#141311] text-white shadow-[8px_8px_0_var(--blood)] border-[1.5px] border-[var(--ink)]">
+        <!-- Subtle Halftone overlay -->
+        <div class="absolute inset-0 halftone" style="filter:invert(1); opacity:0.06;" aria-hidden="true"></div>
         
         <div class="relative z-10">
-          <div class="title-bar mb-4">
-            <span class="title-bar-tag" style="background:var(--orange);">Player Menu</span>
-            <h2 class="title-bar-main text-3xl sm:text-4xl md:text-5xl" style="background:#0a0a09; color:var(--paper);">
+          <div class="title-bar mb-5">
+            <span class="title-bar-tag" style="background:var(--blood);">Player Menu</span>
+            <h2 class="title-bar-main text-3xl sm:text-4xl md:text-5xl" style="background:#000000; color:#FFFFFF;">
               Let's Build Something
             </h2>
           </div>
 
-          <p class="font-mono text-sm md:text-base mt-4 max-w-lg text-[#C9C3B4] leading-relaxed">
+          <p class="font-mono text-sm md:text-base mt-4 max-w-xl text-[#EDEAE2] leading-relaxed">
             Open to full-time engineering roles, high-impact backend contracts, and applied ML collaborations. Drop me a note and let's discuss your next milestone.
           </p>
 
+          <!-- High-Contrast Interactive Contact Cards -->
           <div class="grid sm:grid-cols-2 gap-4 mt-10 font-mono text-sm uppercase">
-            <a href="mailto:a.r.bayhaqi341@gmail.com" class="flex items-center justify-between border-b border-[#3d3830] pb-3 hover:text-[var(--purple)] hover:border-[var(--purple)] transition-colors">
-              <span>Email // Direct</span>
-              <span>a.r.bayhaqi341@gmail.com →</span>
+            <!-- Email -->
+            <a href="mailto:a.r.bayhaqi341@gmail.com" class="p-4 bg-[#23201C] border-[1.5px] border-[#4A453C] hover:border-white hover:bg-[#2D2924] flex items-center justify-between transition-all group shadow-[3px_3px_0_#000]">
+              <div>
+                <span class="text-[11px] text-[#A8A296] block tracking-wider">Email // Direct</span>
+                <span class="text-white font-bold text-xs sm:text-sm tracking-wide group-hover:text-amber-400 transition-colors">a.r.bayhaqi341@gmail.com</span>
+              </div>
+              <span class="text-white text-lg font-bold group-hover:translate-x-1 group-hover:text-amber-400 transition-all">→</span>
             </a>
-            <a href="https://github.com/ZEROTSUDIO" target="_blank" class="flex items-center justify-between border-b border-[#3d3830] pb-3 hover:text-[var(--purple)] hover:border-[var(--purple)] transition-colors">
-              <span>GitHub // Code</span>
-              <span>ZEROTSUDIO →</span>
+
+            <!-- GitHub -->
+            <a href="https://github.com/ZEROTSUDIO" target="_blank" class="p-4 bg-[#23201C] border-[1.5px] border-[#4A453C] hover:border-white hover:bg-[#2D2924] flex items-center justify-between transition-all group shadow-[3px_3px_0_#000]">
+              <div>
+                <span class="text-[11px] text-[#A8A296] block tracking-wider">GitHub // Repositories</span>
+                <span class="text-white font-bold text-xs sm:text-sm tracking-wide group-hover:text-amber-400 transition-colors">github.com/ZEROTSUDIO</span>
+              </div>
+              <span class="text-white text-lg font-bold group-hover:translate-x-1 group-hover:text-amber-400 transition-all">→</span>
             </a>
-            <a href="#" target="_blank" class="flex items-center justify-between border-b border-[#3d3830] pb-3 hover:text-[var(--purple)] hover:border-[var(--purple)] transition-colors">
-              <span>LinkedIn // Network</span>
-              <span>Connect →</span>
+
+            <!-- LinkedIn -->
+            <a href="#" target="_blank" class="p-4 bg-[#23201C] border-[1.5px] border-[#4A453C] hover:border-white hover:bg-[#2D2924] flex items-center justify-between transition-all group shadow-[3px_3px_0_#000]">
+              <div>
+                <span class="text-[11px] text-[#A8A296] block tracking-wider">LinkedIn // Professional</span>
+                <span class="text-white font-bold text-xs sm:text-sm tracking-wide group-hover:text-amber-400 transition-colors">Connect on LinkedIn</span>
+              </div>
+              <span class="text-white text-lg font-bold group-hover:translate-x-1 group-hover:text-amber-400 transition-all">→</span>
             </a>
-            <a href="https://instagram.com/zeeddeong.341" target="_blank" class="flex items-center justify-between border-b border-[#3d3830] pb-3 hover:text-[var(--purple)] hover:border-[var(--purple)] transition-colors">
-              <span>Instagram // Social</span>
-              <span>@zeeddeong.341 →</span>
+
+            <!-- Instagram -->
+            <a href="https://instagram.com/zeeddeong.341" target="_blank" class="p-4 bg-[#23201C] border-[1.5px] border-[#4A453C] hover:border-white hover:bg-[#2D2924] flex items-center justify-between transition-all group shadow-[3px_3px_0_#000]">
+              <div>
+                <span class="text-[11px] text-[#A8A296] block tracking-wider">Instagram // Social</span>
+                <span class="text-white font-bold text-xs sm:text-sm tracking-wide group-hover:text-amber-400 transition-colors">@zeeddeong.341</span>
+              </div>
+              <span class="text-white text-lg font-bold group-hover:translate-x-1 group-hover:text-amber-400 transition-all">→</span>
             </a>
           </div>
         </div>
@@ -476,7 +531,7 @@
       © 2026 Arief Rizal Bayhaqi — Built with ink, paper, and code.
     </p>
     <p class="font-mono text-[11px] uppercase tracking-widest text-[var(--ink-soft)]">
-      Yogyakarta, Indonesia
+      Magelang, Indonesia
     </p>
   </footer>
 
