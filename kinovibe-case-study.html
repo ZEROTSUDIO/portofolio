@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Case Study: Rapa Cast Stone — Arief Rizal Bayhaqi</title>
+    <title>Case Study: KinoVibe — Arief Rizal Bayhaqi</title>
     <meta
       name="description"
-      content="Technical case study of the Rapa Cast Stone E-Catalogue and Company Profile architecture by Arief Rizal Bayhaqi."
+      content="Technical case study of KinoVibe, a personal cinematic movie review and tier ranking platform for blockbuster cinema by Arief Rizal Bayhaqi."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,8 +14,8 @@
       href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;900&family=Space+Mono:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <script type="module" crossorigin src="/assets/main-BMilJ6g2.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/main-C9xYXjhg.css">
+    <link href="/src/style.css" rel="stylesheet" />
+    <script type="module" src="/src/main.js"></script>
   </head>
 
   <body class="antialiased">
@@ -31,11 +31,11 @@
       </div>
       <div class="print-mark" style="bottom:18px; left:18px;">
         <div class="crosshair"></div>
-        <div class="mt-1">ARCHIVAL // REV.01</div>
+        <div class="mt-1">CINEMA ARCHIVE // REV.01</div>
       </div>
       <div class="print-mark text-right" style="bottom:18px; right:18px;">
         <div class="crosshair ml-auto"></div>
-        <div class="mt-1">SYSTEM V.02</div>
+        <div class="mt-1">KINOVIBE V.01</div>
       </div>
     </div>
 
@@ -63,12 +63,12 @@
       <!-- ══════════ CASE STUDY HEADER ══════════ -->
       <section class="max-w-6xl mx-auto px-6 md:px-10 pt-10 pb-16">
         <span class="tag-blood text-xs font-mono uppercase font-bold tracking-wider mb-4 inline-block">
-          Case Study // Production System
+          Case Study // Full Stack Web Platform
         </span>
 
         <h1 class="font-display uppercase leading-[0.88] text-[clamp(2.6rem,7.5vw,5.5rem)]">
-          <span class="diag-word block text-[var(--ink)]">RAPA CAST</span>
-          <span class="diag-word block text-[var(--blood)]">STONE</span>
+          <span class="diag-word block text-[var(--ink)]">KINO</span>
+          <span class="diag-word block text-[var(--blood)]">VIBE</span>
         </h1>
 
         <!-- Signature Title Bar -->
@@ -76,21 +76,21 @@
           <div class="title-bar shadow-[3px_3px_0_var(--ink)]">
             <span class="title-bar-tag" style="background:var(--blood);">Project Spec</span>
             <span class="title-bar-main text-lg sm:text-xl md:text-2xl">
-              High-Performance Architectural E-Catalogue &amp; CMS
+              Personal Movie Review &amp; Tier Ranking Platform for Blockbuster Cinema
             </span>
           </div>
         </div>
 
         <p class="font-mono text-sm md:text-base max-w-2xl leading-relaxed text-[var(--ink-soft)] mt-4">
-          Building a responsive, scalable digital showroom and inventory management engine for the precast architectural concrete industry.
+          Engineered for film lovers and blockbuster cinema enthusiasts who want more nuance than generic star ratings. Combines a 4-pillar scoring formula, personal bias modifiers, live TMDB API metadata syncing, and automatic S-to-F tier classification.
         </p>
 
         <!-- Main Hero Image Frame -->
         <div class="panel p-3 sm:p-4 mt-10 shadow-[10px_10px_0_var(--ink)]">
-          <div class="overflow-hidden border border-[var(--ink)] bg-[#1e1e24]">
+          <div class="overflow-hidden border border-[var(--ink)] bg-[#0b0c16]">
             <img
-              src="/assets/Rapa-CZoljEQO.png"
-              alt="Rapa Cast Stone Frontend Showcase"
+              src="/img/kinovibe.png"
+              alt="KinoVibe Platform Showcase"
               class="w-full h-auto object-cover"
             />
           </div>
@@ -111,10 +111,10 @@
                 <h2 class="font-display uppercase text-2xl">Executive Summary</h2>
               </div>
               <p class="text-base leading-relaxed text-[var(--ink-soft)]">
-                Rapa Cast Stone is a premier manufacturer of custom precast concrete solutions. Prior to this project, their catalog operations relied entirely on heavy offline PDF books and manual sales consultations.
+                Conventional film rating platforms rely heavily on flat 5-star or single 1–10 scores. For high-spectacle modern cinema and summer blockbusters — such as <em>Dune: Part Two</em>, <em>Mad Max: Fury Road</em>, or <em>Top Gun: Maverick</em> — a single number collapses distinct cinematic achievements. A film might exhibit world-class VFX, stunt choreography, and auditory punch, yet feature straightforward narrative beats.
               </p>
               <p class="text-base leading-relaxed text-[var(--ink-soft)] mt-3">
-                They required a complete digital transformation: a modern, searchable, SEO-indexed web catalogue accompanied by an intuitive administrative control panel to handle frequent product line updates without technical overhead.
+                <strong>KinoVibe</strong> was architected as a dedicated platform to break past single-score compromises. By scoring films independently across <strong>Story</strong>, <strong>Visuals</strong>, <strong>Action</strong>, and <strong>Fun</strong>, factoring in user-defined <strong>Bias Modifiers</strong> (e.g., IMAX experience, director loyalty, plot pacing), and leveraging live TMDB metadata, KinoVibe dynamically auto-organizes your cinematic library into an <strong>S-to-F Tier List</strong>.
               </p>
             </div>
 
@@ -125,20 +125,24 @@
                 <h2 class="font-display uppercase text-2xl">Engineering Hurdles</h2>
               </div>
               <p class="text-base leading-relaxed text-[var(--ink-soft)] mb-4">
-                The primary engineering challenge was managing a vast matrix of stone specifications (dimensions, weights, physical textures, applications) while maintaining sub-second mobile page loads for architects browsing directly on active construction jobsites:
+                Building a rich, responsive film catalog and rating tool required addressing several distinct frontend and architectural challenges:
               </p>
               <div class="space-y-3 font-mono text-xs uppercase">
                 <div class="p-3 bg-[var(--paper-dim)] border border-[var(--ink)] flex items-start gap-2.5">
                   <span class="text-[var(--blood)] font-bold">▶</span>
-                  <span>Instant reactive filtering across 500+ product variants without disruptive full-page reloads.</span>
+                  <span><strong>Live TMDB Autocomplete &amp; Image Caching:</strong> Seamlessly querying The Movie Database API v3 with input debouncing, preventing rate-limit throttling while rendering instant high-res poster and backdrop previews.</span>
                 </div>
                 <div class="p-3 bg-[var(--paper-dim)] border border-[var(--ink)] flex items-start gap-2.5">
                   <span class="text-[var(--blood)] font-bold">▶</span>
-                  <span>Lightweight polymorphic database schema accommodating diverse dimensional formats across stone collections.</span>
+                  <span><strong>Mathematical Score Balancing:</strong> Creating a responsive slider formula that computes base criteria, incorporates dynamic positive and negative biases, and ensures final ratings stay within a strict 0.0–10.0 boundary.</span>
                 </div>
                 <div class="p-3 bg-[var(--paper-dim)] border border-[var(--ink)] flex items-start gap-2.5">
                   <span class="text-[var(--blood)] font-bold">▶</span>
-                  <span>High-resolution asset delivery with automated compression to safeguard mobile data budgets.</span>
+                  <span><strong>Automated Tier Bucket Engine:</strong> Dynamically bucketing and rendering movie entries across 7 tiers (S, A, B, C, D, E, F) without manual drag-and-drop friction or layout shifts.</span>
+                </div>
+                <div class="p-3 bg-[var(--paper-dim)] border border-[var(--ink)] flex items-start gap-2.5">
+                  <span class="text-[var(--blood)] font-bold">▶</span>
+                  <span><strong>Cloud Sync with Row-Level Security:</strong> Integrating Supabase PostgreSQL authentication and RLS policies so individual film logs and custom biases remain isolated to each user.</span>
                 </div>
               </div>
             </div>
@@ -146,59 +150,93 @@
             <!-- Section 3: Architecture & Solution -->
             <div class="panel p-8 shadow-[4px_4px_0_var(--ink)]">
               <div class="flex items-center gap-3 mb-4 pb-3 border-b border-[var(--ink)]">
-                <span class="tag-teal text-xs font-mono font-bold uppercase">03 / Solution</span>
-                <h2 class="font-display uppercase text-2xl">The TALL Stack Architecture</h2>
+                <span class="tag-teal text-xs font-mono font-bold uppercase">03 / Architecture</span>
+                <h2 class="font-display uppercase text-2xl">System Architecture &amp; Formulas</h2>
               </div>
               <p class="text-base leading-relaxed text-[var(--ink-soft)]">
-                I chose the <strong>TALL stack</strong> (Tailwind CSS, Alpine.js, Laravel, Livewire) to achieve a modern single-page application (SPA) reactive user experience while retaining server-side simplicity, SEO friendliness, and high-performance server caching.
+                The application was built using modular ES6+ JavaScript, CSS3 with a cinematic dark palette, Supabase as the serverless PostgreSQL backend, and TMDB API v3 for live cinema metadata.
               </p>
               
-              <div class="mt-6 border-t border-[var(--ink)] pt-5 space-y-4">
-                <h3 class="font-display uppercase text-xl text-[var(--ink)]">Backend Data Model</h3>
+              <div class="mt-6 border-t border-[var(--ink)] pt-5 space-y-5">
+                <h3 class="font-display uppercase text-xl text-[var(--ink)]">1. The 4-Pillar Scoring Formula</h3>
                 <p class="text-sm leading-relaxed text-[var(--ink-soft)]">
-                  Built on Laravel 10 and MySQL. I implemented optimized relational database indexing and eager loading strategies (<code class="font-mono bg-[var(--paper-dim)] px-1.5 py-0.5 border border-[var(--ink)] text-xs">with()</code>) to completely eliminate N+1 query overhead across complex product variations.
+                  Users grade films on four distinct 0–10 scales:
                 </p>
+                <ul class="font-mono text-xs text-[var(--ink-soft)] space-y-1 pl-4 list-disc">
+                  <li><strong>Story:</strong> Narrative structure, screenwriting, dialogue, and emotional stakes.</li>
+                  <li><strong>Visuals:</strong> Cinematography, VFX, production design, and color grading.</li>
+                  <li><strong>Action:</strong> Choreography, practical stunts, tension, and set pieces.</li>
+                  <li><strong>Fun:</strong> Entertainment momentum, pure popcorn factor, and rewatchability.</li>
+                </ul>
 
-                <h3 class="font-display uppercase text-xl text-[var(--ink)] pt-2">Livewire Component State</h3>
+                <div class="p-4 bg-[var(--paper-dim)] border border-[var(--ink)] font-mono text-xs">
+                  <div class="text-[var(--ink-soft)] uppercase mb-1">// Base &amp; Final Score Algorithm</div>
+                  <div class="text-[var(--ink)] font-bold">
+                    Base Score = (Story + Visuals + Action + Fun) / 4<br>
+                    Final Score = clamp(0.0, 10.0, (Story + Visuals + Action + Fun + Total Biases) / 4)
+                  </div>
+                </div>
+
+                <h3 class="font-display uppercase text-xl text-[var(--ink)] pt-3">2. Dynamic Tier Classification Table</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 font-mono text-xs">
+                  <div class="p-2 border border-[var(--ink)] bg-[var(--paper)]">
+                    <span class="text-[var(--blood)] font-bold">S TIER</span>: ≥ 9.0<br>
+                    <span class="text-[10px] text-[var(--ink-soft)]">Masterpiece / Absolute Kino</span>
+                  </div>
+                  <div class="p-2 border border-[var(--ink)] bg-[var(--paper)]">
+                    <span class="text-[var(--purple)] font-bold">A TIER</span>: 8.0 – 8.9<br>
+                    <span class="text-[10px] text-[var(--ink-soft)]">Great Cinema</span>
+                  </div>
+                  <div class="p-2 border border-[var(--ink)] bg-[var(--paper)]">
+                    <span class="text-[var(--teal)] font-bold">B TIER</span>: 7.0 – 7.9<br>
+                    <span class="text-[10px] text-[var(--ink-soft)]">Good &amp; Entertaining</span>
+                  </div>
+                  <div class="p-2 border border-[var(--ink)] bg-[var(--paper)]">
+                    <span class="text-[var(--orange)] font-bold">C TIER</span>: 6.0 – 6.9<br>
+                    <span class="text-[10px] text-[var(--ink-soft)]">Decent Watch</span>
+                  </div>
+                </div>
+
+                <h3 class="font-display uppercase text-xl text-[var(--ink)] pt-3">3. TMDB API Integration Pipeline</h3>
                 <p class="text-sm leading-relaxed text-[var(--ink-soft)]">
-                  The client-side search utilizes Livewire components with debounced server requests. Architects can instantaneously filter by stone texture, series, or color swatch without refreshing the browser or introducing client bundle bloat.
+                  When a user types a movie title into the review creator, a debounced query initiates an asynchronous call to TMDB's search endpoint. Upon selecting a title, the system automatically populates release year, director credits, genres, backdrop hero art, poster thumbnails, and synopsis, cutting movie entry time down to seconds.
                 </p>
               </div>
             </div>
 
-            <!-- Section 4: Metrics & Results -->
+            <!-- Section 4: Metrics & Highlights -->
             <div class="panel p-8 shadow-[4px_4px_0_var(--ink)]">
               <div class="flex items-center gap-3 mb-4 pb-3 border-b border-[var(--ink)]">
-                <span class="tag-purple text-xs font-mono font-bold uppercase">04 / Impact</span>
-                <h2 class="font-display uppercase text-2xl">Measured Outcomes</h2>
+                <span class="tag-purple text-xs font-mono font-bold uppercase">04 / Highlights</span>
+                <h2 class="font-display uppercase text-2xl">Platform Highlights</h2>
               </div>
 
               <!-- Stat Metric Grid -->
               <div class="grid sm:grid-cols-3 gap-4 my-6">
                 <div class="p-5 bg-[var(--card)] border-[1.5px] border-[var(--ink)] shadow-[3px_3px_0_var(--ink)] text-center">
-                  <div class="font-display text-4xl text-[var(--blood)]">40%</div>
+                  <div class="font-display text-4xl text-[var(--blood)]">4-Pillar</div>
                   <div class="font-mono text-[10px] uppercase tracking-wider font-bold mt-1 text-[var(--ink-soft)]">
-                    Faster Load Latency
+                    Nuanced Scoring
                   </div>
                 </div>
 
                 <div class="p-5 bg-[var(--card)] border-[1.5px] border-[var(--ink)] shadow-[3px_3px_0_var(--ink)] text-center">
-                  <div class="font-display text-4xl text-[var(--teal)]">500+</div>
+                  <div class="font-display text-4xl text-[var(--teal)]">1-Click</div>
                   <div class="font-mono text-[10px] uppercase tracking-wider font-bold mt-1 text-[var(--ink-soft)]">
-                    Catalog Items Live
+                    TMDB Auto-Metadata
                   </div>
                 </div>
 
                 <div class="p-5 bg-[var(--card)] border-[1.5px] border-[var(--ink)] shadow-[3px_3px_0_var(--ink)] text-center">
-                  <div class="font-display text-4xl text-[var(--orange)]">100%</div>
+                  <div class="font-display text-4xl text-[var(--purple)]">S to F</div>
                   <div class="font-mono text-[10px] uppercase tracking-wider font-bold mt-1 text-[var(--ink-soft)]">
-                    Spec Accuracy
+                    Auto Tier Generation
                   </div>
                 </div>
               </div>
 
               <p class="text-base leading-relaxed text-[var(--ink-soft)]">
-                The deployed web platform directly converted casual architectural visits into concrete project consultation leads. Non-technical administrators now manage product updates in minutes instead of waiting weeks for PDF reprints.
+                KinoVibe turns subjective movie opinions into a coherent, visual catalog. Users can quickly capture post-cinema impressions, preserve nuanced thoughts on blockbuster visuals versus narrative structure, and see their top picks automatically ranked.
               </p>
             </div>
 
@@ -219,14 +257,14 @@
               </div>
               <div>
                 <span class="text-[var(--ink-soft)]">Timeline</span><br />
-                <span class="font-bold text-[var(--ink)]">3 Months (2026)</span>
+                <span class="font-bold text-[var(--ink)]">2026 Active</span>
               </div>
             </div>
 
-            <!-- Client & Industry -->
+            <!-- Client & Domain -->
             <div class="font-mono text-xs uppercase border-t border-[var(--ink)] pt-4">
-              <span class="text-[var(--ink-soft)]">Client / Domain</span><br />
-              <span class="font-bold text-[var(--ink)]">Rapa Cast Stone // Architectural Precast</span>
+              <span class="text-[var(--ink-soft)]">Domain / Target</span><br />
+              <span class="font-bold text-[var(--ink)]">Film Tech // Blockbuster Reviews</span>
             </div>
 
             <!-- Tech Loadout Chips -->
@@ -235,10 +273,10 @@
                 Technologies Used
               </span>
               <div class="grid grid-cols-2 gap-2">
-                <div class="chip !p-2 !text-[11px]"><span class="chip-dot !w-5 !h-5 !text-[8px]" style="background:var(--blood);">LV</span>Laravel 10</div>
-                <div class="chip !p-2 !text-[11px]"><span class="chip-dot !w-5 !h-5 !text-[8px]" style="background:var(--blood);">LW</span>Livewire</div>
-                <div class="chip !p-2 !text-[11px]"><span class="chip-dot !w-5 !h-5 !text-[8px]" style="background:var(--teal);">MY</span>MySQL</div>
-                <div class="chip !p-2 !text-[11px]"><span class="chip-dot !w-5 !h-5 !text-[8px]" style="background:var(--purple);">TW</span>Tailwind</div>
+                <div class="chip !p-2 !text-[11px]"><span class="chip-dot !w-5 !h-5 !text-[8px]" style="background:var(--blood);">JS</span>JavaScript</div>
+                <div class="chip !p-2 !text-[11px]"><span class="chip-dot !w-5 !h-5 !text-[8px]" style="background:var(--teal);">SB</span>Supabase</div>
+                <div class="chip !p-2 !text-[11px]"><span class="chip-dot !w-5 !h-5 !text-[8px]" style="background:var(--purple);">DB</span>TMDB API</div>
+                <div class="chip !p-2 !text-[11px]"><span class="chip-dot !w-5 !h-5 !text-[8px]" style="background:var(--orange);">VC</span>Vercel</div>
               </div>
             </div>
 
@@ -248,21 +286,31 @@
                 Deliverables
               </span>
               <ul class="font-mono text-xs uppercase text-[var(--ink-soft)] space-y-1.5">
-                <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">✓</span> E-Catalogue Front</li>
-                <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">✓</span> CMS Admin Panel</li>
-                <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">✓</span> Livewire Filtering</li>
-                <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">✓</span> SEO Optimization</li>
+                <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">✓</span> TMDB Live Auto-Search</li>
+                <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">✓</span> 4-Pillar Scoring Formula</li>
+                <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">✓</span> Custom Bias Modifiers</li>
+                <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">✓</span> Automated S-to-F Tiers</li>
+                <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">✓</span> Supabase Auth &amp; Cloud Sync</li>
               </ul>
             </div>
 
-            <!-- External CTA -->
-            <div class="border-t border-[var(--ink)] pt-4">
+            <!-- External CTAs -->
+            <div class="border-t border-[var(--ink)] pt-4 space-y-3">
               <a
-                href="https://www.rapacaststone.com"
+                href="https://kinovibe-eight.vercel.app/"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="btn-solid w-full justify-center !py-3 !text-xs text-center"
               >
-                Visit Live Site ↗
+                Launch Live App ↗
+              </a>
+              <a
+                href="https://github.com/ZEROTSUDIO/KinoVibe-ver-0.1"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-outline w-full justify-center !py-3 !text-xs text-center"
+              >
+                View GitHub Repo ↗
               </a>
             </div>
           </aside>
@@ -277,8 +325,8 @@
             <span class="font-mono text-[10px] text-[var(--ink-soft)] uppercase tracking-widest block mb-1">
               Previous Entry
             </span>
-            <a href="index.html#projects" class="font-mono text-xs font-bold uppercase text-[var(--ink)] hover:text-[var(--blood)] transition-colors">
-              ← Move List Overview
+            <a href="rapa-case-study.html" class="font-mono text-xs font-bold uppercase text-[var(--ink)] hover:text-[var(--blood)] transition-colors">
+              ← Rapa Cast Stone Case Study
             </a>
           </div>
 

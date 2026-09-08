@@ -51,14 +51,14 @@ A modern, responsive e-catalogue website for Rapa Cast Stone featuring a compreh
 
 ---
 
-### ⭐ Rapa Invoice Generator — Automatic Invoice System
+### 🎬 KinoVibe — Movie Review & Tier Ranking Platform
 > **Featured · 2026 · Live**
 
-A client-facing invoice generation tool that automatically computes totals, applies formatting, and produces print-ready documents for Rapa Cast Stone's business operations.
+Personal cinematic movie review and tier-ranking platform designed for blockbuster cinema. Features 4-pillar scoring (Story, Visuals, Action, Fun), custom personal bias modifiers, live TMDB metadata search, and automated S-to-F tier lists.
 
-`JavaScript` `Tailwind CSS`
+`JavaScript` `Supabase` `TMDB API` `Tailwind CSS`
 
-🔗 [View Case Study →](https://github.com/ZEROTSUDIO)
+🔗 [Live Web App →](https://kinovibe-eight.vercel.app/) &nbsp;|&nbsp; 🔗 [GitHub Repository →](https://github.com/ZEROTSUDIO/KinoVibe-ver-0.1)
 
 ---
 
