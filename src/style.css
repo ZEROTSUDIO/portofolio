@@ -1,24 +1,68 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;900&family=Space+Mono:wght@400;700&display=swap');
+/* ═════════════════════════════════════════════════════════════════════
+   ZEROTSUDIO MANGA UI (v3.0.0) // PORTFOLIO STYLESHEET
+   Tactile Tankōbon Newsprint, Non-Repro Cyan Grid & Architectural Dossier
+   Arief Rizal Bayhaqi — Backend & Data Developer Portfolio
+   ═════════════════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;900&family=Noto+Sans+JP:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap');
 @import "tailwindcss";
 
+/* ═════════════════════════════════════════════════════════════════════
+   1. CORE TOKENS & SYSTEM VARIABLES
+   ═════════════════════════════════════════════════════════════════════ */
+
 :root {
-  --paper: #ECE6D6;
-  --paper-dim: #E1D9C4;
-  --card: #F4F0E4;
-  --ink: #1C1B19;
-  --ink-soft: #4A453C;
-  --purple: #7C5CE0;
-  --purple-ink: #2E2678;
-  --purple-mid: #9370DB;
-  --blood: #D91E2B;
-  --orange: #E8631F;
-  --orange-ink: #7A320D;
-  --teal: #1B8F9E;
-  --teal-ink: #0D454D;
-  --annot: #8A8578;
+  /* Manga Newsprint & Tankōbon Surfaces */
+  --paper: #ECE6D6;          /* Vintage warm manga newsprint base */
+  --paper-dim: #E1D9C4;      /* Gutter, muted technical panels & stripes */
+  --card: #F4F0E4;           /* High-contrast comic panel paper */
+  --paper-dark: #141311;     /* Shaded dark manga ink panels */
+  --paper-white: #FFFFFF;    /* Pure paper highlight */
+
+  /* Carbon Printing Press Inks */
+  --ink: #1C1B19;            /* Deep press carbon ink */
+  --ink-soft: #4A453C;       /* Screentone secondary ink */
+  --ink-muted: #6B655B;      /* Registration notes & captions */
+  --annot: #8A8578;          /* Margin coordinates & print metadata */
+
+  /* Architectural Drafting & Non-Repro Accents */
+  --cyan-bleed: #5BB8D4;     /* Non-repro blue drafting guideline */
+  --cyan-bleed-dim: rgba(91, 184, 212, 0.4);
+
+  /* Shonen Manga & Mecha Action Accents */
+  --blood: #D91E2B;          /* Crimson attack / Hanko seal / Alert */
+  --blood-ink: #5E0B12;      /* Dark blood border anchor */
+  --signal: #7C5CE0;         /* Electric violet CTAs & energetic links */
+  --purple: #7C5CE0;         /* Backward compatibility alias */
+  --signal-ink: #2E2678;     /* Midnight violet ink */
+  --purple-ink: #2E2678;     /* Backward compatibility alias */
+  --purple-mid: #9370DB;     /* Midtone violet */
+  --orange: #E8631F;         /* Shonen burst orange / Move list tags */
+  --orange-ink: #7A320D;     /* Burnished orange ink */
+  --teal: #1B8F9E;           /* Mecha telemetry & live status */
+  --teal-ink: #0D454D;       /* Deep cyan shadow */
+  --gold: #D4A318;           /* Special edition & rank stars */
+  --success: #22863A;        /* Production status green */
+
+  /* Crosshatch & Game Textures */
+  --crosshatch-orange: #E8631F;
+  --crosshatch-stripe: rgba(255, 255, 255, 0.18);
+  --hud-bg: #1C1B19;
+
+  /* Geometry & Mechanical Shadows (0-blur offset) */
+  --border: 1.5px solid var(--ink);
+  --border-thick: 2px solid var(--ink);
+  --shadow-sm: 2px 2px 0 var(--ink);
+  --shadow-md: 4px 4px 0 var(--ink);
+  --shadow-lg: 6px 6px 0 var(--ink);
+  --shadow-signal: 4px 4px 0 var(--signal);
+  --shadow-blood: 4px 4px 0 var(--blood);
+  --shadow-orange: 4px 4px 0 var(--orange);
+  --tilt: -1.4deg;
 }
 
-* {
+/* Base reset */
+*, *::before, *::after {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
 }
@@ -33,18 +77,55 @@ body {
   font-family: 'Archivo', sans-serif;
   position: relative;
   overflow-x: hidden;
+  margin: 0;
+  line-height: 1.5;
 }
 
-/* Paper grain background */
+/* Tactile pulp paper grain & comic drafting non-repro cyan grid */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.45;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+  opacity: 0.55;
+  background-image: 
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E"),
+    linear-gradient(to right, rgba(91, 184, 212, 0.09) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(91, 184, 212, 0.09) 1px, transparent 1px);
+  background-size: 120px 120px, 48px 48px, 48px 48px;
+  will-change: transform;
+  transform: translateZ(0);
 }
+
+body.no-grid::before {
+  display: none !important;
+}
+
+/* Margin Ruler & Page Number Guides on viewport edges */
+.drafting-page-guide {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 24px;
+  pointer-events: none;
+  z-index: 45;
+  opacity: 0.35;
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  color: var(--cyan-bleed);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-right: 1px dashed var(--cyan-bleed-dim);
+  user-select: none;
+}
+
+/* ═════════════════════════════════════════════════════════════════════
+   2. TYPOGRAPHY & BRANDING
+   ═════════════════════════════════════════════════════════════════════ */
 
 .font-display {
   font-family: 'Anton', sans-serif;
@@ -59,22 +140,83 @@ body::before {
   font-family: 'Archivo', sans-serif;
 }
 
-/* Print registration marks */
+.font-jp {
+  font-family: 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif;
+}
+
+.diag-word {
+  display: inline-block;
+  transform: skewY(-2deg);
+}
+
+.diag-word-reverse {
+  display: inline-block;
+  transform: skewY(2deg);
+}
+
+/* Japanese Subtitles & Telemetry */
+.jp-sub {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.jp-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+.jp-tag .kanji {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+}
+
+.jp-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.25em;
+  user-select: none;
+}
+
+/* ═════════════════════════════════════════════════════════════════════
+   3. PRINT REGISTRATION & CROP MARKS
+   ═════════════════════════════════════════════════════════════════════ */
+
 .print-mark {
-  position: fixed;
-  z-index: 0;
+  position: absolute;
+  z-index: 2;
   pointer-events: none;
   color: var(--ink);
-  opacity: 0.28;
+  opacity: 0.35;
   font-family: 'Space Mono', monospace;
-  font-size: 10px;
+  font-size: 9px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
+
 .crosshair {
   width: 14px;
   height: 14px;
   position: relative;
+  display: inline-block;
 }
 .crosshair::before, .crosshair::after {
   content: "";
@@ -84,18 +226,43 @@ body::before {
 .crosshair::before { left: 6px; top: 0; width: 2px; height: 14px; }
 .crosshair::after { top: 6px; left: 0; height: 2px; width: 14px; }
 
-section {
-  position: relative;
-  z-index: 1;
+/* ═════════════════════════════════════════════════════════════════════
+   4. MANGA SCREENTONES & CROSSHATCH
+   ═════════════════════════════════════════════════════════════════════ */
+
+.halftone {
+  background-image: radial-gradient(var(--ink) 1px, transparent 1.4px);
+  background-size: 8px 8px;
+  opacity: 0.12;
 }
 
-/* Diagonal skew for typography */
-.diag-word {
-  display: inline-block;
-  transform: skewY(-2deg);
+.halftone-dense {
+  background-image: radial-gradient(var(--ink) 1.2px, transparent 1.6px);
+  background-size: 6px 6px;
+  opacity: 0.18;
 }
 
-/* Sasha Volkov Title-Bar Component */
+.halftone-paper {
+  background-image: radial-gradient(var(--paper) 1px, transparent 1.4px);
+  background-size: 8px 8px;
+  opacity: 0.18;
+}
+
+.fill-crosshatch {
+  background-color: var(--crosshatch-orange);
+  background-image: repeating-linear-gradient(
+    135deg,
+    var(--crosshatch-stripe) 0px,
+    var(--crosshatch-stripe) 4px,
+    transparent 4px,
+    transparent 11px
+  );
+}
+
+/* ═════════════════════════════════════════════════════════════════════
+   5. TITLE BARS & HANKO SEALS
+   ═════════════════════════════════════════════════════════════════════ */
+
 .title-bar {
   display: inline-flex;
   flex-direction: column;
@@ -107,9 +274,20 @@ section {
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--paper);
+  background: var(--orange);
   padding: 4px 12px;
   font-weight: 700;
   width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1.5px solid var(--ink);
+  border-bottom: none;
+}
+.title-bar-tag .kanji {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.05em;
 }
 .title-bar-main {
   font-family: 'Anton', sans-serif;
@@ -119,31 +297,415 @@ section {
   letter-spacing: 0.01em;
   padding: 6px 14px 10px;
   line-height: 0.95;
+  border: 1.5px solid var(--ink);
 }
 
-/* Tags */
-.tag-block {
-  display: inline-block;
+.title-bar-dark {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 8px 16px;
+  border-bottom: 1.5px solid var(--ink);
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Sasha Volkov Stacked Move-List Header */
+.title-bar-stacked {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+/* Hanko / Signature Seal Stamp */
+.stamp {
+  width: 44px;
+  height: 44px;
+  background: var(--blood);
+  transform: rotate(45deg);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--ink);
+  box-shadow: 2px 2px 0 var(--ink);
+  flex-shrink: 0;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.25s cubic-bezier(0.2, 0.9, 0.2, 1);
+}
+.stamp span {
+  transform: rotate(-45deg);
+  font-family: 'Noto Sans JP', sans-serif;
+  color: var(--paper);
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1;
+}
+.stamp:hover {
+  transform: rotate(135deg);
+}
+
+/* ═════════════════════════════════════════════════════════════════════
+   6. BUTTONS & INTERACTIVE TRIGGERS
+   ═════════════════════════════════════════════════════════════════════ */
+
+.btn-solid {
+  background: var(--ink);
+  color: var(--paper);
   font-family: 'Space Mono', monospace;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-size: 12px;
-  padding: 5px 12px;
+  padding: 11px 20px;
+  border: 1.5px solid var(--ink);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+}
+.btn-solid:hover {
+  background: var(--signal);
+  color: #ffffff;
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--ink);
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 12px;
+  padding: 11px 20px;
+  border: 1.5px solid var(--ink);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+}
+.btn-outline:hover {
+  background: var(--ink);
+  color: var(--paper);
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-signal);
+}
+
+.btn-blood {
+  background: var(--blood);
+  color: #ffffff;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 12px;
+  padding: 11px 20px;
+  border: 1.5px solid var(--ink);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.btn-blood:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-orange {
+  background: var(--orange);
+  color: #ffffff;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 12px;
+  padding: 11px 20px;
+  border: 1.5px solid var(--ink);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.btn-orange:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-sm {
+  padding: 6px 12px !important;
+  font-size: 11px !important;
+}
+
+.btn-lg {
+  padding: 15px 28px !important;
+  font-size: 14px !important;
+}
+
+/* Keycap & Controller Glyphs */
+.keycap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  background: var(--card);
+  border: 1.5px solid var(--ink);
+  box-shadow: 2px 2px 0 var(--ink);
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1;
+  text-transform: uppercase;
+  border-radius: 3px;
+  vertical-align: middle;
+  flex-shrink: 0;
+  user-select: none;
+}
+.keycap-circle { border-radius: 999px; }
+.keycap-accent { background: var(--orange); color: #fff; border-color: var(--ink); }
+.keycap-cyan { background: var(--cyan-bleed); color: var(--ink); border-color: var(--ink); }
+.keycap-purple { background: var(--signal); color: #fff; border-color: var(--ink); }
+
+/* ═════════════════════════════════════════════════════════════════════
+   7. BADGES, TAGS & WASHI TAPES
+   ═════════════════════════════════════════════════════════════════════ */
+
+.tag-block {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 11px;
+  padding: 4px 10px;
   border: 1.5px solid var(--ink);
 }
-.tag-purple { background: var(--purple); color: #fff; }
+.tag-purple, .tag-signal { background: var(--signal); color: #fff; }
 .tag-blood { background: var(--blood); color: #fff; }
-.tag-orange { background: var(--orange); color: var(--orange-ink); }
+.tag-orange { background: var(--orange); color: var(--paper); }
 .tag-teal { background: var(--teal); color: #fff; }
+.tag-ink { background: var(--ink); color: var(--paper); }
+.tag-gold { background: var(--gold); color: var(--ink); }
 
-/* Panels */
+/* Washi Tape Slanted Badges */
+.badge-tape {
+  position: absolute;
+  padding: 3px 12px;
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1.5px solid var(--ink);
+  box-shadow: 2px 2px 0 var(--ink);
+  z-index: 10;
+  transform: rotate(var(--r, 3deg));
+}
+.badge-tape-tr { top: -8px; right: -8px; }
+.badge-tape-tl { top: -8px; left: -8px; }
+.badge-tape-br { bottom: -8px; right: -8px; }
+.badge-tape-bl { bottom: -8px; left: -8px; }
+
+/* ═════════════════════════════════════════════════════════════════════
+   8. PANELS, CARDS & FRAMED POSTERS
+   ═════════════════════════════════════════════════════════════════════ */
+
 .panel {
   background: var(--card);
   border: 1.5px solid var(--ink);
+  position: relative;
+}
+.panel-dim {
+  background: var(--paper-dim);
+  border: 1.5px solid var(--ink);
+  position: relative;
+}
+.panel-dark {
+  background: var(--paper-dark);
+  color: var(--paper);
+  border: 1.5px solid var(--ink);
+  position: relative;
 }
 
-/* Modular Skill Chips */
+.card-project, .card-manga, .card-tilty {
+  background: var(--card);
+  border: 1.5px solid var(--ink);
+  transform: rotate(var(--r, var(--tilt)));
+  transition: transform 0.25s cubic-bezier(0.2, 0.9, 0.2, 1), box-shadow 0.25s ease;
+  will-change: transform;
+}
+.card-project:hover, .card-manga:hover, .card-tilty:hover {
+  transform: rotate(0deg) translateY(-5px) scale(1.008);
+  box-shadow: 8px 8px 0 var(--ink);
+  z-index: 10;
+}
+
+.framed-poster {
+  background: var(--card);
+  border: 2px solid var(--ink);
+  box-shadow: 8px 8px 0 var(--ink);
+  position: relative;
+  padding: 12px;
+  transform: rotate(var(--r, -1.5deg));
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.framed-poster:hover {
+  transform: rotate(0deg) translateY(-4px);
+  box-shadow: 10px 10px 0 var(--signal);
+}
+.framed-poster-inner {
+  border: 1.5px solid var(--ink);
+}
+
+/* ═════════════════════════════════════════════════════════════════════
+   9. BLEED FRAMES, ANNOTATION STRIPS & RULER RAILS
+   ═════════════════════════════════════════════════════════════════════ */
+
+/* Dashed cyan annotation border */
+.bleed-frame {
+  position: relative;
+  border: 2px dashed var(--cyan-bleed);
+  padding: 20px;
+}
+.bleed-frame::before {
+  content: attr(data-bleed-label);
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--paper);
+  color: var(--cyan-bleed);
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0 10px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.bleed-frame-inner {
+  border: 1.5px solid var(--ink);
+  background: var(--card);
+  position: relative;
+}
+.bleed-frame::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border: 1px solid var(--cyan-bleed-dim);
+  pointer-events: none;
+}
+
+/* Print Spec Annotation Strip */
+.annotation-strip {
+  width: 100%;
+  background: transparent;
+  border-top: 1.5px dashed var(--cyan-bleed);
+  border-bottom: 1.5px dashed var(--cyan-bleed);
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+}
+.annotation-strip::before,
+.annotation-strip::after {
+  content: "— CUT LEFT-HAND PAGE AT THIS LINE —";
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--cyan-bleed);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.annotation-strip-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--cyan-bleed);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  background: var(--paper);
+  padding: 0 12px;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+/* Ruler Rail (millimeter ticks above stats) */
+.ruler-rail {
+  width: 100%;
+  height: 10px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+.ruler-rail::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1.5px;
+  background: var(--ink);
+}
+.ruler-rail::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--ink) 0px,
+    var(--ink) 1px,
+    transparent 1px,
+    transparent 8px
+  ), repeating-linear-gradient(
+    to right,
+    var(--ink) 0px,
+    var(--ink) 1px,
+    transparent 1px,
+    transparent 24px
+  );
+  background-size: 8px 4px, 24px 8px;
+  background-repeat: repeat-x;
+  background-position: 0 bottom, 0 bottom;
+}
+
+/* ═════════════════════════════════════════════════════════════════════
+   10. MODULAR SKILL CHIPS
+   ═════════════════════════════════════════════════════════════════════ */
+
 .chip {
   display: flex;
   align-items: center;
@@ -156,6 +718,7 @@ section {
   font-weight: 700;
   color: var(--ink);
   transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+  user-select: none;
 }
 .chip:hover {
   transform: translate(-2px, -2px);
@@ -176,52 +739,387 @@ section {
   color: #fff;
 }
 
-/* Buttons */
-.btn-solid {
-  background: var(--ink);
-  color: var(--paper);
-  font-family: 'Space Mono', monospace;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 13px;
-  padding: 14px 24px;
+/* ═════════════════════════════════════════════════════════════════════
+   11. MOVE LIST ROWS & MANGA TABLES
+   ═════════════════════════════════════════════════════════════════════ */
+
+.table-manga-container {
+  width: 100%;
+  overflow-x: auto;
   border: 1.5px solid var(--ink);
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
-}
-.btn-solid:hover {
-  background: var(--purple);
-  color: #fff;
-  transform: translate(-2px, -2px);
-  box-shadow: 4px 4px 0 var(--ink);
+  box-shadow: var(--shadow-sm);
+  background: var(--card);
 }
 
-.btn-outline {
-  background: transparent;
+.table-manga {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+}
+
+.table-manga th {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 10px 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-bottom: 1.5px solid var(--ink);
+}
+
+.table-manga td {
+  padding: 12px 14px;
+  border-bottom: 1.5px solid var(--ink);
   color: var(--ink);
-  font-family: 'Space Mono', monospace;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 13px;
-  padding: 14px 24px;
-  border: 1.5px solid var(--ink);
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
-}
-.btn-outline:hover {
-  background: var(--ink);
-  color: var(--paper);
-  transform: translate(-2px, -2px);
-  box-shadow: 4px 4px 0 var(--purple);
 }
 
-/* Nav Link */
+.table-manga tr:nth-child(even) td {
+  background: var(--paper-dim);
+}
+
+.table-manga tr:hover td {
+  background: #ffffff;
+}
+
+/* Active Row in Move List */
+.row-active {
+  background-color: var(--crosshatch-orange) !important;
+  background-image: repeating-linear-gradient(
+    135deg,
+    var(--crosshatch-stripe) 0px,
+    var(--crosshatch-stripe) 4px,
+    transparent 4px,
+    transparent 11px
+  ) !important;
+  color: #ffffff !important;
+  font-weight: 700;
+}
+.row-active td,
+.row-active .row-name {
+  color: #ffffff !important;
+}
+
+/* Command list image + name + command row */
+.move-list-row {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  align-items: center;
+  border-bottom: 1.5px solid var(--ink);
+  background: var(--card);
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  position: relative;
+  overflow: hidden;
+}
+.move-list-row:hover:not(.active) {
+  background: var(--paper-dim);
+}
+.move-list-row.active {
+  background-color: var(--crosshatch-orange) !important;
+  background-image: repeating-linear-gradient(
+    135deg,
+    var(--crosshatch-stripe) 0px,
+    var(--crosshatch-stripe) 4px,
+    transparent 4px,
+    transparent 11px
+  ) !important;
+}
+.move-list-row.active .move-name {
+  color: #ffffff !important;
+}
+
+/* ═════════════════════════════════════════════════════════════════════
+   12. STAT BARS & STAR RATINGS
+   ═════════════════════════════════════════════════════════════════════ */
+
+.stat-bar {
+  height: 10px;
+  background: var(--paper-dim);
+  border: 1.5px solid var(--ink);
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-fill {
+  height: 100%;
+  width: 0%;
+  transition: width 1.2s cubic-bezier(0.2, 0.9, 0.2, 1);
+}
+
+.stat-fill.animated {
+  width: var(--target-width);
+}
+
+.stat-stars {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 11px;
+  color: var(--gold);
+}
+.star-filled { color: var(--gold); }
+.star-empty { color: var(--paper-dim); -webkit-text-stroke: 1px var(--ink-soft); }
+
+/* ═════════════════════════════════════════════════════════════════════
+   13. TAB MANGA SYSTEM
+   ═════════════════════════════════════════════════════════════════════ */
+
+.tab-manga {
+  display: flex;
+  align-items: stretch;
+  border-bottom: 2px solid var(--ink);
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.tab-manga::-webkit-scrollbar { display: none; }
+
+.tab-manga-btn {
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: transparent;
+  border: none;
+  border-right: 1.5px solid var(--ink);
+  padding: 10px 20px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  position: relative;
+  flex-shrink: 0;
+}
+.tab-manga-btn:first-child {
+  border-left: none;
+}
+.tab-manga-btn:hover:not(.active) {
+  background: var(--paper-dim);
+}
+.tab-manga-btn.active {
+  background: var(--ink);
+  color: var(--paper);
+}
+.tab-manga-btn.active::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--orange);
+}
+
+.tab-manga-btn .tab-ctrl {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  border: 1.5px solid currentColor;
+  font-size: 8px;
+  font-weight: 900;
+  margin-right: 6px;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+/* ═════════════════════════════════════════════════════════════════════
+   14. FIGHTING GAME HUD BAR
+   ═════════════════════════════════════════════════════════════════════ */
+
+.hud-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 20px;
+  background: var(--ink);
+  color: var(--paper);
+  border-top: 2px solid var(--ink);
+  padding: 8px 20px;
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+}
+.hud-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--paper);
+  letter-spacing: 0.06em;
+  transition: color 0.15s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+.hud-action:hover { color: var(--orange); }
+.hud-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border: 2px solid currentColor;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 900;
+  line-height: 1;
+  flex-shrink: 0;
+  font-family: 'Space Mono', monospace;
+}
+.hud-btn.square { border-radius: 3px; }
+.hud-btn.triangle { border-radius: 3px; font-size: 8px; }
+.hud-btn.accent {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: #fff;
+}
+.hud-hint {
+  font-family: 'Archivo', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--paper);
+  opacity: 0.7;
+  margin-right: auto;
+  font-style: italic;
+}
+
+/* ═════════════════════════════════════════════════════════════════════
+   15. TACTILE TOAST NOTIFICATIONS & MODALS
+   ═════════════════════════════════════════════════════════════════════ */
+
+.toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none;
+}
+
+.toast-manga {
+  background: var(--card);
+  border: 2px solid var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+  padding: 12px 18px;
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  pointer-events: auto;
+  transform: translateX(120%);
+  transition: transform 0.25s cubic-bezier(0.2, 0.9, 0.2, 1), opacity 0.2s ease;
+}
+.toast-manga.show {
+  transform: translateX(0);
+}
+.toast-manga.success { border-color: var(--ink); box-shadow: 4px 4px 0 var(--success); }
+.toast-manga.error { border-color: var(--ink); box-shadow: 4px 4px 0 var(--blood); }
+.toast-manga.info { border-color: var(--ink); box-shadow: 4px 4px 0 var(--signal); }
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(28, 27, 25, 0.65);
+  backdrop-filter: blur(2px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-box-game {
+  background: var(--card);
+  border: 2px solid var(--ink);
+  border-left: 6px dashed var(--ink);
+  box-shadow: 8px 8px 0 var(--ink);
+  width: 100%;
+  max-width: 560px;
+  position: relative;
+  transform: translateY(12px) scale(0.98);
+  transition: transform 0.25s cubic-bezier(0.2, 0.9, 0.2, 1);
+  overflow: hidden;
+}
+.modal-overlay.active .modal-box-game {
+  transform: translateY(0) scale(1);
+}
+.modal-game-title {
+  font-family: 'Anton', sans-serif;
+  font-size: clamp(26px, 4.5vw, 36px);
+  text-transform: uppercase;
+  color: var(--ink);
+  letter-spacing: 0.01em;
+  line-height: 1;
+  padding: 20px 24px 8px;
+}
+.modal-game-body {
+  padding: 0 24px 16px;
+  font-family: 'Archivo', sans-serif;
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+.modal-item-list {
+  margin: 12px 24px;
+  border: 1.5px solid var(--ink);
+}
+.modal-item-header {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-bottom: 1.5px solid var(--ink);
+  color: var(--ink-soft);
+  background: var(--paper-dim);
+}
+.modal-item-row {
+  padding: 10px 14px;
+  font-family: 'Space Mono', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  border-bottom: 1.5px solid var(--ink);
+  cursor: pointer;
+  transition: background-color 0.1s ease;
+  text-align: center;
+}
+.modal-item-row:last-child { border-bottom: none; }
+.modal-item-row:hover:not(.active) { background: var(--paper-dim); }
+.modal-item-row.active {
+  background-color: var(--crosshatch-orange) !important;
+  color: #ffffff;
+  font-style: italic;
+}
+.modal-game-footer {
+  padding: 12px 24px;
+  border-top: 1.5px solid var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ═════════════════════════════════════════════════════════════════════
+   16. BACKWARD COMPATIBILITY & HERITAGE UTILITIES
+   ═════════════════════════════════════════════════════════════════════ */
+
 .nav-link {
   position: relative;
   font-family: 'Space Mono', monospace;
@@ -238,19 +1136,17 @@ section {
   bottom: 0;
   height: 3px;
   width: 0%;
-  background: var(--purple);
+  background: var(--signal);
   transition: width 0.2s ease;
 }
 .nav-link:hover::after {
   width: 100%;
 }
 
-/* Diamond shape */
 .diamond {
   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 }
 
-/* Hero diagonal split backdrop */
 .split-bg {
   position: absolute;
   inset: 0;
@@ -260,7 +1156,7 @@ section {
 .split-bg .a {
   position: absolute;
   inset: 0;
-  background: var(--purple);
+  background: var(--signal);
   clip-path: polygon(0 0, 58% 0, 36% 100%, 0% 100%);
   opacity: 0.85;
 }
@@ -272,42 +1168,6 @@ section {
   opacity: 0.85;
 }
 
-.halftone {
-  background-image: radial-gradient(var(--ink) 1px, transparent 1.4px);
-  background-size: 9px 9px;
-  opacity: 0.12;
-}
-
-/* Project cards */
-.card-project {
-  background: var(--card);
-  border: 1.5px solid var(--ink);
-  transform: rotate(var(--r, -1deg));
-  transition: transform 0.25s cubic-bezier(0.2, 0.9, 0.2, 1), box-shadow 0.25s ease;
-}
-.card-project:hover {
-  transform: rotate(0deg) translateY(-4px);
-  box-shadow: 6px 6px 0 var(--ink);
-}
-
-/* Stat bars */
-.stat-bar {
-  height: 10px;
-  background: var(--paper-dim);
-  border: 1.5px solid var(--ink);
-  position: relative;
-  overflow: hidden;
-}
-.stat-fill {
-  height: 100%;
-  width: 0%;
-  transition: width 1.2s cubic-bezier(0.2, 0.9, 0.2, 1);
-}
-.stat-fill.animated {
-  width: var(--target-width);
-}
-
-/* Table rows */
 .table-row {
   border-top: 1.5px solid var(--ink);
 }
@@ -315,14 +1175,13 @@ section {
   border-top: none;
 }
 
-/* Custom selection */
 ::selection {
-  background: var(--purple);
+  background: var(--signal);
   color: var(--paper);
 }
 
 a:focus-visible, button:focus-visible {
-  outline: 3px solid var(--purple);
+  outline: 3px solid var(--signal);
   outline-offset: 2px;
 }
 
