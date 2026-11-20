@@ -3,37 +3,59 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Case Study: KinoVibe — Arief Rizal Bayhaqi</title>
+    <title>Case Study: KinoVibe — Arief Rizal Bayhaqi // MANGA_OPS</title>
     <meta
       name="description"
       content="Technical case study of KinoVibe, a personal cinematic movie review and tier ranking platform for blockbuster cinema by Arief Rizal Bayhaqi."
     />
+    <link rel="icon" type="image/svg+xml" href="/assets/zero-studios-icon.svg" />
+
+    <!-- Google Fonts: Anton, Archivo, Space Mono, Noto Sans JP -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;900&family=Space+Mono:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;900&family=Noto+Sans+JP:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap"
       rel="stylesheet"
-    />
-    <script type="module" crossorigin src="/assets/main-BeiWCJej.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/main-8B232Mwf.css">
+    />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+    <!-- GSAP Animation Library CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <!-- Core Stylesheet & Modules -->
+    <script type="module" crossorigin src="/assets/main-Brb01BSJ.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-BkvXfI0D.css">
   </head>
 
-  <body class="antialiased">
+  <body class="antialiased pb-12">
+
+    <!-- ══════════ DRAFTING PAGE GUIDES & VIEWPORT EDGES ══════════ -->
+    <div class="drafting-page-guide hidden xl:flex">
+      <span>01</span><span>02</span><span>03</span><span>04</span><span>05</span><span>06</span><span>07</span><span>08</span><span>09</span><span>10</span><span>11</span><span>12</span>
+    </div>
+
+    <!-- Top-left Registration Target & Realtime Telemetry -->
+    <div class="fixed top-2 left-8 z-50 pointer-events-none opacity-40 hidden xl:flex items-center gap-2 font-mono text-[9px]">
+      <div class="crosshair scale-75"></div>
+      <span class="text-[var(--cyan-bleed)] font-bold">MANGA_OPS // CASE_STUDY // KINOVIBE</span>
+      <span data-telemetry-coords class="text-[var(--ink-muted)]">X:1440 // Y:0 // REG.OK</span>
+    </div>
+
     <!-- Decorative print marks -->
-    <div aria-hidden="true" class="hidden sm:block">
-      <div class="print-mark" style="top:18px; left:18px;">
+    <div aria-hidden="true" class="hidden sm:block pointer-events-none">
+      <div class="print-mark" style="top:18px; left:24px;">
         <div class="crosshair"></div>
         <div class="mt-1">TRIM // SPEC.2026</div>
       </div>
-      <div class="print-mark text-right" style="top:18px; right:18px;">
+      <div class="print-mark text-right" style="top:18px; right:24px;">
         <div class="crosshair ml-auto"></div>
         <div class="mt-1">CASE STUDY // BLEED</div>
       </div>
-      <div class="print-mark" style="bottom:18px; left:18px;">
+      <div class="print-mark" style="bottom:60px; left:24px;">
         <div class="crosshair"></div>
         <div class="mt-1">CINEMA ARCHIVE // REV.01</div>
       </div>
-      <div class="print-mark text-right" style="bottom:18px; right:18px;">
+      <div class="print-mark text-right" style="bottom:60px; right:24px;">
         <div class="crosshair ml-auto"></div>
         <div class="mt-1">KINOVIBE V.01</div>
       </div>
@@ -42,38 +64,49 @@
     <!-- ══════════ NAVIGATION ══════════ -->
     <header class="fixed top-0 inset-x-0 z-50 bg-[var(--paper)] border-b-[1.5px] border-[var(--ink)]">
       <div class="max-w-6xl mx-auto flex items-center justify-between px-6 md:px-10 py-3.5">
-        <!-- Brand Logo -->
+        <!-- Brand Logo with Hanko Seal -->
         <a href="index.html" class="flex items-center gap-3 group">
-          <span class="diamond w-9 h-9 flex items-center justify-center bg-[var(--ink)] transition-transform group-hover:rotate-45">
-            <span class="font-mono font-bold text-xs text-[var(--paper)]">AB</span>
-          </span>
+          <div class="stamp w-9 h-9 border shadow-none" style="background: var(--blood);">
+            <span class="text-sm font-black">零</span>
+          </div>
           <span class="font-mono font-bold text-sm tracking-widest uppercase text-[var(--ink)]">
             Arief Bayhaqi<span class="text-[var(--blood)]">.</span>
           </span>
         </a>
 
-        <!-- Back Link -->
-        <a href="index.html#projects" class="btn-outline !py-2 !px-4 !text-xs font-mono">
-          ← Back to Projects
-        </a>
+        <!-- Back Link & Status -->
+        <div class="flex items-center gap-4">
+          <span class="hidden sm:inline-flex items-center gap-2 font-mono text-xs text-[var(--ink-soft)]">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 status-pulse"></span>
+            Production App
+          </span>
+          <a href="index.html#projects" class="btn-outline !py-2 !px-4 !text-xs font-mono">
+            ← Back to Move List
+          </a>
+        </div>
       </div>
     </header>
 
     <main class="pt-20 pb-24">
       <!-- ══════════ CASE STUDY HEADER ══════════ -->
       <section class="max-w-6xl mx-auto px-6 md:px-10 pt-10 pb-16">
-        <span class="tag-blood text-xs font-mono uppercase font-bold tracking-wider mb-4 inline-block">
-          Case Study // Full Stack Web Platform
-        </span>
+        <div class="flex flex-wrap items-center gap-2 mb-4">
+          <span class="jp-tag text-xs text-[var(--purple)] uppercase">
+            <span class="kanji">事例研究</span> 02 // CINEMATIC TIER PLATFORM
+          </span>
+          <span class="tag-blood text-[10px] font-mono uppercase font-bold tracking-wider">
+            Full Stack Web Platform
+          </span>
+        </div>
 
         <h1 class="font-display uppercase leading-[0.88] text-[clamp(2.6rem,7.5vw,5.5rem)]">
           <span class="diag-word block text-[var(--ink)]">KINO</span>
           <span class="diag-word block text-[var(--blood)]">VIBE</span>
         </h1>
 
-        <!-- Signature Title Bar -->
+        <!-- Signature Stacked Title Bar -->
         <div class="mt-6 mb-6">
-          <div class="title-bar shadow-[3px_3px_0_var(--ink)]">
+          <div class="title-bar shadow-[4px_4px_0_var(--ink)]">
             <span class="title-bar-tag" style="background:var(--blood);">Project Spec</span>
             <span class="title-bar-main text-lg sm:text-xl md:text-2xl">
               Personal Movie Review &amp; Tier Ranking Platform for Blockbuster Cinema
@@ -85,14 +118,23 @@
           Engineered for film lovers and blockbuster cinema enthusiasts who want more nuance than generic star ratings. Combines a 4-pillar scoring formula, personal bias modifiers, live TMDB API metadata syncing, and automatic S-to-F tier classification.
         </p>
 
-        <!-- Main Hero Image Frame -->
-        <div class="panel p-3 sm:p-4 mt-10 shadow-[10px_10px_0_var(--ink)]">
-          <div class="overflow-hidden border border-[var(--ink)] bg-[#0b0c16]">
-            <img
-              src="/assets/kinovibe-B4-7WqSf.png"
-              alt="KinoVibe Platform Showcase"
-              class="w-full h-auto object-cover"
-            />
+        <!-- Main Hero Image Frame with Washi Tape Badges -->
+        <div class="relative mt-10">
+          <div class="badge-tape badge-tape-tr bg-[var(--purple)] text-white" style="--r: 2.5deg;">
+            BLOCKBUSTER CINEMA // 2026
+          </div>
+          <div class="badge-tape badge-tape-bl bg-[var(--paper-dim)] text-[var(--ink)]" style="--r: -3deg;">
+            4-PILLAR SCORING ENGINE
+          </div>
+
+          <div class="panel p-3 sm:p-4 shadow-[10px_10px_0_var(--ink)]">
+            <div class="overflow-hidden border border-[var(--ink)] bg-[#0b0c16]">
+              <img
+                src="/assets/kinovibe-B4-7WqSf.png"
+                alt="KinoVibe Platform Showcase"
+                class="w-full h-auto object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -211,7 +253,11 @@
                 <h2 class="font-display uppercase text-2xl">Platform Highlights</h2>
               </div>
 
-              <!-- Stat Metric Grid -->
+              <!-- Stat Metric Grid with Ruler Rails -->
+              <div class="ruler-rail my-4">
+                <span>00</span><span>25</span><span>50</span><span>75</span><span>100</span>
+              </div>
+
               <div class="grid sm:grid-cols-3 gap-4 my-6">
                 <div class="p-5 bg-[var(--card)] border-[1.5px] border-[var(--ink)] shadow-[3px_3px_0_var(--ink)] text-center">
                   <div class="font-display text-4xl text-[var(--blood)]">4-Pillar</div>
@@ -323,23 +369,22 @@
         <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
           <div class="text-left w-full sm:w-auto">
             <span class="font-mono text-[10px] text-[var(--ink-soft)] uppercase tracking-widest block mb-1">
-              Previous Entry
+              Previous Case Study
             </span>
             <a href="rapa-case-study.html" class="font-mono text-xs font-bold uppercase text-[var(--ink)] hover:text-[var(--blood)] transition-colors">
-              ← Rapa Cast Stone Case Study
+              ← Rapa Cast Stone
             </a>
           </div>
 
           <div class="text-right w-full sm:w-auto">
             <span class="font-mono text-[10px] text-[var(--blood)] uppercase tracking-widest block mb-1">
-              Next Project
+              Next Case Study
             </span>
             <a
-              href="https://github.com/ZEROTSUDIO/Chatbot-Perpus-Bipa"
-              target="_blank"
+              href="invoice-generator-case-study.html"
               class="font-display uppercase text-xl hover:text-[var(--blood)] transition-colors"
             >
-              Chatbot Perpus Bipa →
+              Rapa Invoice Generator →
             </a>
           </div>
         </div>
@@ -348,14 +393,34 @@
     </main>
 
     <!-- ══════════ FOOTER ══════════ -->
-    <footer class="max-w-6xl mx-auto px-6 md:px-10 pb-12 pt-6 border-t-[1.5px] border-[var(--ink)] flex flex-col sm:flex-row justify-between items-center gap-4">
+    <footer class="max-w-6xl mx-auto px-6 md:px-10 pb-20 pt-6 border-t-[1.5px] border-[var(--ink)] flex flex-col sm:flex-row justify-between items-center gap-4">
       <p class="font-mono text-[11px] uppercase tracking-widest text-[var(--ink-soft)]">
         © 2026 Arief Rizal Bayhaqi — Built with ink, paper, and code.
       </p>
       <p class="font-mono text-[11px] uppercase tracking-widest text-[var(--ink-soft)]">
-        Magelang, Indonesia
+        Magelang, Indonesia // MANGA_OPS v3.0
       </p>
     </footer>
+
+    <!-- ══════════ BOTTOM FIGHTING GAME HUD BAR ══════════ -->
+    <div class="hud-bar fixed bottom-0 inset-x-0 z-40 border-t-2 border-[var(--ink)]">
+      <span class="hud-hint hidden md:inline">CASE STUDY // KINOVIBE — MANGA_OPS v3.0</span>
+      <a href="index.html#projects" class="hud-action">
+        <span class="hud-btn square">□</span>Move List
+      </a>
+      <a href="rapa-case-study.html" class="hud-action hidden sm:inline-flex">
+        <span class="hud-btn triangle">▲</span>Rapa Stone
+      </a>
+      <a href="invoice-generator-case-study.html" class="hud-action hidden sm:inline-flex">
+        <span class="hud-btn">○</span>Invoice Gen
+      </a>
+      <a href="https://kinovibe-eight.vercel.app/" target="_blank" rel="noopener noreferrer" class="hud-action">
+        <span class="hud-btn accent">✕</span>Launch App ↗
+      </a>
+      <a href="https://github.com/ZEROTSUDIO/KinoVibe-ver-0.1" target="_blank" rel="noopener noreferrer" class="hud-action hidden md:inline-flex">
+        <span class="hud-btn">📄</span>GitHub
+      </a>
+    </div>
 
   </body>
 </html>

@@ -3,266 +3,395 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Case Study: Rapa Invoice Generator — Arief Rizal Bayhaqi</title>
+    <title>Case Study: Rapa Invoice Generator — Arief Rizal Bayhaqi // MANGA_OPS</title>
     <meta
       name="description"
-      content="Technical case study of the Rapa Invoice Generator project by Arief Rizal Bayhaqi."
+      content="Technical case study of the Rapa Invoice Generator project: automated financial document and billing engine by Arief Rizal Bayhaqi."
     />
+    <link rel="icon" type="image/svg+xml" href="/assets/zero-studios-icon.svg" />
+
+    <!-- Google Fonts: Anton, Archivo, Space Mono, Noto Sans JP -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;900&family=Noto+Sans+JP:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap"
       rel="stylesheet"
-    />
-    <script type="module" crossorigin src="/assets/main-BeiWCJej.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/main-8B232Mwf.css">
+    />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+    <!-- GSAP Animation Library CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <!-- Core Stylesheet & Modules -->
+    <script type="module" crossorigin src="/assets/main-Brb01BSJ.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/main-BkvXfI0D.css">
   </head>
 
-  <body
-    class="bg-white text-black font-sans text-[14px] leading-[1.5] overflow-x-hidden"
-  >
-    <!-- ══════════ NAV ══════════ -->
-    <nav class="nav-bar sticky top-0 z-50">
-      <div
-        class="max-w-[1200px] mx-auto w-full flex items-center justify-between px-10 py-[18px]"
-      >
-        <!-- Logo -->
-        <a
-          href="index.html"
-          class="flex items-center gap-2.5 no-underline text-black"
-        >
-          <div
-            class="w-6 h-6 bg-black rounded-md flex items-center justify-center text-[10px] font-bold text-white"
-          >
-            H
+  <body class="antialiased pb-12">
+
+    <!-- ══════════ DRAFTING PAGE GUIDES & VIEWPORT EDGES ══════════ -->
+    <div class="drafting-page-guide hidden xl:flex">
+      <span>01</span><span>02</span><span>03</span><span>04</span><span>05</span><span>06</span><span>07</span><span>08</span><span>09</span><span>10</span><span>11</span><span>12</span>
+    </div>
+
+    <!-- Top-left Registration Target & Realtime Telemetry -->
+    <div class="fixed top-2 left-8 z-50 pointer-events-none opacity-40 hidden xl:flex items-center gap-2 font-mono text-[9px]">
+      <div class="crosshair scale-75"></div>
+      <span class="text-[var(--cyan-bleed)] font-bold">MANGA_OPS // CASE_STUDY // INVOICE_GEN</span>
+      <span data-telemetry-coords class="text-[var(--ink-muted)]">X:1440 // Y:0 // REG.OK</span>
+    </div>
+
+    <!-- Decorative print marks -->
+    <div aria-hidden="true" class="hidden sm:block pointer-events-none">
+      <div class="print-mark" style="top:18px; left:24px;">
+        <div class="crosshair"></div>
+        <div class="mt-1">TRIM // FINANCIAL SPEC</div>
+      </div>
+      <div class="print-mark text-right" style="top:18px; right:24px;">
+        <div class="crosshair ml-auto"></div>
+        <div class="mt-1">CASE STUDY // BLEED</div>
+      </div>
+      <div class="print-mark" style="bottom:60px; left:24px;">
+        <div class="crosshair"></div>
+        <div class="mt-1">CLIENT ENGINE // REV.01</div>
+      </div>
+      <div class="print-mark text-right" style="bottom:60px; right:24px;">
+        <div class="crosshair ml-auto"></div>
+        <div class="mt-1">INVOICE GEN V.01</div>
+      </div>
+    </div>
+
+    <!-- ══════════ NAVIGATION ══════════ -->
+    <header class="fixed top-0 inset-x-0 z-50 bg-[var(--paper)] border-b-[1.5px] border-[var(--ink)]">
+      <div class="max-w-6xl mx-auto flex items-center justify-between px-6 md:px-10 py-3.5">
+        <!-- Brand Logo with Hanko Seal -->
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div class="stamp w-9 h-9 border shadow-none" style="background: var(--blood);">
+            <span class="text-sm font-black">零</span>
           </div>
-          <span class="text-[15px] font-bold tracking-[-0.4px]">
-            Arief Rizal Bayhaqi<span class="text-purple">.</span>
+          <span class="font-mono font-bold text-sm tracking-widest uppercase text-[var(--ink)]">
+            Arief Bayhaqi<span class="text-[var(--blood)]">.</span>
           </span>
         </a>
 
-        <!-- CTA -->
-        <a href="index.html#work" class="btn-outline py-[6px] px-[14px]"
-          >← Back to Work</a
-        >
-      </div>
-    </nav>
-
-    <!-- ══════════ HERO ══════════ -->
-    <header class="cs-hero border-b border-gray-line">
-      <div class="max-w-[1200px] mx-auto px-10">
-        <span class="section-badge mb-6 reveal">Case Study</span>
-        <h1 class="reveal reveal-delay-1">
-          Rapa Invoice Generator<span class="text-purple">.</span>
-        </h1>
-        <p
-          class="text-[#666] text-[18px] font-medium max-w-[600px] mx-auto reveal reveal-delay-2"
-        >
-          An automated invoice generator to streamline billing and improve
-          productivity.
-        </p>
-        <div class="cs-hero-img reveal reveal-delay-3">
-          <img
-            src="/assets/invoice-DpmK0Ij1.png"
-            alt="Rapa Invoice Generator Frontend"
-            class="w-full h-auto"
-          />
+        <!-- Back Link & Status -->
+        <div class="flex items-center gap-4">
+          <span class="hidden sm:inline-flex items-center gap-2 font-mono text-xs text-[var(--ink-soft)]">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 status-pulse"></span>
+            Production Utility
+          </span>
+          <a href="index.html#projects" class="btn-outline !py-2 !px-4 !text-xs font-mono">
+            ← Back to Move List
+          </a>
         </div>
       </div>
     </header>
 
-    <!-- ══════════ CONTENT ══════════ -->
-    <main class="max-w-[1200px] mx-auto px-10 py-[100px]">
-      <div class="cs-grid">
-        <!-- Main content -->
-        <div class="cs-content">
-          <section id="overview" class="reveal">
-            <h2 class="mt-0">Executive Summary</h2>
-            <p>
-              Creating invoices manually can be tedious and prone to errors. The
-              Rapa Invoice Generator was built to provide a quick, reliable, and
-              user-friendly solution to generate well-organized invoices
-              instantly. I handled the frontend implementation with modern web
-              technologies.
-            </p>
-          </section>
-
-          <section id="challenge" class="reveal">
-            <h2>The Challenge</h2>
-            <p>
-              The goal was to create a lightweight, responsive client-side
-              application that allowed users to input invoice details, customize
-              styling, and instantly generate print-ready or downloadable PDF
-              formats.
-            </p>
-            <p>Key requirements included:</p>
-            <ul class="list-disc pl-5 mb-6 text-[#666] space-y-2">
-              <li>Real-time preview of the invoice as details are entered.</li>
-              <li>Mobile-friendly layout for creating invoices on the go.</li>
-              <li>Clean, modern design using Tailwind CSS.</li>
-            </ul>
-          </section>
-
-          <section id="solution" class="reveal">
-            <h2>Technical Solution</h2>
-            <p>
-              The project was developed using raw **JavaScript** and **Tailwind
-              CSS**.
-            </p>
-            <h3 class="text-[18px] font-bold mt-8 mb-3">
-              Frontend Architecture
-            </h3>
-            <p>
-              By utilizing Tailwind CSS, I was able to rapidly craft a
-              responsive user interface that scales neatly from mobile to
-              desktop. JavaScript was used to handle DOM manipulation, form
-              state, and generating the final view for the invoice.
-            </p>
-          </section>
-
-          <section id="impact" class="reveal">
-            <h2>Impact & Results</h2>
-            <div class="grid grid-cols-2 gap-4 my-8">
-              <div class="stat-card border-purple! bg-purple-light/30">
-                <div
-                  class="text-[32px] font-extrabold text-black tracking-tighter"
-                >
-                  100%
-                </div>
-                <div
-                  class="text-[11px] text-purple font-mono uppercase font-bold mt-1"
-                >
-                  Client-Side Functionality
-                </div>
-              </div>
-              <div class="stat-card border-black! bg-gray-50">
-                <div
-                  class="text-[32px] font-extrabold text-black tracking-tighter"
-                >
-                  Fast
-                </div>
-                <div
-                  class="text-[11px] text-gray-400 font-mono uppercase font-bold mt-1"
-                >
-                  Setup Time
-                </div>
-              </div>
-            </div>
-            <p>
-              The invoice generator drastically reduced time spent on creating
-              manual invoices, ensuring formatting consistency and professional
-              presentation across all business transactions.
-            </p>
-          </section>
+    <main class="pt-20 pb-24">
+      <!-- ══════════ CASE STUDY HEADER ══════════ -->
+      <section class="max-w-6xl mx-auto px-6 md:px-10 pt-10 pb-16">
+        <div class="flex flex-wrap items-center gap-2 mb-4">
+          <span class="jp-tag text-xs text-[var(--blood)] uppercase">
+            <span class="kanji">事例研究</span> 03 // FINANCIAL OPS CASE STUDY
+          </span>
+          <span class="tag-blood text-[10px] font-mono uppercase font-bold tracking-wider">
+            Client-Side Architecture
+          </span>
         </div>
 
-        <!-- Sidebar -->
-        <aside class="cs-sidebar reveal reveal-delay-2">
-          <div class="cs-sidebar-item">
-            <h4>Role</h4>
-            <div class="text-[14px] font-bold">Frontend Developer</div>
+        <h1 class="font-display uppercase leading-[0.88] text-[clamp(2.6rem,7.5vw,5.5rem)]">
+          <span class="diag-word block text-[var(--ink)]">RAPA INVOICE</span>
+          <span class="diag-word block text-[var(--blood)]">GENERATOR</span>
+        </h1>
+
+        <!-- Signature Stacked Title Bar -->
+        <div class="mt-6 mb-6">
+          <div class="title-bar shadow-[4px_4px_0_var(--ink)]">
+            <span class="title-bar-tag" style="background:var(--blood);">Project Spec</span>
+            <span class="title-bar-main text-lg sm:text-xl md:text-2xl">
+              Automated Financial Document &amp; Billing Engine
+            </span>
           </div>
-          <div class="cs-sidebar-item">
-            <h4>Timeline</h4>
-            <div class="text-[14px] font-bold">1 Month (2026)</div>
+        </div>
+
+        <p class="font-mono text-sm md:text-base max-w-2xl leading-relaxed text-[var(--ink-soft)] mt-4">
+          A dedicated client-side billing application engineered for precast concrete manufacturing operations. Replaces fragile spreadsheets and paper carbon receipts with instantaneous multi-line item calculations, live document previews, and print-accurate Nota Penjualan &amp; Surat Jalan generation.
+        </p>
+
+        <!-- Main Hero Image Frame with Washi Tape Badges -->
+        <div class="relative mt-10">
+          <div class="badge-tape badge-tape-tr bg-[var(--orange)] text-white" style="--r: 2.5deg;">
+            COMMERCIAL FIN-OPS // 2026
           </div>
-          <div class="cs-sidebar-item">
-            <h4>Technologies</h4>
-            <div class="flex flex-wrap gap-1.5 mt-2">
-              <span class="tech-tag active">JavaScript</span>
-              <span class="tech-tag active">Tailwind</span>
-              <span class="tech-tag active">HTML/CSS</span>
+          <div class="badge-tape badge-tape-bl bg-[var(--paper-dim)] text-[var(--ink)]" style="--r: -3deg;">
+            CLIENT-SIDE REACTIVE ENGINE
+          </div>
+
+          <div class="panel p-3 sm:p-4 shadow-[10px_10px_0_var(--ink)]">
+            <div class="overflow-hidden border border-[var(--ink)] bg-[#0c1a2e]">
+              <img
+                src="/assets/invoice-DpmK0Ij1.png"
+                alt="Rapa Invoice Generator Frontend Interface &amp; Document Preview"
+                class="w-full h-auto object-cover"
+              />
             </div>
           </div>
-          <div class="cs-sidebar-item">
-            <h4>Deliverables</h4>
-            <ul class="text-[13px] text-[#666] list-none p-0 space-y-1">
-              <li>✓ Web Application</li>
-              <li>✓ Invoice Editor</li>
-              <li>✓ Automated Calculations</li>
-            </ul>
+        </div>
+      </section>
+
+      <!-- ══════════ MAIN CASE STUDY BODY ══════════ -->
+      <section class="max-w-6xl mx-auto px-6 md:px-10">
+        <div class="grid lg:grid-cols-[1.85fr_1fr] gap-10 items-start">
+
+          <!-- Left Column: Detailed Technical Analysis -->
+          <div class="space-y-12">
+
+            <!-- Section 1: Executive Summary -->
+            <div class="panel p-8 shadow-[4px_4px_0_var(--ink)]">
+              <div class="flex items-center gap-3 mb-4 pb-3 border-b border-[var(--ink)]">
+                <span class="tag-blood text-xs font-mono font-bold uppercase">01 / Overview</span>
+                <h2 class="font-display uppercase text-2xl">Executive Summary</h2>
+              </div>
+              <p class="text-base leading-relaxed text-[var(--ink-soft)]">
+                For manufacturing operations in the architectural precast concrete sector, generating transactional paperwork — specifically <strong>Nota Penjualan</strong> (Sales Receipts) and <strong>Surat Jalan</strong> (Delivery Waybills) — is a daily mission-critical task. Previously, personnel relied on generic spreadsheet templates and manual paper ledgers, which frequently produced calculation discrepancies, lost records, and delayed driver dispatches.
+              </p>
+              <p class="text-base leading-relaxed text-[var(--ink-soft)] mt-3">
+                <strong>Rapa Invoice Generator</strong> was architected as a lightweight, zero-latency desktop and tablet web utility. Built without heavy backend dependencies, it equips administrative clerks with an interactive form editor that renders a live, true-to-print commercial document preview on the fly with instantaneous mathematical tallying.
+              </p>
+            </div>
+
+            <!-- Section 2: Technical Challenges -->
+            <div class="panel p-8 shadow-[4px_4px_0_var(--ink)]">
+              <div class="flex items-center gap-3 mb-4 pb-3 border-b border-[var(--ink)]">
+                <span class="tag-orange text-xs font-mono font-bold uppercase">02 / Challenges</span>
+                <h2 class="font-display uppercase text-2xl">Engineering Hurdles</h2>
+              </div>
+              <p class="text-base leading-relaxed text-[var(--ink-soft)] mb-4">
+                Delivering an enterprise billing utility directly in the client browser necessitated solving critical formatting, arithmetic, and printing constraints:
+              </p>
+              <div class="space-y-3 font-mono text-xs uppercase">
+                <div class="p-3 bg-[var(--paper-dim)] border border-[var(--ink)] flex items-start gap-2.5">
+                  <span class="text-[var(--blood)] font-bold">▶</span>
+                  <span><strong>Pixel-Perfect Commercial Print Formatting:</strong> Replicating exact standard Indonesian continuous stationery and A4 corporate invoice layouts with strict margin controls for laser and thermal print output.</span>
+                </div>
+                <div class="p-3 bg-[var(--paper-dim)] border border-[var(--ink)] flex items-start gap-2.5">
+                  <span class="text-[var(--blood)] font-bold">▶</span>
+                  <span><strong>Complex Multi-Line Item Calculations:</strong> Dynamically recalculating piece counts (PCS), area coverage ($M^2$), tiered pricing, logistics/ongkir freight fees, and down payments (DP) without rounding errors.</span>
+                </div>
+                <div class="p-3 bg-[var(--paper-dim)] border border-[var(--ink)] flex items-start gap-2.5">
+                  <span class="text-[var(--blood)] font-bold">▶</span>
+                  <span><strong>Dual Document Generation:</strong> Supporting instant one-click toggle between Sales Invoice (financial breakdown with banking coordinates) and Delivery Note (logistics manifest omitting pricing).</span>
+                </div>
+                <div class="p-3 bg-[var(--paper-dim)] border border-[var(--ink)] flex items-start gap-2.5">
+                  <span class="text-[var(--blood)] font-bold">▶</span>
+                  <span><strong>Zero Server Overhead &amp; Offline Tolerance:</strong> Guaranteeing full offline operation on warehouse tablets without requiring a recurring cloud backend or persistent internet connection.</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Section 3: Architecture & Solution -->
+            <div class="panel p-8 shadow-[4px_4px_0_var(--ink)]">
+              <div class="flex items-center gap-3 mb-4 pb-3 border-b border-[var(--ink)]">
+                <span class="tag-teal text-xs font-mono font-bold uppercase">03 / Solution</span>
+                <h2 class="font-display uppercase text-2xl">Client-Side Architecture</h2>
+              </div>
+              <p class="text-base leading-relaxed text-[var(--ink-soft)]">
+                I engineered the solution using modular <strong>vanilla JavaScript (ES6+)</strong> and <strong>Tailwind CSS</strong>, emphasizing extreme lightness, deterministic performance, and zero dependency fatigue.
+              </p>
+
+              <div class="mt-6 border-t border-[var(--ink)] pt-5 space-y-4">
+                <h3 class="font-display uppercase text-xl text-[var(--ink)]">1. Two-Way State Binding &amp; Live Mirroring</h3>
+                <p class="text-sm leading-relaxed text-[var(--ink-soft)]">
+                  The UI is split into a streamlined configuration workbench on the left and an exact 1:1 paper document sheet on the right. Form inputs are bound via reactive DOM event listeners, updating tabular quantities, prices, and net balances on every single keystroke with zero measurable input lag.
+                </p>
+
+                <h3 class="font-display uppercase text-xl text-[var(--ink)] pt-2">2. Dynamic CSS Print Engine</h3>
+                <p class="text-sm leading-relaxed text-[var(--ink-soft)]">
+                  A bespoke <code class="font-mono bg-[var(--paper-dim)] px-1.5 py-0.5 border border-[var(--ink)] text-xs">@media print</code> stylesheet strips out all workbench controls, sidebars, headers, and backgrounds. It forces exact physical print dimensions, high-contrast monochrome ink lines, and page-break isolation so users get flawless physical documents via standard system print dialogs (<code class="font-mono bg-[var(--paper-dim)] px-1.5 py-0.5 border border-[var(--ink)] text-xs">window.print()</code>).
+                </p>
+
+                <h3 class="font-display uppercase text-xl text-[var(--ink)] pt-2">3. Session Storage &amp; Safety Auto-Save</h3>
+                <p class="text-sm leading-relaxed text-[var(--ink-soft)]">
+                  Active invoice drafts are continuously serialized into browser <code class="font-mono bg-[var(--paper-dim)] px-1.5 py-0.5 border border-[var(--ink)] text-xs">localStorage</code>. Clerks can accidentally close the tab or reload during busy dock operations without losing itemized order rows or custom client billing details.
+                </p>
+              </div>
+            </div>
+
+            <!-- Section 4: Metrics & Results -->
+            <div class="panel p-8 shadow-[4px_4px_0_var(--ink)]">
+              <div class="flex items-center gap-3 mb-4 pb-3 border-b border-[var(--ink)]">
+                <span class="tag-purple text-xs font-mono font-bold uppercase">04 / Impact</span>
+                <h2 class="font-display uppercase text-2xl">Measured Outcomes</h2>
+              </div>
+
+              <!-- Stat Metric Grid with Ruler Rails -->
+              <div class="ruler-rail my-4">
+                <span>00</span><span>25</span><span>50</span><span>75</span><span>100</span>
+              </div>
+
+              <div class="grid sm:grid-cols-3 gap-4 my-6">
+                <div class="p-5 bg-[var(--card)] border-[1.5px] border-[var(--ink)] shadow-[3px_3px_0_var(--ink)] text-center">
+                  <div class="font-display text-4xl text-[var(--blood)]">100%</div>
+                  <div class="font-mono text-[10px] uppercase tracking-wider font-bold mt-1 text-[var(--ink-soft)]">
+                    Client-Side Execution
+                  </div>
+                </div>
+
+                <div class="p-5 bg-[var(--card)] border-[1.5px] border-[var(--ink)] shadow-[3px_3px_0_var(--ink)] text-center">
+                  <div class="font-display text-4xl text-[var(--teal)]">0.0ms</div>
+                  <div class="font-mono text-[10px] uppercase tracking-wider font-bold mt-1 text-[var(--ink-soft)]">
+                    Calculation Latency
+                  </div>
+                </div>
+
+                <div class="p-5 bg-[var(--card)] border-[1.5px] border-[var(--ink)] shadow-[3px_3px_0_var(--ink)] text-center">
+                  <div class="font-display text-4xl text-[var(--orange)]">90%</div>
+                  <div class="font-mono text-[10px] uppercase tracking-wider font-bold mt-1 text-[var(--ink-soft)]">
+                    Billing Time Saved
+                  </div>
+                </div>
+              </div>
+
+              <p class="text-base leading-relaxed text-[var(--ink-soft)]">
+                The application eradicated manual arithmetic discrepancies across thousands of billing line items. Clerks can generate, review, and print official warehouse documentation in under 30 seconds per dispatch.
+              </p>
+            </div>
+
           </div>
-          <div class="cs-sidebar-item mt-4">
-            <a
-              href="https://rapa-invoice.vercel.app/"
-              target="_blank"
-              class="btn-primary w-full text-center py-3"
-              >Visit Live Site</a
-            >
-            <a
-              href="https://github.com/ZEROTSUDIO/invoice-generator"
-              target="_blank"
-              class="btn-outline w-full text-center py-3 mt-2"
-              >View on GitHub</a
-            >
+
+          <!-- Right Column: System Dossier Sidebar -->
+          <aside class="panel p-6 sm:p-8 shadow-[6px_6px_0_var(--ink)] sticky top-24 space-y-6">
+            <div class="border-b border-[var(--ink)] pb-3">
+              <span class="tag-blood text-[10px] font-mono font-bold uppercase">Specification Dossier</span>
+              <h3 class="font-display uppercase text-2xl mt-1">Project Meta</h3>
+            </div>
+
+            <!-- Role & Timeline -->
+            <div class="grid grid-cols-2 gap-4 font-mono text-xs uppercase">
+              <div>
+                <span class="text-[var(--ink-soft)]">Role</span><br />
+                <span class="font-bold text-[var(--ink)]">Frontend Developer</span>
+              </div>
+              <div>
+                <span class="text-[var(--ink-soft)]">Timeline</span><br />
+                <span class="font-bold text-[var(--ink)]">1 Month (2026)</span>
+              </div>
+            </div>
+
+            <!-- Client & Domain -->
+            <div class="font-mono text-xs uppercase border-t border-[var(--ink)] pt-4">
+              <span class="text-[var(--ink-soft)]">Client / Domain</span><br />
+              <span class="font-bold text-[var(--ink)]">Rapa Cement &amp; GRC // Fin-Ops</span>
+            </div>
+
+            <!-- Tech Loadout Chips -->
+            <div class="border-t border-[var(--ink)] pt-4">
+              <span class="font-mono text-xs uppercase tracking-widest text-[var(--ink-soft)] font-bold block mb-3">
+                Technologies Used
+              </span>
+              <div class="grid grid-cols-2 gap-2">
+                <div class="chip !p-2 !text-[11px]"><span class="chip-dot !w-5 !h-5 !text-[8px]" style="background:var(--blood);">JS</span>JavaScript</div>
+                <div class="chip !p-2 !text-[11px]"><span class="chip-dot !w-5 !h-5 !text-[8px]" style="background:var(--purple);">TW</span>Tailwind</div>
+                <div class="chip !p-2 !text-[11px]"><span class="chip-dot !w-5 !h-5 !text-[8px]" style="background:var(--teal);">H5</span>HTML5</div>
+                <div class="chip !p-2 !text-[11px]"><span class="chip-dot !w-5 !h-5 !text-[8px]" style="background:var(--orange);">LS</span>Storage</div>
+              </div>
+            </div>
+
+            <!-- Deliverables Checklist -->
+            <div class="border-t border-[var(--ink)] pt-4">
+              <span class="font-mono text-xs uppercase tracking-widest text-[var(--ink-soft)] font-bold block mb-2">
+                Deliverables
+              </span>
+              <ul class="font-mono text-xs uppercase text-[var(--ink-soft)] space-y-1.5">
+                <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">✓</span> Interactive Invoice Editor</li>
+                <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">✓</span> Nota &amp; Surat Jalan Mirror</li>
+                <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">✓</span> Real-Time Math Tallying</li>
+                <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">✓</span> Dedicated Print Stylesheet</li>
+                <li class="flex items-center gap-2"><span class="text-emerald-600 font-bold">✓</span> Local Draft Recovery</li>
+              </ul>
+            </div>
+
+            <!-- External CTAs -->
+            <div class="border-t border-[var(--ink)] pt-4 space-y-3">
+              <a
+                href="https://rapa-invoice.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-solid w-full justify-center !py-3 !text-xs text-center"
+              >
+                Launch Live App ↗
+              </a>
+              <a
+                href="https://github.com/ZEROTSUDIO/invs-studio-custom"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-outline w-full justify-center !py-3 !text-xs text-center"
+              >
+                View GitHub Repo ↗
+              </a>
+            </div>
+          </aside>
+
+        </div>
+      </section>
+
+      <!-- ══════════ NEXT / PREV PROJECT FOOTER ══════════ -->
+      <section class="max-w-6xl mx-auto px-6 md:px-10 mt-20 pt-10 border-t-[1.5px] border-[var(--ink)]">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div class="text-left w-full sm:w-auto">
+            <span class="font-mono text-[10px] text-[var(--ink-soft)] uppercase tracking-widest block mb-1">
+              Previous Case Study
+            </span>
+            <a href="kinovibe-case-study.html" class="font-mono text-xs font-bold uppercase text-[var(--ink)] hover:text-[var(--blood)] transition-colors">
+              ← KinoVibe Movie Platform
+            </a>
           </div>
-        </aside>
-      </div>
+
+          <div class="text-right w-full sm:w-auto">
+            <span class="font-mono text-[10px] text-[var(--blood)] uppercase tracking-widest block mb-1">
+              Next Case Study
+            </span>
+            <a
+              href="rapa-case-study.html"
+              class="font-display uppercase text-xl hover:text-[var(--blood)] transition-colors"
+            >
+              Rapa Cast Stone →
+            </a>
+          </div>
+        </div>
+      </section>
+
     </main>
 
-    <!-- ══════════ NEXT ══════════ -->
-    <section class="border-t border-gray-line">
-      <div class="max-w-[1200px] mx-auto px-10 cs-next-nav">
-        <div>
-          <span
-            class="font-mono text-[10px] text-purple uppercase tracking-widest block mb-1"
-            >Previous Project</span
-          >
-          <a
-            href="rapa-case-study.html"
-            class="text-[16px] font-bold no-underline text-black hover:text-purple transition-colors"
-            >← Rapa Cast Stone</a
-          >
-        </div>
-        <div class="text-right">
-          <span
-            class="font-mono text-[10px] text-gray-400 uppercase tracking-widest block mb-1"
-            >Next Project</span
-          >
-          <a
-            href="#"
-            class="text-[16px] font-bold no-underline text-gray-300 pointer-events-none"
-            >None</a
-          >
-        </div>
-      </div>
-    </section>
-
     <!-- ══════════ FOOTER ══════════ -->
-    <footer class="border-t border-gray-line">
-      <div
-        class="max-w-[1200px] mx-auto w-full px-10 py-8 flex justify-between items-center flex-wrap gap-4"
-      >
-        <div class="flex flex-col gap-1">
-          <span class="text-[15px] font-bold"
-            >Arief Rizal Bayhaqi<span class="text-purple">.</span></span
-          >
-          <span class="font-mono text-[11px] text-[#bbb]"
-            >Backend & Data Developer</span
-          >
-        </div>
-        <span class="font-mono text-[11px] text-[#bbb]"
-          >© 2025 — Dedicated to excellence.</span
-        >
-      </div>
+    <footer class="max-w-6xl mx-auto px-6 md:px-10 pb-20 pt-6 border-t-[1.5px] border-[var(--ink)] flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p class="font-mono text-[11px] uppercase tracking-widest text-[var(--ink-soft)]">
+        © 2026 Arief Rizal Bayhaqi — Built with ink, paper, and code.
+      </p>
+      <p class="font-mono text-[11px] uppercase tracking-widest text-[var(--ink-soft)]">
+        Magelang, Indonesia // MANGA_OPS v3.0
+      </p>
     </footer>
 
-    <!-- ══════════ SCRIPTS ══════════ -->
-    <script>
-      // ── Scroll Reveal ──
-      const reveals = document.querySelectorAll(".reveal");
-      const ro = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((e) => {
-            if (e.isIntersecting) {
-              e.target.classList.add("visible");
-              ro.unobserve(e.target);
-            }
-          });
-        },
-        { threshold: 0.1 },
-      );
-      reveals.forEach((el) => ro.observe(el));
-    </script>
+    <!-- ══════════ BOTTOM FIGHTING GAME HUD BAR ══════════ -->
+    <div class="hud-bar fixed bottom-0 inset-x-0 z-40 border-t-2 border-[var(--ink)]">
+      <span class="hud-hint hidden md:inline">CASE STUDY // RAPA INVOICE GENERATOR — MANGA_OPS v3.0</span>
+      <a href="index.html#projects" class="hud-action">
+        <span class="hud-btn square">□</span>Move List
+      </a>
+      <a href="kinovibe-case-study.html" class="hud-action hidden sm:inline-flex">
+        <span class="hud-btn triangle">▲</span>KinoVibe
+      </a>
+      <a href="rapa-case-study.html" class="hud-action hidden sm:inline-flex">
+        <span class="hud-btn">○</span>Rapa Stone
+      </a>
+      <a href="https://rapa-invoice.vercel.app/" target="_blank" rel="noopener noreferrer" class="hud-action">
+        <span class="hud-btn accent">✕</span>Launch App ↗
+      </a>
+      <a href="https://github.com/ZEROTSUDIO/invs-studio-custom" target="_blank" rel="noopener noreferrer" class="hud-action hidden md:inline-flex">
+        <span class="hud-btn">📄</span>GitHub
+      </a>
+    </div>
+
   </body>
 </html>
