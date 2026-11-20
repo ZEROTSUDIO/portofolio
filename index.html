@@ -3,104 +3,136 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arief Rizal Bayhaqi — Backend &amp; Data Developer</title>
+  <title>Arief Rizal Bayhaqi — Backend &amp; Data Developer // MANGA_OPS</title>
   <meta name="description" content="Arief Rizal Bayhaqi — Backend & Data Developer specializing in robust backend architectures, ML pipelines, and decision support systems.">
-  
+  <link rel="icon" type="image/svg+xml" href="/assets/zero-studios-icon.svg">
+
+  <!-- Google Fonts: Anton, Archivo, Space Mono, Noto Sans JP -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700;900&family=Noto+Sans+JP:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
   
+  <!-- GSAP Animation Library CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+  <!-- Core Stylesheet & Modules -->
   <link href="/src/style.css" rel="stylesheet">
   <script type="module" src="/src/main.js"></script>
 </head>
-<body class="antialiased">
+<body class="antialiased pb-12">
 
-  <!-- Decorative print registration marks -->
-  <div aria-hidden="true" class="hidden sm:block">
-    <div class="print-mark" style="top:18px; left:18px;">
+  <!-- ══════════ DRAFTING PAGE GUIDES & VIEWPORT EDGES ══════════ -->
+  <div class="drafting-page-guide hidden xl:flex">
+    <span>01</span><span>02</span><span>03</span><span>04</span><span>05</span><span>06</span><span>07</span><span>08</span><span>09</span><span>10</span><span>11</span><span>12</span>
+  </div>
+
+  <!-- Top-left Registration Target & Realtime Telemetry -->
+  <div class="fixed top-2 left-8 z-50 pointer-events-none opacity-40 hidden xl:flex items-center gap-2 font-mono text-[9px]">
+    <div class="crosshair scale-75"></div>
+    <span class="text-[var(--cyan-bleed)] font-bold">MANGA_OPS // TRIM SPEC // REG.OK</span>
+    <span data-telemetry-coords class="text-[var(--ink-muted)]">X:1440 // Y:0 // REG.OK</span>
+  </div>
+
+  <!-- Decorative print registration marks in viewport corners -->
+  <div aria-hidden="true" class="hidden sm:block pointer-events-none">
+    <div class="print-mark" style="top:18px; left:24px;">
       <div class="crosshair"></div>
       <div class="mt-1">TRIM // REV.2026</div>
     </div>
-    <div class="print-mark text-right" style="top:18px; right:18px;">
+    <div class="print-mark text-right" style="top:18px; right:24px;">
       <div class="crosshair ml-auto"></div>
       <div class="mt-1">CHARACTER SHEET // BLEED</div>
     </div>
-    <div class="print-mark" style="bottom:18px; left:18px;">
+    <div class="print-mark" style="bottom:60px; left:24px;">
       <div class="crosshair"></div>
       <div class="mt-1">FOLD // SYSTEM SPEC</div>
     </div>
-    <div class="print-mark text-right" style="bottom:18px; right:18px;">
+    <div class="print-mark text-right" style="bottom:60px; right:24px;">
       <div class="crosshair ml-auto"></div>
-      <div class="mt-1">V.02 // ASSEMBLE</div>
+      <div class="mt-1">V.03 // ASSEMBLE</div>
     </div>
   </div>
 
-  <!-- ══════════ NAVIGATION ══════════ -->
-  <header class="fixed top-0 inset-x-0 z-50 bg-[var(--paper)] border-b-[1.5px] border-[var(--ink)]">
-    <div class="max-w-6xl mx-auto flex items-center justify-between px-6 md:px-10 py-3.5">
-      <!-- Logo -->
+  <!-- ══════════ NAVIGATION HEADER ══════════ -->
+  <header class="fixed top-0 inset-x-0 z-50 bg-[var(--paper)]/95 backdrop-blur-md border-b-[1.5px] border-[var(--ink)]">
+    <div class="max-w-6xl mx-auto flex items-center justify-between px-6 md:px-10 py-3">
+      
+      <!-- Brand Logo with Hanko Stamp -->
       <a href="#hero" class="flex items-center gap-3 group">
-        <span class="diamond w-9 h-9 flex items-center justify-center bg-[var(--ink)] transition-transform group-hover:rotate-45">
-          <span class="font-mono font-bold text-xs text-[var(--paper)]">AB</span>
-        </span>
-        <span class="font-mono font-bold text-sm tracking-widest uppercase hidden sm:inline text-[var(--ink)]">
-          Arief Bayhaqi<span class="text-[var(--blood)]">.</span>
-        </span>
+        <div class="stamp w-9 h-9 flex-shrink-0 group-hover:rotate-90 transition-transform">
+          <span class="text-xs font-mono font-bold">AB</span>
+        </div>
+        <div class="flex flex-col truncate">
+          <span class="font-display text-base tracking-wider uppercase leading-none text-[var(--ink)]">
+            ARIEF BAYHAQI<span class="text-[var(--blood)]">.</span>
+          </span>
+          <span class="font-mono text-[9px] text-[var(--blood)] font-bold tracking-widest leading-none mt-1">
+            BACKEND // DATA OPS
+          </span>
+        </div>
       </a>
 
-      <!-- Desktop Nav -->
-      <nav class="hidden md:flex items-center gap-8">
-        <a href="#about" class="nav-link">About</a>
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#stack" class="nav-link">Stack</a>
-        <a href="#contact" class="nav-link">Contact</a>
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-8 font-mono text-xs font-bold uppercase">
+        <a href="#about" class="nav-link">01 // About</a>
+        <a href="#projects" class="nav-link">02 // Projects</a>
+        <a href="#stack" class="nav-link">03 // Stack</a>
+        <a href="#contact" class="nav-link">04 // Contact</a>
       </nav>
 
-      <!-- Status & CTA -->
+      <!-- Status & CTA Triggers -->
       <div class="hidden sm:flex items-center gap-4">
-        <span class="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider border border-[var(--ink)] px-3 py-1.5 bg-[var(--card)]">
+        <span class="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-wider border border-[var(--ink)] px-2.5 py-1 bg-[var(--card)] shadow-[2px_2px_0_var(--ink)]">
           <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-          Available for work
+          <span>AVAILABLE FOR WORK</span>
         </span>
-        <a href="#contact" class="btn-solid !py-2 !px-4 !text-xs">Say hello</a>
+        <a href="#contact" class="btn-blood !py-1.5 !px-3.5 !text-xs flex items-center gap-1.5">
+          <span class="keycap keycap-accent text-[8px]">✉</span>
+          <span>SAY HELLO</span>
+        </a>
       </div>
 
       <!-- Mobile Menu Button -->
-      <button id="menuBtn" class="md:hidden font-mono font-bold text-xs uppercase border px-3 py-2 border-[var(--ink)]" aria-label="Toggle menu" aria-expanded="false">
-        Menu
+      <button id="menuBtn" class="md:hidden font-mono font-bold text-xs uppercase border-1.5 border-[var(--ink)] px-3 py-1.5 bg-[var(--card)] shadow-[2px_2px_0_var(--ink)]" aria-label="Toggle menu" aria-expanded="false">
+        MENU
       </button>
     </div>
 
     <!-- Mobile Dropdown -->
-    <nav id="mobileMenu" class="md:hidden hidden flex-col px-6 pb-5 pt-2 gap-3 border-t border-[var(--ink)] bg-[var(--paper)]">
-      <a href="#about" class="nav-link pt-2">About</a>
-      <a href="#projects" class="nav-link">Projects</a>
-      <a href="#stack" class="nav-link">Stack</a>
-      <a href="#contact" class="nav-link">Contact</a>
-      <a href="#contact" class="btn-solid !py-2.5 !px-4 !text-xs justify-center mt-2">Say hello</a>
+    <nav id="mobileMenu" class="md:hidden hidden flex-col px-6 pb-5 pt-3 gap-3 border-t-2 border-[var(--ink)] bg-[var(--paper)]">
+      <a href="#about" class="nav-link pt-1">01 // About (Character Sheet)</a>
+      <a href="#projects" class="nav-link">02 // Selected Projects (Move List)</a>
+      <a href="#stack" class="nav-link">03 // Tech Loadout (Command List)</a>
+      <a href="#contact" class="nav-link">04 // Comms (Player Menu)</a>
+      <a href="#contact" class="btn-blood !py-2 !px-4 !text-xs justify-center mt-2 flex items-center gap-2">
+        <span class="keycap keycap-accent text-[9px]">✉</span>
+        <span>SAY HELLO // CONTACT</span>
+      </a>
     </nav>
   </header>
 
   <main class="pt-16">
 
     <!-- ══════════ HERO SECTION (Alex Rivera × Sasha Volkov Fusion) ══════════ -->
-    <section id="hero" class="relative min-h-[90vh] flex items-center overflow-hidden border-b-[1.5px] border-[var(--ink)]">
+    <section id="hero" class="relative min-h-[92vh] flex items-center overflow-hidden border-b-[1.5px] border-[var(--ink)]">
+      
+      <!-- Diagonal Split Backdrop & Screentone -->
       <div class="split-bg" aria-hidden="true">
         <div class="a"></div>
         <div class="b"></div>
         <div class="absolute inset-0 halftone"></div>
       </div>
 
-      <div class="max-w-6xl mx-auto px-6 md:px-10 py-16 md:py-24 w-full">
+      <div class="max-w-6xl mx-auto px-6 md:px-10 py-16 md:py-24 w-full relative z-10">
         <div class="grid lg:grid-cols-[1.15fr_auto] md:grid-cols-[1.1fr_auto] gap-12 items-center">
           
-          <!-- Left: Sasha Volkov Name & Title-Bar + Alex Content -->
+          <!-- Left: Sasha Volkov Name & Stacked Title-Bar -->
           <div>
-            <!-- Subtitle Eyebrow -->
-            <p class="font-mono text-xs md:text-sm uppercase tracking-[0.22em] text-[var(--ink-soft)] font-bold mb-4">
-              Backend &amp; Data Developer
-            </p>
+            <!-- Japanese Callout & Eyebrow -->
+            <div class="jp-tag text-xs text-[var(--blood)] mb-3">
+              <span class="kanji">開発者</span> DEVELOPER DOSSIER // V.2026
+            </div>
 
             <!-- Skewed Stacked Name -->
             <h1 class="font-display uppercase leading-[0.85] text-[clamp(3rem,8.5vw,6.8rem)] select-none">
@@ -108,42 +140,65 @@
               <span class="diag-word block text-[var(--blood)]">BAYHAQI</span>
             </h1>
 
-            <!-- Sasha Volkov Signature Title-Bar Component -->
-            <div class="mt-6">
-              <div class="title-bar shadow-[3px_3px_0_var(--ink)]">
-                <span class="title-bar-tag" style="background:var(--blood);">Specialization</span>
-                <span class="title-bar-main text-xl sm:text-2xl md:text-3xl">Robust Backends &amp; ML Pipelines</span>
-              </div>
+            <!-- Sasha Volkov Signature Stacked Title-Bar Component -->
+            <div class="mt-6 title-bar-stacked">
+              <span class="title-bar-tag" style="background:var(--blood);">
+                <span class="kanji">専門</span> SPECIALIZATION // MOVE LIST
+              </span>
+              <span class="title-bar-main text-xl sm:text-2xl md:text-3xl">
+                Robust Backends &amp; ML Pipelines
+              </span>
             </div>
 
             <!-- Narrative Paragraph -->
             <p class="font-mono text-sm md:text-base mt-6 max-w-lg leading-relaxed text-[var(--ink-soft)]">
-              I architect high-performance server backends, intelligent machine learning models, and automated business workflows. Focused on clean code, resilient databases, and systems built to scale.
+              I architect high-throughput server backends, fine-tuned machine learning models, and automated business workflows. Engineered with clean schemas, predictable query latency, and systems built to scale.
             </p>
 
-            <!-- Action Buttons -->
+            <!-- Telemetry Indicator Chips -->
+            <div class="flex flex-wrap gap-2 mt-5 font-mono text-[10px] uppercase">
+              <span class="px-2 py-1 border border-[var(--ink)] bg-[var(--card)] shadow-[2px_2px_0_var(--ink)]">
+                ● LATENCY &lt; 50MS
+              </span>
+              <span class="px-2 py-1 border border-[var(--ink)] bg-[var(--card)] shadow-[2px_2px_0_var(--ink)]">
+                LARAVEL // CODEIGNITER
+              </span>
+              <span class="px-2 py-1 border border-[var(--ink)] bg-[var(--card)] shadow-[2px_2px_0_var(--ink)]">
+                PYTHON // INDOBERT NLP
+              </span>
+            </div>
+
+            <!-- Action Buttons with Keycap Glyphs -->
             <div class="flex flex-wrap gap-4 mt-8">
-              <a href="#projects" class="btn-solid">View projects →</a>
-              <a href="CV.pdf" target="_blank" class="btn-outline">Download CV</a>
+              <a href="#projects" class="btn-solid flex items-center gap-2">
+                <span>VIEW PROJECTS</span>
+                <span class="keycap keycap-accent text-[9px]">↓</span>
+              </a>
+              <a href="CV.pdf" target="_blank" class="btn-outline flex items-center gap-2">
+                <span>DOWNLOAD CV</span>
+                <span class="keycap text-[9px]">📄</span>
+              </a>
             </div>
           </div>
 
-          <!-- Right: Visual Card with Real Photo (Bigger) & Badges -->
-          <div class="justify-self-center relative">
-            <!-- Framed Photo Card (Enlarged) -->
-            <div class="w-72 h-84 sm:w-80 sm:h-96 md:w-88 md:h-[420px] lg:w-[360px] lg:h-[440px] panel p-3 relative shadow-[10px_10px_0_var(--ink)] transform -rotate-1 hover:rotate-0 transition-transform duration-200">
-              <div class="w-full h-full overflow-hidden border border-[var(--ink)] bg-[var(--paper-dim)]">
+          <!-- Right: Framed Poster Card with Slanted Washi Tapes -->
+          <div class="justify-self-center relative pt-4 sm:pt-0">
+            <div class="framed-poster w-72 h-84 sm:w-80 sm:h-96 md:w-88 md:h-[420px] lg:w-[350px] lg:h-[440px]">
+              
+              <!-- Slanted Washi Tape Corner Badges -->
+              <span class="badge-tape badge-tape-tr font-mono text-[10px] bg-[var(--teal)] text-white font-bold">
+                MAGELANG, ID
+              </span>
+
+              <!-- Photo Viewport -->
+              <div class="framed-poster-inner w-full h-full overflow-hidden bg-[var(--paper-dim)]">
                 <img src="/img/me.png" alt="Arief Rizal Bayhaqi" class="w-full h-full object-cover grayscale contrast-125 hover:grayscale-0 transition-all duration-300">
               </div>
-            </div>
 
-            <!-- Decorative Badges -->
-            <span class="tag-orange absolute -bottom-4 -left-4 font-bold shadow-[3px_3px_0_var(--ink)] text-xs sm:text-sm" style="transform:rotate(-3deg);">
-              23 Years Old Dev
-            </span>
-            <span class="tag-teal absolute -top-3 -right-3 font-bold shadow-[3px_3px_0_var(--ink)] text-xs sm:text-sm" style="transform:rotate(3deg);">
-              Magelang, ID
-            </span>
+              <span class="badge-tape badge-tape-bl font-mono text-[10px] bg-[var(--orange)] text-white font-bold">
+                23 YEARS OLD DEV
+              </span>
+            </div>
           </div>
 
         </div>
@@ -152,15 +207,24 @@
 
     <!-- ══════════ ABOUT SECTION ("Character Sheet") ══════════ -->
     <section id="about" class="max-w-6xl mx-auto px-6 md:px-10 py-24">
-      <!-- Title-Bar Section Header -->
-      <div class="title-bar">
-        <span class="title-bar-tag" style="background:var(--purple);">Character Sheet</span>
-        <h2 class="title-bar-main text-2xl sm:text-3xl md:text-4xl">Profile &amp; Stats</h2>
+      
+      <!-- Architectural Annotation Strip -->
+      <div class="annotation-strip mb-6">
+        <span class="annotation-strip-label">MANGA_OPS // CHARACTER SHEET &amp; TELEMETRY — REG.OK</span>
       </div>
 
-      <div class="grid md:grid-cols-[1.15fr_1fr] gap-8 mt-10">
-        <!-- Left: Bio & Personal Data -->
-        <div class="panel p-8 shadow-[4px_4px_0_var(--ink)]">
+      <!-- Title-Bar Section Header -->
+      <div class="title-bar-stacked">
+        <span class="title-bar-tag" style="background:var(--signal);">
+          <span class="kanji">経歴書</span> CHARACTER SHEET
+        </span>
+        <h2 class="title-bar-main text-2xl sm:text-3xl md:text-4xl">Profile &amp; Telemetry Stats</h2>
+      </div>
+
+      <div class="grid md:grid-cols-[1.15fr_1fr] gap-8 mt-10 items-start">
+        
+        <!-- Left: Bio & Personal Data Dossier -->
+        <div class="panel p-6 sm:p-8 shadow-[4px_4px_0_var(--ink)]">
           <p class="text-base md:text-lg leading-relaxed text-[var(--ink-soft)]">
             I'm a backend and data engineer who approaches software architecture like a precision engine — clean schemas, predictable query latency, and reliable automation.
           </p>
@@ -170,93 +234,147 @@
 
           <div class="grid grid-cols-2 gap-y-4 gap-x-6 mt-8 font-mono text-xs uppercase border-t-[1.5px] border-[var(--ink)] pt-6">
             <div>
-              <span class="text-[var(--ink-soft)]">Location</span><br>
-              <span class="font-bold text-[var(--ink)]">Magelang, ID</span>
+              <span class="text-[var(--ink-soft)] block text-[10px]">OPERATOR LOCATION</span>
+              <span class="font-bold text-[var(--ink)] text-sm">Magelang, ID</span>
             </div>
             <div>
-              <span class="text-[var(--ink-soft)]">Primary Focus</span><br>
-              <span class="font-bold text-[var(--ink)]">Backend / ML / Data</span>
+              <span class="text-[var(--ink-soft)] block text-[10px]">PRIMARY FOCUS</span>
+              <span class="font-bold text-[var(--ink)] text-sm">Backend / ML / Data</span>
             </div>
             <div>
-              <span class="text-[var(--ink-soft)]">Experience</span><br>
-              <span class="font-bold text-[var(--ink)]">1+ Years Active</span>
+              <span class="text-[var(--ink-soft)] block text-[10px]">EXPERIENCE</span>
+              <span class="font-bold text-[var(--ink)] text-sm">1+ Years Active</span>
             </div>
             <div>
-              <span class="text-[var(--ink-soft)]">Status</span><br>
-              <span class="font-bold text-[var(--purple)]">Open to Work</span>
+              <span class="text-[var(--ink-soft)] block text-[10px]">CURRENT STATUS</span>
+              <span class="font-bold text-[var(--signal)] text-sm">Open to Work</span>
             </div>
           </div>
         </div>
 
-        <!-- Right: Stat Block / HUD bars -->
-        <div class="panel p-8 shadow-[4px_4px_0_var(--ink)]">
-          <p class="font-mono text-xs uppercase tracking-widest mb-6 text-[var(--ink-soft)] font-bold">System Telemetry &amp; Mastery</p>
+        <!-- Right: Stat Block / HUD bars with Ruler Rails -->
+        <div class="panel p-6 sm:p-8 shadow-[4px_4px_0_var(--ink)] space-y-6">
+          <div class="flex justify-between items-center border-b border-[var(--ink)] pb-3">
+            <span class="font-mono text-xs uppercase tracking-widest text-[var(--ink-soft)] font-bold">
+              // TELEMETRY &amp; MASTERY
+            </span>
+            <span class="tag-blood text-[9px] py-0.2 px-1 font-mono font-bold">VERIFIED</span>
+          </div>
           
           <div class="space-y-5">
+            
+            <!-- Skill 1 -->
             <div>
-              <div class="flex justify-between font-mono text-xs uppercase mb-1.5">
+              <div class="flex justify-between font-mono text-xs uppercase mb-1">
                 <span class="font-bold">Backend Architecture (PHP / Python)</span>
-                <span class="font-bold">92%</span>
+                <div class="stat-stars">
+                  <span class="stat-stars-label">92%</span>
+                  <span class="star-filled">★★★★★</span>
+                </div>
               </div>
-              <div class="stat-bar">
-                <div class="stat-fill" style="--target-width:92%; background:var(--purple);"></div>
+              <div class="ruler-rail"></div>
+              <div class="stat-bar mt-1">
+                <div class="stat-fill" style="--target-width:92%; background:var(--signal);"></div>
               </div>
             </div>
 
+            <!-- Skill 2 -->
             <div>
-              <div class="flex justify-between font-mono text-xs uppercase mb-1.5">
+              <div class="flex justify-between font-mono text-xs uppercase mb-1">
                 <span class="font-bold">Database Design &amp; SQL (MySQL / Postgres)</span>
-                <span class="font-bold">88%</span>
+                <div class="stat-stars">
+                  <span class="stat-stars-label">88%</span>
+                  <span class="star-filled">★★★★★</span>
+                </div>
               </div>
-              <div class="stat-bar">
+              <div class="ruler-rail"></div>
+              <div class="stat-bar mt-1">
                 <div class="stat-fill" style="--target-width:88%; background:var(--teal);"></div>
               </div>
             </div>
 
+            <!-- Skill 3 -->
             <div>
-              <div class="flex justify-between font-mono text-xs uppercase mb-1.5">
+              <div class="flex justify-between font-mono text-xs uppercase mb-1">
                 <span class="font-bold">Machine Learning &amp; NLP (IndoBERT / scikit)</span>
-                <span class="font-bold">82%</span>
+                <div class="stat-stars">
+                  <span class="stat-stars-label">82%</span>
+                  <span class="star-filled">★★★★</span><span class="star-empty">★</span>
+                </div>
               </div>
-              <div class="stat-bar">
+              <div class="ruler-rail"></div>
+              <div class="stat-bar mt-1">
                 <div class="stat-fill" style="--target-width:82%; background:var(--orange);"></div>
               </div>
             </div>
 
+            <!-- Skill 4 -->
             <div>
-              <div class="flex justify-between font-mono text-xs uppercase mb-1.5">
+              <div class="flex justify-between font-mono text-xs uppercase mb-1">
                 <span class="font-bold">API Integration &amp; System Optimization</span>
-                <span class="font-bold">85%</span>
+                <div class="stat-stars">
+                  <span class="stat-stars-label">85%</span>
+                  <span class="star-filled">★★★★</span><span class="star-empty">★</span>
+                </div>
               </div>
-              <div class="stat-bar">
+              <div class="ruler-rail"></div>
+              <div class="stat-bar mt-1">
                 <div class="stat-fill" style="--target-width:85%; background:var(--blood);"></div>
               </div>
             </div>
+
           </div>
 
-          <div class="mt-8 p-4 bg-[var(--paper-dim)] border border-[var(--ink)] font-mono text-xs flex items-center justify-between">
-            <span>READY TO DEPLOY</span>
-            <span class="font-bold text-[var(--purple)]">ALL SYSTEMS NOMINAL</span>
+          <div class="p-3.5 bg-[var(--paper-dim)] border border-[var(--ink)] font-mono text-xs flex items-center justify-between">
+            <span class="text-[var(--ink-soft)] font-bold">DISPATCH READY</span>
+            <span class="font-bold text-[var(--signal)]">● ALL SYSTEMS NOMINAL</span>
           </div>
         </div>
+
       </div>
     </section>
 
-    <!-- ══════════ PROJECTS SECTION ("Move List") ══════════ -->
+    <!-- ══════════ PROJECTS SECTION ("Move List / Selected Works") ══════════ -->
     <section id="projects" class="max-w-6xl mx-auto px-6 md:px-10 py-24 border-t-[1.5px] border-[var(--ink)]">
+      
+      <!-- Print Spec Annotation Strip -->
+      <div class="annotation-strip mb-6">
+        <span class="annotation-strip-label">MANGA_OPS // MOVE LIST (SELECTED WORKS) — RESOLUTION 1200DPI</span>
+      </div>
+
       <!-- Title-Bar Section Header -->
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-        <div class="title-bar">
-          <span class="title-bar-tag" style="background:var(--orange);">Move List</span>
+        <div class="title-bar-stacked">
+          <span class="title-bar-tag" style="background:var(--orange);">
+            <span class="kanji">技一覧</span> MOVE LIST
+          </span>
           <h2 class="title-bar-main text-2xl sm:text-3xl md:text-4xl">Selected Projects</h2>
         </div>
-        <a href="https://github.com/ZEROTSUDIO" target="_blank" class="font-mono text-xs font-bold uppercase text-[var(--ink-soft)] hover:text-[var(--purple)] transition-colors inline-flex items-center gap-1">
+        <a href="https://github.com/ZEROTSUDIO" target="_blank" class="font-mono text-xs font-bold uppercase text-[var(--ink-soft)] hover:text-[var(--signal)] transition-colors inline-flex items-center gap-1">
           Explore all repositories on GitHub →
         </a>
       </div>
-      <p class="font-mono text-sm mt-3 text-[var(--ink-soft)]">Selected work — hover a card to see it snap into focus.</p>
 
-      <div class="grid sm:grid-cols-2 gap-8 mt-10">
+      <!-- View Mode Switcher Toolbar -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mt-6 border-b border-[var(--ink)] pb-4">
+        <p class="font-mono text-xs text-[var(--ink-soft)]">
+          Selected production works — toggle between tactile card view and command matrix table.
+        </p>
+        
+        <div class="flex items-center gap-2 font-mono text-xs">
+          <button data-project-view="cards" class="px-3 py-1.5 border border-[var(--ink)] bg-[var(--ink)] text-white font-bold active flex items-center gap-1.5 cursor-pointer shadow-[2px_2px_0_var(--blood)]">
+            <span class="keycap keycap-accent text-[8px]">□</span>
+            <span>CARDS VIEW</span>
+          </button>
+          <button data-project-view="table" class="px-3 py-1.5 border border-[var(--ink)] bg-[var(--paper-dim)] text-[var(--ink)] font-bold flex items-center gap-1.5 cursor-pointer hover:bg-white transition-colors">
+            <span class="keycap text-[8px]">≡</span>
+            <span>COMMAND MATRIX</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- ══════════ VIEW A: TACTILE PROJECT CARDS GRID ══════════ -->
+      <div id="projectsGrid" class="grid sm:grid-cols-2 gap-8 mt-10">
 
         <!-- Project 1: Rapa Cast Stone -->
         <article class="card-project" style="--r:-1.5deg;">
@@ -277,7 +395,7 @@
               <span class="px-2 py-1 border border-[var(--ink)] bg-[var(--paper)]">MySQL</span>
             </div>
             <div class="mt-6 flex items-center justify-between border-t border-[var(--ink)] pt-4">
-              <a href="rapa-case-study.html" class="font-mono text-xs font-bold uppercase hover:text-[var(--purple)] transition-colors">
+              <a href="rapa-case-study.html" class="font-mono text-xs font-bold uppercase hover:text-[var(--signal)] transition-colors inline-flex items-center gap-1">
                 View Case Study →
               </a>
               <span class="font-mono text-[10px] text-emerald-600 font-bold uppercase">● Production</span>
@@ -304,10 +422,10 @@
               <span class="px-2 py-1 border border-[var(--ink)] bg-[var(--paper)]">PyTorch</span>
             </div>
             <div class="mt-6 flex items-center justify-between border-t border-[var(--ink)] pt-4">
-              <a href="https://github.com/ZEROTSUDIO/Chatbot-Perpus-Bipa" target="_blank" class="font-mono text-xs font-bold uppercase hover:text-[var(--purple)] transition-colors">
+              <a href="https://github.com/ZEROTSUDIO/Chatbot-Perpus-Bipa" target="_blank" class="font-mono text-xs font-bold uppercase hover:text-[var(--signal)] transition-colors inline-flex items-center gap-1">
                 View Repository →
               </a>
-              <span class="font-mono text-[10px] text-[var(--purple)] font-bold uppercase">ML Pipeline</span>
+              <span class="font-mono text-[10px] text-[var(--signal)] font-bold uppercase">ML Pipeline</span>
             </div>
           </div>
         </article>
@@ -322,7 +440,7 @@
             <span class="tag-blood mb-2 inline-block text-[11px]">Cinema &amp; Tier Ranking</span>
             <h3 class="font-display uppercase text-2xl mt-1">KinoVibe</h3>
             <p class="text-sm mt-2 leading-relaxed text-[var(--ink-soft)]">
-              Personal cinematic movie review and tier-ranking platform designed for blockbuster cinema. Features 4-pillar scoring (Story, Visuals, Action, Fun), custom personal bias modifiers, live TMDB metadata search, and automated S-to-F tier lists.
+              Personal cinematic movie review and tier-ranking platform designed for blockbuster cinema. Features 4-pillar scoring, custom personal bias modifiers, live TMDB search, and automated S-to-F tier lists.
             </p>
             <div class="flex flex-wrap gap-2 mt-4 font-mono text-[11px] uppercase">
               <span class="px-2 py-1 border border-[var(--ink)] bg-[var(--paper)]">JavaScript</span>
@@ -332,7 +450,7 @@
             </div>
             <div class="mt-6 flex flex-wrap items-center justify-between gap-3 border-t border-[var(--ink)] pt-4">
               <div class="flex items-center gap-2 font-mono text-xs font-bold uppercase">
-                <a href="kinovibe-case-study.html" class="hover:text-[var(--purple)] transition-colors">
+                <a href="kinovibe-case-study.html" class="hover:text-[var(--signal)] transition-colors">
                   Case Study →
                 </a>
                 <span class="text-[var(--ink-soft)]">/</span>
@@ -340,7 +458,7 @@
                   Live ↗
                 </a>
                 <span class="text-[var(--ink-soft)]">/</span>
-                <a href="https://github.com/ZEROTSUDIO/KinoVibe-ver-0.1" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--purple)] transition-colors inline-flex items-center gap-0.5">
+                <a href="https://github.com/ZEROTSUDIO/KinoVibe-ver-0.1" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--signal)] transition-colors inline-flex items-center gap-0.5">
                   GitHub ↗
                 </a>
               </div>
@@ -380,7 +498,7 @@
               <span class="px-2 py-1 border border-[var(--ink)] bg-[var(--paper)]">Algorithm</span>
             </div>
             <div class="mt-6 flex items-center justify-between border-t border-[var(--ink)] pt-4">
-              <a href="https://github.com/ZEROTSUDIO/invs-studio-custom" target="_blank" class="font-mono text-xs font-bold uppercase hover:text-[var(--purple)] transition-colors">
+              <a href="https://github.com/ZEROTSUDIO/invs-studio-custom" target="_blank" class="font-mono text-xs font-bold uppercase hover:text-[var(--signal)] transition-colors">
                 View on GitHub →
               </a>
               <span class="font-mono text-[10px] text-[var(--ink-soft)] font-bold uppercase">Production Core</span>
@@ -406,7 +524,7 @@
               <span class="px-2 py-1 border border-[var(--ink)] bg-[var(--paper)]">MySQL</span>
             </div>
             <div class="mt-6 flex items-center justify-between border-t border-[var(--ink)] pt-4">
-              <a href="https://github.com/ZEROTSUDIO/Lorebook" target="_blank" rel="noopener noreferrer" class="font-mono text-xs font-bold uppercase hover:text-[var(--purple)] transition-colors inline-flex items-center gap-0.5">
+              <a href="https://github.com/ZEROTSUDIO/Lorebook" target="_blank" rel="noopener noreferrer" class="font-mono text-xs font-bold uppercase hover:text-[var(--signal)] transition-colors inline-flex items-center gap-0.5">
                 View on GitHub →
               </a>
               <span class="font-mono text-[10px] text-[var(--ink-soft)] font-bold uppercase">● Development</span>
@@ -415,14 +533,126 @@
         </article>
 
       </div>
+
+      <!-- ══════════ VIEW B: MOVE LIST COMMAND MATRIX TABLE ══════════ -->
+      <div id="projectsTable" class="mt-10 hidden" style="display:none;">
+        <div class="table-manga-container shadow-[6px_6px_0_var(--ink)]">
+          <div class="title-bar-dark">
+            <div class="flex items-center gap-2">
+              <span class="w-2 h-2 bg-[var(--blood)] inline-block"></span>
+              <span>TECHNICAL REPOSITORY MATRIX // 5 PROJECTS INDEXED</span>
+            </div>
+            <span class="font-mono text-[10px] text-[var(--orange)]">CLICK ROWS TO INSPECT</span>
+          </div>
+
+          <table class="table-manga">
+            <thead>
+              <tr>
+                <th class="w-20">ARC // ID</th>
+                <th>PROJECT TITLE</th>
+                <th>STACK ENGINE</th>
+                <th>ARCHITECTURE / TELEMETRY</th>
+                <th class="w-32">STATUS</th>
+                <th class="text-right w-44">ACTIONS</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Row 1 -->
+              <tr data-activatable class="cursor-pointer row-active" data-title="Rapa Cast Stone">
+                <td class="font-bold text-[var(--blood)]">ARC-01</td>
+                <td>
+                  <span class="font-bold block text-sm">Rapa Cast Stone</span>
+                  <span class="text-[10px] text-[var(--ink-soft)]">Precast Concrete Digital E-Catalogue</span>
+                </td>
+                <td>Laravel / Livewire / Tailwind</td>
+                <td>500+ Items // Sub-second Latency</td>
+                <td><span class="tag-teal text-[9px]">● LIVE PRODUCTION</span></td>
+                <td class="text-right space-x-1 whitespace-nowrap">
+                  <a href="rapa-case-study.html" class="btn-solid btn-sm">CASE STUDY</a>
+                </td>
+              </tr>
+
+              <!-- Row 2 -->
+              <tr data-activatable class="cursor-pointer" data-title="Chatbot Perpus Bipa">
+                <td class="font-bold text-[var(--blood)]">ARC-02</td>
+                <td>
+                  <span class="font-bold block text-sm">Chatbot Perpus Bipa</span>
+                  <span class="text-[10px] text-[var(--ink-soft)]">Conversational Library Assistant</span>
+                </td>
+                <td>Python / IndoBERT / PyTorch</td>
+                <td>Transformer NLP // Fine-tuned Model</td>
+                <td><span class="tag-purple text-[9px]">ML PIPELINE</span></td>
+                <td class="text-right space-x-1 whitespace-nowrap">
+                  <a href="https://github.com/ZEROTSUDIO/Chatbot-Perpus-Bipa" target="_blank" class="btn-outline btn-sm">GITHUB ↗</a>
+                </td>
+              </tr>
+
+              <!-- Row 3 -->
+              <tr data-activatable class="cursor-pointer" data-title="KinoVibe">
+                <td class="font-bold text-[var(--blood)]">ARC-03</td>
+                <td>
+                  <span class="font-bold block text-sm">KinoVibe</span>
+                  <span class="text-[10px] text-[var(--ink-soft)]">Movie Review &amp; Tier Ranking Web App</span>
+                </td>
+                <td>Supabase / TMDB API / JS</td>
+                <td>4-Pillar Scoring // Automated Tiers</td>
+                <td><span class="tag-blood text-[9px]">● LIVE PRODUCTION</span></td>
+                <td class="text-right space-x-1 whitespace-nowrap">
+                  <a href="kinovibe-case-study.html" class="btn-solid btn-sm">CASE STUDY</a>
+                  <a href="https://kinovibe-eight.vercel.app/" target="_blank" class="btn-outline btn-sm">LIVE ↗</a>
+                </td>
+              </tr>
+
+              <!-- Row 4 -->
+              <tr data-activatable class="cursor-pointer" data-title="INVS Studio Custom">
+                <td class="font-bold text-[var(--blood)]">ARC-04</td>
+                <td>
+                  <span class="font-bold block text-sm">INVS Studio Custom</span>
+                  <span class="text-[10px] text-[var(--ink-soft)]">Garment SJF Scheduling Production ERP</span>
+                </td>
+                <td>PHP / CodeIgniter / MySQL</td>
+                <td>Shortest Job First Scheduling Algo</td>
+                <td><span class="tag-teal text-[9px]">CORE STABLE</span></td>
+                <td class="text-right space-x-1 whitespace-nowrap">
+                  <a href="https://github.com/ZEROTSUDIO/invs-studio-custom" target="_blank" class="btn-outline btn-sm">GITHUB ↗</a>
+                </td>
+              </tr>
+
+              <!-- Row 5 -->
+              <tr data-activatable class="cursor-pointer" data-title="Zerostudios Lorekeeper">
+                <td class="font-bold text-[var(--blood)]">ARC-05</td>
+                <td>
+                  <span class="font-bold block text-sm">Zerostudios Lorekeeper</span>
+                  <span class="text-[10px] text-[var(--ink-soft)]">Internal Studio Knowledge Archive</span>
+                </td>
+                <td>CodeIgniter 3 / Tailwind / MySQL</td>
+                <td>Design System &amp; Narrative Lorebook</td>
+                <td><span class="tag-ink text-[9px]">● DEVELOPMENT</span></td>
+                <td class="text-right space-x-1 whitespace-nowrap">
+                  <a href="https://github.com/ZEROTSUDIO/Lorebook" target="_blank" class="btn-outline btn-sm">GITHUB ↗</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
     </section>
 
     <!-- ══════════ TECH STACK SECTION ("Command List" / Modular Loadout) ══════════ -->
     <section id="stack" class="max-w-6xl mx-auto px-6 md:px-10 py-24 border-t-[1.5px] border-[var(--ink)]">
+      
+      <!-- Print Spec Annotation Strip -->
+      <div class="annotation-strip mb-6">
+        <span class="annotation-strip-label">MANGA_OPS // COMMAND LIST &amp; SYSTEM TOOLING — SPEC.2026</span>
+      </div>
+
       <!-- Title-Bar Section Header -->
       <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-        <div class="title-bar">
-          <span class="title-bar-tag" style="background:var(--teal);">Command List</span>
+        <div class="title-bar-stacked">
+          <span class="title-bar-tag" style="background:var(--teal);">
+            <span class="kanji">装備</span> COMMAND LIST
+          </span>
           <h2 class="title-bar-main text-2xl sm:text-3xl md:text-4xl">Tech Loadout</h2>
         </div>
         <p class="font-mono text-xs uppercase tracking-widest text-[var(--ink-soft)] font-bold">
@@ -487,12 +717,12 @@
               <span class="tag-purple text-xs font-mono font-bold uppercase">04 / DevOps &amp; Tools</span>
             </div>
             <div class="grid grid-cols-2 gap-3">
-              <div class="chip"><span class="chip-dot" style="background:var(--purple);">GT</span>Git / GitHub</div>
-              <div class="chip"><span class="chip-dot" style="background:var(--purple);">LX</span>Linux / Bash</div>
-              <div class="chip"><span class="chip-dot" style="background:var(--purple);">DK</span>Docker</div>
-              <div class="chip"><span class="chip-dot" style="background:var(--purple);">PM</span>Postman</div>
-              <div class="chip"><span class="chip-dot" style="background:var(--purple);">TW</span>Tailwind CSS</div>
-              <div class="chip"><span class="chip-dot" style="background:var(--purple);">VT</span>Vite</div>
+              <div class="chip"><span class="chip-dot" style="background:var(--signal);">GT</span>Git / GitHub</div>
+              <div class="chip"><span class="chip-dot" style="background:var(--signal);">LX</span>Linux / Bash</div>
+              <div class="chip"><span class="chip-dot" style="background:var(--signal);">DK</span>Docker</div>
+              <div class="chip"><span class="chip-dot" style="background:var(--signal);">PM</span>Postman</div>
+              <div class="chip"><span class="chip-dot" style="background:var(--signal);">TW</span>Tailwind CSS</div>
+              <div class="chip"><span class="chip-dot" style="background:var(--signal);">VT</span>Vite</div>
             </div>
           </div>
         </div>
@@ -500,48 +730,60 @@
       </div>
     </section>
 
-    <!-- ══════════ CONTACT SECTION ("Player Menu" - High Contrast) ══════════ -->
+    <!-- ══════════ CONTACT SECTION ("Player Menu" - Obsidian Ink) ══════════ -->
     <section id="contact" class="max-w-6xl mx-auto px-6 md:px-10 py-24 border-t-[1.5px] border-[var(--ink)]">
-      <div class="panel p-8 sm:p-12 md:p-16 relative overflow-hidden bg-[#141311] text-white shadow-[8px_8px_0_var(--blood)] border-[1.5px] border-[var(--ink)]">
-        <!-- Subtle Halftone overlay -->
-        <div class="absolute inset-0 halftone" style="filter:invert(1); opacity:0.06;" aria-hidden="true"></div>
+      
+      <!-- Print Spec Annotation Strip -->
+      <div class="annotation-strip mb-6">
+        <span class="annotation-strip-label">MANGA_OPS // SECURE TRANSMISSION CHANNEL — ENCRYPTED</span>
+      </div>
+
+      <div class="panel-dark p-8 sm:p-12 md:p-16 relative overflow-hidden shadow-[8px_8px_0_var(--blood)] border-[1.5px] border-[var(--ink)]">
+        <!-- Halftone overlay -->
+        <div class="absolute inset-0 halftone opacity-10 pointer-events-none" aria-hidden="true"></div>
         
         <div class="relative z-10">
-          <div class="title-bar mb-5">
-            <span class="title-bar-tag" style="background:var(--blood);">Player Menu</span>
+          <div class="title-bar-stacked mb-5">
+            <span class="title-bar-tag" style="background:var(--blood);">
+              <span class="kanji">通信</span> PLAYER MENU
+            </span>
             <h2 class="title-bar-main text-3xl sm:text-4xl md:text-5xl" style="background:#000000; color:#FFFFFF;">
               Let's Build Something
             </h2>
           </div>
 
-          <p class="font-mono text-sm md:text-base mt-4 max-w-xl text-[#EDEAE2] leading-relaxed">
+          <p class="font-mono text-sm md:text-base mt-4 max-w-xl text-[var(--paper)] opacity-90 leading-relaxed">
             Open to full-time engineering roles, high-impact backend contracts, and applied ML collaborations. Drop me a note and let's discuss your next milestone.
           </p>
 
-          <!-- High-Contrast Interactive Contact Cards -->
+          <!-- High-Contrast Interactive Contact Cards (with 1-click data-copy) -->
           <div class="grid sm:grid-cols-2 gap-4 mt-10 font-mono text-sm uppercase">
-            <!-- Email -->
-            <a href="mailto:a.r.bayhaqi341@gmail.com" class="p-4 bg-[#23201C] border-[1.5px] border-[#4A453C] hover:border-white hover:bg-[#2D2924] flex items-center justify-between transition-all group shadow-[3px_3px_0_#000]">
+            
+            <!-- Email (with 1-click clipboard copy) -->
+            <div data-copy="a.r.bayhaqi341@gmail.com" class="p-4 bg-[#23201C] border-[1.5px] border-[#4A453C] hover:border-white hover:bg-[#2D2924] flex items-center justify-between transition-all group shadow-[3px_3px_0_#000] cursor-pointer" title="Click to copy email address">
               <div>
-                <span class="text-[11px] text-[#A8A296] block tracking-wider">Email // Direct</span>
+                <div class="flex items-center gap-1.5 mb-0.5">
+                  <span class="text-[11px] text-[#A8A296] block tracking-wider">EMAIL // 1-CLICK COPY</span>
+                  <span class="keycap keycap-accent text-[8px] py-0 px-1">COPY</span>
+                </div>
                 <span class="text-white font-bold text-xs sm:text-sm tracking-wide group-hover:text-amber-400 transition-colors">a.r.bayhaqi341@gmail.com</span>
               </div>
-              <span class="text-white text-lg font-bold group-hover:translate-x-1 group-hover:text-amber-400 transition-all">→</span>
-            </a>
+              <span class="text-white text-lg font-bold group-hover:translate-x-1 group-hover:text-amber-400 transition-all">📋</span>
+            </div>
 
             <!-- GitHub -->
             <a href="https://github.com/ZEROTSUDIO" target="_blank" class="p-4 bg-[#23201C] border-[1.5px] border-[#4A453C] hover:border-white hover:bg-[#2D2924] flex items-center justify-between transition-all group shadow-[3px_3px_0_#000]">
               <div>
-                <span class="text-[11px] text-[#A8A296] block tracking-wider">GitHub // Repositories</span>
+                <span class="text-[11px] text-[#A8A296] block tracking-wider mb-0.5">GITHUB // REPOSITORIES</span>
                 <span class="text-white font-bold text-xs sm:text-sm tracking-wide group-hover:text-amber-400 transition-colors">github.com/ZEROTSUDIO</span>
               </div>
               <span class="text-white text-lg font-bold group-hover:translate-x-1 group-hover:text-amber-400 transition-all">→</span>
             </a>
 
             <!-- LinkedIn -->
-            <a href="#" target="_blank" class="p-4 bg-[#23201C] border-[1.5px] border-[#4A453C] hover:border-white hover:bg-[#2D2924] flex items-center justify-between transition-all group shadow-[3px_3px_0_#000]">
+            <a href="https://linkedin.com" target="_blank" class="p-4 bg-[#23201C] border-[1.5px] border-[#4A453C] hover:border-white hover:bg-[#2D2924] flex items-center justify-between transition-all group shadow-[3px_3px_0_#000]">
               <div>
-                <span class="text-[11px] text-[#A8A296] block tracking-wider">LinkedIn // Professional</span>
+                <span class="text-[11px] text-[#A8A296] block tracking-wider mb-0.5">LINKEDIN // PROFESSIONAL</span>
                 <span class="text-white font-bold text-xs sm:text-sm tracking-wide group-hover:text-amber-400 transition-colors">Connect on LinkedIn</span>
               </div>
               <span class="text-white text-lg font-bold group-hover:translate-x-1 group-hover:text-amber-400 transition-all">→</span>
@@ -550,7 +792,7 @@
             <!-- Instagram -->
             <a href="https://instagram.com/zeeddeong.341" target="_blank" class="p-4 bg-[#23201C] border-[1.5px] border-[#4A453C] hover:border-white hover:bg-[#2D2924] flex items-center justify-between transition-all group shadow-[3px_3px_0_#000]">
               <div>
-                <span class="text-[11px] text-[#A8A296] block tracking-wider">Instagram // Social</span>
+                <span class="text-[11px] text-[#A8A296] block tracking-wider mb-0.5">INSTAGRAM // SOCIAL</span>
                 <span class="text-white font-bold text-xs sm:text-sm tracking-wide group-hover:text-amber-400 transition-colors">@zeeddeong.341</span>
               </div>
               <span class="text-white text-lg font-bold group-hover:translate-x-1 group-hover:text-amber-400 transition-all">→</span>
@@ -563,40 +805,34 @@
   </main>
 
   <!-- ══════════ FOOTER ══════════ -->
-  <footer class="max-w-6xl mx-auto px-6 md:px-10 pb-12 pt-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+  <footer class="max-w-6xl mx-auto px-6 md:px-10 pb-20 pt-4 flex flex-col sm:flex-row justify-between items-center gap-4">
     <p class="font-mono text-[11px] uppercase tracking-widest text-[var(--ink-soft)]">
       © 2026 Arief Rizal Bayhaqi — Built with ink, paper, and code.
     </p>
     <p class="font-mono text-[11px] uppercase tracking-widest text-[var(--ink-soft)]">
-      Magelang, Indonesia
+      Magelang, Indonesia // MANGA_OPS v3.0
     </p>
   </footer>
 
-  <!-- ══════════ INTERACTION SCRIPTS ══════════ -->
-  <script>
-    // Mobile navigation toggle
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    menuBtn.addEventListener('click', () => {
-      const isOpen = mobileMenu.classList.toggle('flex');
-      mobileMenu.classList.toggle('hidden');
-      menuBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    });
-
-    // Stat bar animation with IntersectionObserver
-    const statObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animated');
-          statObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.3 });
-
-    document.querySelectorAll('.stat-fill').forEach(bar => {
-      statObserver.observe(bar);
-    });
-  </script>
+  <!-- ══════════ BOTTOM FIGHTING GAME HUD BAR ══════════ -->
+  <div class="hud-bar fixed bottom-0 inset-x-0 z-40 border-t-2 border-[var(--ink)]">
+    <span class="hud-hint hidden md:inline">ARIEF BAYHAQI // BACKEND &amp; DATA DEVELOPER — MANGA_OPS v3.0</span>
+    <a href="#about" class="hud-action">
+      <span class="hud-btn square">□</span>About
+    </a>
+    <a href="#projects" class="hud-action">
+      <span class="hud-btn triangle">▲</span>Projects
+    </a>
+    <a href="#stack" class="hud-action">
+      <span class="hud-btn">○</span>Stack
+    </a>
+    <a href="#contact" class="hud-action">
+      <span class="hud-btn accent">✕</span>Comms
+    </a>
+    <a href="CV.pdf" target="_blank" class="hud-action hidden sm:inline-flex">
+      <span class="hud-btn">📄</span>CV
+    </a>
+  </div>
 
 </body>
 </html>
